@@ -1,24 +1,30 @@
 {
     "basics": {
-      "name": "John Doe",
-      "label": "Programmer",
+      "name": "Ezequiel Menor",
+      "label": "Estudiante",
       "image": "",
-      "email": "john@gmail.com",
-      "phone": "(912) 555-4321",
-      "url": "https://johndoe.com",
+      "email": "ezequielmenor@gmail.com",
+      "phone": "690 82 47 18",
+      "url": "",
       "summary": "A summary of John Doe…",
       "location": {
         "address": "2712 Broadway St",
         "postalCode": "CA 94115",
-        "city": "San Francisco",
-        "countryCode": "US",
-        "region": "California"
+        "city": "Gandía",
+        "countryCode": "ES",
+        "region": "Valencia"
       },
-      "profiles": [{
-        "network": "Twitter",
-        "username": "john",
-        "url": "https://twitter.com/john"
-      }]
+      "profiles": [
+        {
+          "network": "GitHub",
+          "username": "EzequielMenor",
+          "url": "https://github.com/EzequielMenor"
+        },
+        {
+          "network": "LinkedIn",
+          "username": "Ezequiel Menor",
+          "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+        }]
     },
     "work": [{
       "name": "Company",
