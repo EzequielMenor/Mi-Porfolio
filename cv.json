@@ -2,11 +2,11 @@
     "basics": {
       "name": "Ezequiel Menor",
       "label": "Estudiante",
-      "image": "",
+      "image": "mia.jpeg",
       "email": "ezequielmenor@gmail.com",
       "phone": "690 82 47 18",
       "url": "",
-      "summary": "A summary of John Doe…",
+      "summary": "Soy un estudiante de un grado medio de sistemas microinformaticos y redes. Quiero seguir con el grado superior de desarrollo de aplicaciones multiplataforma. Me interesa la programación y la tecnoliga.",
       "location": {
         "address": "2712 Broadway St",
         "postalCode": "CA 94115",
@@ -26,17 +26,31 @@
           "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
         }]
     },
-    "work": [{
-      "name": "Company",
-      "position": "President",
+    "work": [
+      {
+        "name": "Practicas",
+        "position": "Informatico",
+        "url": "https://company.com",
+        "startDate": "2024-03-20",
+        "endDate": null,
+        "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
+        "highlights": [
+          "Started the company"
+        ]
+      },
+      {
+      "name": "Antica",
+      "position": "Camarero",
       "url": "https://company.com",
-      "startDate": "2013-01-01",
-      "endDate": "2014-01-01",
-      "summary": "Description…",
+      "startDate": "2022-07-11",
+      "endDate": "2022-09-05",
+      "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
       "highlights": [
         "Started the company"
       ]
-    }],
+
+    }
+    ],
     "volunteer": [{
       "organization": "Organization",
       "position": "Volunteer",
@@ -79,15 +93,29 @@
       "url": "https://publication.com",
       "summary": "Description…"
     }],
-    "skills": [{
-      "name": "Web Development",
-      "level": "Master",
-      "keywords": [
-        "HTML",
-        "CSS",
-        "JavaScript"
-      ]
-    }],
+    "skills": [
+      {
+        "name": "HTML",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend"
+        ]
+      },
+      {
+        "name": "CSS",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Diseño Responsive"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        ]
+      }
+    ],
     "languages": [{
       "language": "English",
       "fluency": "Native speaker"
