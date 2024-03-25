@@ -42,7 +42,7 @@
         "name": "Antica",
         "position": "Camarero",
         "url": "https://company.com",
-        "startDate": "2021-07-11",
+        "startDate": "2022-07-11",
         "endDate": "2022-09-05",
         "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
         "highlights": [
@@ -62,10 +62,22 @@
         "Awarded 'Volunteer of the Month'"
       ]
     }],
-    "education": [
-      {
+    "education": [ 
+    {
+      "institution": "María Enriquez",
+      "url": "https://portal.edu.gva.es/mariaenriquez/",
+      "area": "Grado Medio",
+      "studyType": "Estudiante",
+      "startDate": "2022-09-12",
+      "endDate": null,
+      "score": null,
+      "courses": [
+        "1r y 2n de grado medio de Sistemas Microinformaticos y redes"
+      ]
+    },
+    {
       "institution": "Ausias March",
-      "url": "https://institution.com/",
+      "url": "https://portal.edu.gva.es/iesausiasmarch/",
       "area": "ESO",
       "studyType": "Estudiante",
       "startDate": "2018-09-10",
@@ -73,18 +85,6 @@
       "score": "7.0",
       "courses": [
         "1r, 2n, 3r y 4t de ESO"
-      ]
-    }, 
-    {
-      "institution": "María Enriquez",
-      "url": "https://institution.com/",
-      "area": "FP",
-      "studyType": "Estudiante",
-      "startDate": "2022-09-12",
-      "endDate": null,
-      "score": null,
-      "courses": [
-        "DB1101 - Basic SQL"
       ]
     }
     ],
