@@ -6,7 +6,7 @@
       "email": "ezequielmenor@gmail.com",
       "phone": "",
       "url": "",
-      "summary": "Soy un estudiante de un grado medio de sistemas microinformaticos y redes. Quiero seguir con el grado superior de desarrollo de aplicaciones multiplataforma. Me interesa la programación y la tecnoliga.",
+      "summary": "Soy un estudiante de un grado medio de sistemas microinformaticos y redes. Quiero seguir con el grado superior de desarrollo de aplicaciones multiplataforma. Me interesa la programación y la tecnología.",
       "location": {
         "address": "2712 Broadway St",
         "postalCode": "46702",
@@ -42,7 +42,7 @@
         "name": "Antica",
         "position": "Camarero",
         "url": "https://company.com",
-        "startDate": "2022-07-11",
+        "startDate": "2021-07-11",
         "endDate": "2022-09-05",
         "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
         "highlights": [
@@ -62,18 +62,32 @@
         "Awarded 'Volunteer of the Month'"
       ]
     }],
-    "education": [{
-      "institution": "University",
+    "education": [
+      {
+      "institution": "Ausias March",
       "url": "https://institution.com/",
-      "area": "Software Development",
-      "studyType": "Bachelor",
-      "startDate": "2011-01-01",
-      "endDate": "2013-01-01",
-      "score": "4.0",
+      "area": "ESO",
+      "studyType": "Estudiante",
+      "startDate": "2018-09-10",
+      "endDate": "2022-06-20",
+      "score": "7.0",
+      "courses": [
+        "1r, 2n, 3r y 4t de ESO"
+      ]
+    }, 
+    {
+      "institution": "María Enriquez",
+      "url": "https://institution.com/",
+      "area": "FP",
+      "studyType": "Estudiante",
+      "startDate": "2022-09-12",
+      "endDate": null,
+      "score": null,
       "courses": [
         "DB1101 - Basic SQL"
       ]
-    }],
+    }
+    ],
     "awards": [{
       "title": "Award",
       "date": "2014-11-01",
