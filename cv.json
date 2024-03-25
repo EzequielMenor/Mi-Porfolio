@@ -2,7 +2,7 @@
     "basics": {
       "name": "Ezequiel Menor",
       "label": "Estudiante",
-      "image": "mia.jpeg",
+      "image": "public/mia.jpeg",
       "email": "ezequielmenor@gmail.com",
       "phone": "",
       "url": "",
@@ -28,28 +28,28 @@
     },
     "work": [
       {
+        "name": "Antica",
+        "position": "Camarero",
+        "url": "https://company.com",
+        "startDate": "2022-07-11",
+        "endDate": "2022-09-05",
+        "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
+        "highlights": [
+          "Started the company"
+        ]
+  
+      },
+      {
         "name": "Practicas",
         "position": "Informatico",
         "url": "https://company.com",
         "startDate": "2024-03-20",
         "endDate": null,
-        "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
+        "summary": "",
         "highlights": [
           "Started the company"
         ]
-      },
-      {
-      "name": "Antica",
-      "position": "Camarero",
-      "url": "https://company.com",
-      "startDate": "2022-07-11",
-      "endDate": "2022-09-05",
-      "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
-      "highlights": [
-        "Started the company"
-      ]
-
-    }
+      }
     ],
     "volunteer": [{
       "organization": "Organization",
