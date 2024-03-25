@@ -4,7 +4,7 @@ import Section from "../Section.astro";
 import { work } from '@cv'
 ---
 
-<Section title="Experience">
+<Section title="Experiencia laboral">
     <ul>
         {work.map(( {name, startDate, endDate, position, summary, highlights}) => {
             const startYear = new Date(startDate).getFullYear()

@@ -137,8 +137,18 @@
       "isActive": true,
       "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
       "highlights": [
-        ""
+        "Todo sobre mi"
       ],
-      "url": "https://project.com/"
-    }]
+      "url": "https://ezequielmenor.es/"
+    },
+    {
+      "name": "Forzza Web",
+      "isActive": true,
+      "description": "Página web de la empresa Forzza.",
+      "highlights": [
+        "Mi primera web para otro"
+      ],
+      "url": ""
+    }
+  ]
   }
