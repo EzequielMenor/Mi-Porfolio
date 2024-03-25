@@ -33,11 +33,8 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
             </span>
             <footer class="print">
                 {printInfo}
-            <footer>
-                <div class="print">
-                    {printInfo}
-                </div>
-                <div class="no-print">
+            </footer>
+            <footer class="no-print">
                 {
                     email && (
                         <a
@@ -78,7 +75,6 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
                         )
                     })
                 }
-                </div>
             </footer>
         </div>
         <figure>
@@ -131,6 +127,8 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
     }
 
     footer {
+        color: #555;
+        font-size: 0.65rem;
         display: flex;
         gap: 4px;
         margin-top: 8px;
@@ -154,20 +152,6 @@ const printInfo = [email, linkedUrl].filter(Boolean).join(" • ")
         border: 1px solid #ddd;
     }
 
-    @media print {
-        .no-print {
-            display: none;
-        }
-    }
 
-    .print {
-        display: none;
-    }
-
-    @media print {
-        .print {
-            display: block;
-        }
-    }
 
 </style>
