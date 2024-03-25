@@ -2,14 +2,14 @@
     "basics": {
       "name": "Ezequiel Menor",
       "label": "Estudiante",
-      "image": "public/mia.jpeg",
+      "image": "mia.jpeg",
       "email": "ezequielmenor@gmail.com",
       "phone": "",
       "url": "",
       "summary": "Soy un estudiante de un grado medio de sistemas microinformaticos y redes. Quiero seguir con el grado superior de desarrollo de aplicaciones multiplataforma. Me interesa la programación y la tecnoliga.",
       "location": {
         "address": "2712 Broadway St",
-        "postalCode": "CA 94115",
+        "postalCode": "46702",
         "city": "Gandía",
         "countryCode": "ES",
         "region": "Valencia"
@@ -28,6 +28,17 @@
     },
     "work": [
       {
+        "name": "Practicas",
+        "position": "Informatico",
+        "url": "https://company.com",
+        "startDate": "2024-03-20",
+        "endDate": null,
+        "summary": "",
+        "highlights": [
+          "Started the company"
+        ]
+      },
+      {
         "name": "Antica",
         "position": "Camarero",
         "url": "https://company.com",
@@ -38,17 +49,6 @@
           "Started the company"
         ]
   
-      },
-      {
-        "name": "Practicas",
-        "position": "Informatico",
-        "url": "https://company.com",
-        "startDate": "2024-03-20",
-        "endDate": null,
-        "summary": "",
-        "highlights": [
-          "Started the company"
-        ]
       }
     ],
     "volunteer": [{
