@@ -131,13 +131,13 @@
       "name": "Jane Doe",
       "reference": "Reference…"
     }],
-    "projects": [{
-      "name": "Project",
-      "startDate": "2019-01-01",
-      "endDate": "2021-01-01",
-      "description": "Description...",
+    "projects": [
+      {
+      "name": "Mi portfolio",
+      "isActive": true,
+      "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
       "highlights": [
-        "Won award at AIHacks 2016"
+        "Mi portfolio"
       ],
       "url": "https://project.com/"
     }]
