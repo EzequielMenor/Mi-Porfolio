@@ -154,15 +154,6 @@
         "Todo sobre mi", "Astro"
       ],
       "url": "https://ezequielmenor.es/"
-    },
-    {
-      "name": "Forzza Web",
-      "isActive": true,
-      "description": "Página web de la empresa Forzza.",
-      "highlights": [
-        "Mi primera web para otro", "Astro"
-      ],
-      "url": ""
     }
   ]
   }
