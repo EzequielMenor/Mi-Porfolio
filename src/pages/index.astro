@@ -1,35 +1,42 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
-import Experience from "@/components/sections/Experience.astro"
-import About from "@/components/sections/About.astro"
-import Education from '@/components/sections/Education.astro';
-import Hero from '@/components/sections/Hero.astro';
-import Projects from '@/components/sections/Projects.astro';
-import Skills from '@/components/sections/Skills.astro';
-import KeyboardManager from '@/components/KeyboardManager.astro';
+import Experience from "@/components/sections/Experience.astro";
+import About from "@/components/sections/About.astro";
+import Education from "@/components/sections/Education.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Skills from "@/components/sections/Skills.astro";
+import KeyboardManager from "@/components/KeyboardManager.astro";
 
-import { basics } from '@cv'
-const { name, label } = basics
+import { basics } from "@cv";
+const { name, label } = basics;
 ---
 
 <Layout title={`Portfolio de ${name} - ${label}`}>
-	<main>
-		<Hero />
-		<About />
-		<Education />
-		<Experience />
-		<Projects />
-		<!-- <Skills />-->
-	</main>
-	
-	<KeyboardManager />
+  <main>
+    <Hero />
+    <About />
+    <Education />
+    <Experience />
+    <Projects />
+    <!-- <Skills />-->
+  </main>
+
+  <KeyboardManager />
 </Layout>
 
 <style>
-	main {
-		padding: 4rem;
-		margin: auto;
-		width: 100%;
-	}
+  main {
+    padding: 4rem;
+    margin: auto;
+    width: 100%;
+  }
+  /* Estilos para la impresión */
+  @media print {
+    header, /* Reemplaza 'header' por el selector adecuado para tu encabezado */
+  footer /* Reemplaza 'footer' por el selector adecuado para tu pie de página */ {
+      display: none;
+    }
+  }
 </style>
