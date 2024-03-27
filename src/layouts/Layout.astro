@@ -97,4 +97,15 @@ const { title } = Astro.props;
   }
 </style>
 
+<script>
+  window.onbeforeprint = function () {
+    document.querySelector("header").style.display = "none"; // Reemplaza 'header' por el selector adecuado para tu encabezado
+    document.querySelector("footer").style.display = "none"; // Reemplaza 'footer' por el selector adecuado para tu pie de página
+  };
 
+  window.onafterprint = function () {
+    document.querySelector("header").style.display = ""; // Restaura la visualización del encabezado después de la impresión
+    document.querySelector("footer").style.display = ""; // Restaura la visualización del pie de página después de la impresión
+  };
+</script>
+  

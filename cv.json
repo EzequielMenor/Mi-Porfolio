@@ -154,6 +154,15 @@
         "Todo sobre mi", "Astro"
       ],
       "url": "https://ezequielmenor.es/"
+    },
+    {
+      "name": "SpaceX",
+      "isActive": true,
+      "description": "Esto es un proyecto de conexión con Api de SpaceX",
+      "highlights": [
+        "SpaceX", "Astro"
+      ],
+      "url": "https://ezequielmenor.es/spacex"
     }
   ]
   }
