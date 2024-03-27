@@ -147,7 +147,7 @@
     }],
     "projects": [
       {
-      "name": "Mi portfolio",
+      "name": "Mi porfolio",
       "isActive": true,
       "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
       "highlights": [
