@@ -1,7 +1,8 @@
 # Mi porfolio creado con Astro
 
 <div align="center">
-<img src="./public/Mi-Porfolio.png)">
+<img src="./public/Mi-Porfolio.png">
+<p></p>
 </div>
 
 <p>
