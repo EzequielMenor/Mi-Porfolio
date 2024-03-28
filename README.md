@@ -2,7 +2,7 @@
 
 <div align="center">
 <a href="https://ezequielmenor.es/">
-<img src="./public/Mi-porfolio.png">
+<img src="./public/Mi-porfolio.png" alt="Visualización de la página web Mi porfolio">
 </a>
 <p></p>
 </div>
