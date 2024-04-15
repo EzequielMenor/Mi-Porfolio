@@ -156,6 +156,15 @@
       "url": "https://ezequielmenor.es/"
     },
     {
+      "name": "Tarjetas",
+      "isActive": true,
+      "description": "Este proyecto es basicamente una págian para crear tarjetas y borrar tarjetas con informacions",
+      "highlights": [
+        "Next.js", "CRUD (Create, Read, Update, Delete)"
+      ],
+      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+    },
+    {
       "name": "SpaceX",
       "isActive": true,
       "description": "Esto es un proyecto de conexión con Api de SpaceX",
