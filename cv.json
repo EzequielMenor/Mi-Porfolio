@@ -1,0 +1,177 @@
+{
+    "basics": {
+      "name": "Ezequiel Menor",
+      "label": "Estudiante",
+      "image": "/mia2.jpeg",
+      "email": "ezequielmenor@gmail.com",
+      "phone": "",
+      "url": "",
+      "summary": "Como estudiante de sistemas microinformáticos y redes, me apasiona la programación y la tecnología. Estoy interesado en seguir mi formación con el grado superior de desarrollo de aplicaciones multiplataforma. Me atrae la idea de aprender a crear aplicaciones que funcionen en diferentes dispositivos y sistemas operativos. Creo que este campo me permitirá explorar mi creatividad y contribuir al mundo de la tecnología de una manera emocionante y práctica.",
+      "location": {
+        "address": "2712 Broadway St",
+        "postalCode": "46702",
+        "city": "Gandía",
+        "countryCode": "ES",
+        "region": "Valencia"
+      },
+      "profiles": [
+        {
+          "network": "GitHub",
+          "username": "EzequielMenor",
+          "url": "https://github.com/EzequielMenor"
+        },
+        {
+          "network": "LinkedIn",
+          "username": "Ezequiel Menor",
+          "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+        }]
+    },
+    "work": [
+      {
+        "name": "Practicas",
+        "position": "Informatico",
+        "url": "https://company.com",
+        "startDate": "2024-03-20",
+        "endDate": null,
+        "summary": "",
+        "highlights": [
+          "Started the company"
+        ]
+      },
+      {
+        "name": "Antica",
+        "position": "Camarero",
+        "url": "https://company.com",
+        "startDate": "2022-07-11",
+        "endDate": "2022-09-05",
+        "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
+        "highlights": [
+          "Started the company"
+        ]
+  
+      }
+    ],
+    "volunteer": [{
+      "organization": "Organization",
+      "position": "Volunteer",
+      "url": "https://organization.com/",
+      "startDate": "2012-01-01",
+      "endDate": "2013-01-01",
+      "summary": "Description…",
+      "highlights": [
+        "Awarded 'Volunteer of the Month'"
+      ]
+    }],
+    "education": [ 
+    {
+      "institution": "María Enriquez",
+      "url": "https://portal.edu.gva.es/mariaenriquez/",
+      "area": "Grado Medio",
+      "studyType": "Estudiante",
+      "startDate": "2022-09-12",
+      "endDate": null,
+      "score": null,
+      "courses": [
+        "1r y 2n de grado medio de Sistemas Microinformaticos y redes"
+      ]
+    },
+    {
+      "institution": "Ausias March",
+      "url": "https://portal.edu.gva.es/iesausiasmarch/",
+      "area": "ESO",
+      "studyType": "Estudiante",
+      "startDate": "2018-09-10",
+      "endDate": "2022-06-20",
+      "score": "7.0",
+      "courses": [
+        "1r, 2n, 3r y 4t de ESO"
+      ]
+    }
+    ],
+    "awards": [{
+      "title": "Award",
+      "date": "2014-11-01",
+      "awarder": "Company",
+      "summary": "There is no spoon."
+    }],
+    "certificates": [{
+      "name": "Certificate",
+      "date": "2021-11-07",
+      "issuer": "Company",
+      "url": "https://certificate.com"
+    }],
+    "publications": [{
+      "name": "Publication",
+      "publisher": "Company",
+      "releaseDate": "2014-10-01",
+      "url": "https://publication.com",
+      "summary": "Description…"
+    }],
+    "skills": [
+      {
+        "name": "HTML",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend"
+        ]
+      },
+      {
+        "name": "CSS",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Diseño Responsive"
+        ]
+      },
+      {
+        "name": "JavaScript",
+        "level": "Basico",
+        "keywords": [
+          "Desarrollo Web", "Frontend", "Backend", "Fullstack"
+        ]
+      }
+    ],
+    "languages": [{
+      "language": "English",
+      "fluency": "Native speaker"
+    }],
+    "interests": [{
+      "name": "Wildlife",
+      "keywords": [
+        "Ferrets",
+        "Unicorns"
+      ]
+    }],
+    "references": [{
+      "name": "Jane Doe",
+      "reference": "Reference…"
+    }],
+    "projects": [
+      {
+      "name": "Mi porfolio",
+      "isActive": true,
+      "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
+      "highlights": [
+        "Todo sobre mi", "Astro"
+      ],
+      "url": "https://ezequielmenor.es/"
+    },
+    {
+      "name": "Sistema de tarjetas",
+      "isActive": true,
+      "description": "Es una página simple en la que creas tarjetas.",
+      "highlights": [
+        "Next.js", "React"
+      ],
+      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+    },
+    {
+      "name": "SpaceX",
+      "isActive": true,
+      "description": "Esto es un proyecto de conexión con Api de SpaceX",
+      "highlights": [
+        "SpaceX", "Astro"
+      ],
+      "url": "https://github.com/EzequielMenor/SpaceX-Launcher"
+    }
+  ]
+  }
