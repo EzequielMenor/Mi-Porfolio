@@ -166,7 +166,7 @@
     },
     {
       "name": "SpaceX",
-      "isActive": true,
+      "isActive": false,
       "description": "Esto es un proyecto de conexión con Api de SpaceX",
       "highlights": [
         "SpaceX", "Astro"
