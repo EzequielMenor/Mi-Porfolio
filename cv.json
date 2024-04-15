@@ -156,15 +156,6 @@
       "url": "https://ezequielmenor.es/"
     },
     {
-      "name": "Sistema de tarjetas",
-      "isActive": true,
-      "description": "Es una página simple en la que creas tarjetas.",
-      "highlights": [
-        "Next.js", "React"
-      ],
-      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
-    },
-    {
       "name": "SpaceX",
       "isActive": true,
       "description": "Esto es un proyecto de conexión con Api de SpaceX",
