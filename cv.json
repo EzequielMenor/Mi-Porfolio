@@ -166,7 +166,7 @@
     },
     {
       "name": "Clon de Spotify",
-      "isActive": true,
+      "isActive": false,
       "description": "Este proyecto se basa en un clon de Spotify.",
       "highlights": [
         "Astro", "Spotify Clon"
