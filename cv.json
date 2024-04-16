@@ -157,7 +157,7 @@
     },
     {
       "name": "Tarjetas",
-      "isActive": true,
+      "isActive": false,
       "description": "Este proyecto es una pagina para crear tarjetas y borrar tarjetas con informacion",
       "highlights": [
         "Next.js", "CRUD (Create, Read, Update, Delete)"
@@ -170,6 +170,15 @@
       "description": "Este proyecto se basa en un clon de Spotify.",
       "highlights": [
         "Astro", "Spotify Clon"
+      ],
+      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+    },
+    {
+      "name": "Ticketing-App",
+      "isActive": true,
+      "description": "Está págna web sirve para la creación de tickets de lo que quieras. ",
+      "highlights": [
+        "Next.js", "Ticketing-App"
       ],
       "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
     },
