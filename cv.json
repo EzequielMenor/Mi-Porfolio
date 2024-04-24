@@ -1,68 +1,64 @@
 {
-    "basics": {
-      "name": "Ezequiel Menor",
-      "label": "Estudiante",
-      "image": "/mia2.jpeg",
-      "email": "ezequielmenor@gmail.com",
-      "phone": "",
-      "url": "",
-      "summary": "Como estudiante de sistemas microinformáticos y redes, me apasiona la programación y la tecnología. Estoy interesado en seguir mi formación con el grado superior de desarrollo de aplicaciones multiplataforma. Me atrae la idea de aprender a crear aplicaciones que funcionen en diferentes dispositivos y sistemas operativos. Creo que este campo me permitirá explorar mi creatividad y contribuir al mundo de la tecnología de una manera emocionante y práctica.",
-      "location": {
-        "address": "2712 Broadway St",
-        "postalCode": "46702",
-        "city": "Gandía",
-        "countryCode": "ES",
-        "region": "Valencia"
-      },
-      "profiles": [
-        {
-          "network": "GitHub",
-          "username": "EzequielMenor",
-          "url": "https://github.com/EzequielMenor"
-        },
-        {
-          "network": "LinkedIn",
-          "username": "Ezequiel Menor",
-          "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
-        }]
+  "basics": {
+    "name": "Ezequiel Menor",
+    "label": "Estudiante",
+    "image": "/mia2.jpeg",
+    "email": "ezequielmenor@gmail.com",
+    "phone": "",
+    "url": "",
+    "summary": "Como estudiante de sistemas microinformáticos y redes, me apasiona la programación y la tecnología. Estoy interesado en seguir mi formación con el grado superior de desarrollo de aplicaciones multiplataforma. Me atrae la idea de aprender a crear aplicaciones que funcionen en diferentes dispositivos y sistemas operativos. Creo que este campo me permitirá explorar mi creatividad y contribuir al mundo de la tecnología de una manera emocionante y práctica.",
+    "location": {
+      "address": "2712 Broadway St",
+      "postalCode": "46702",
+      "city": "Gandía",
+      "countryCode": "ES",
+      "region": "Valencia"
     },
-    "work": [
+    "profiles": [
       {
-        "name": "Practicas",
-        "position": "Informatico",
-        "url": "https://company.com",
-        "startDate": "2024-03-20",
-        "endDate": null,
-        "summary": "",
-        "highlights": [
-          "Started the company"
-        ]
+        "network": "GitHub",
+        "username": "EzequielMenor",
+        "url": "https://github.com/EzequielMenor"
       },
       {
-        "name": "Antica",
-        "position": "Camarero",
-        "url": "https://company.com",
-        "startDate": "2022-07-11",
-        "endDate": "2022-09-05",
-        "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
-        "highlights": [
-          "Started the company"
-        ]
-  
+        "network": "LinkedIn",
+        "username": "Ezequiel Menor",
+        "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
       }
-    ],
-    "volunteer": [{
+    ]
+  },
+  "work": [
+    {
+      "name": "Practicas",
+      "position": "Informatico",
+      "url": "https://company.com",
+      "startDate": "2024-03-20",
+      "endDate": null,
+      "summary": "",
+      "highlights": ["Started the company"]
+    },
+    {
+      "name": "Antica",
+      "position": "Camarero",
+      "url": "https://company.com",
+      "startDate": "2022-07-11",
+      "endDate": "2022-09-05",
+      "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
+      "highlights": ["Started the company"]
+    }
+  ],
+  "volunteer": [
+    {
       "organization": "Organization",
       "position": "Volunteer",
       "url": "https://organization.com/",
       "startDate": "2012-01-01",
       "endDate": "2013-01-01",
       "summary": "Description…",
-      "highlights": [
-        "Awarded 'Volunteer of the Month'"
-      ]
-    }],
-    "education": [ 
+      "highlights": ["Awarded 'Volunteer of the Month'"]
+    }
+  ],
+  "education": [
     {
       "institution": "María Enriquez",
       "url": "https://portal.edu.gva.es/mariaenriquez/",
@@ -83,113 +79,104 @@
       "startDate": "2018-09-10",
       "endDate": "2022-06-20",
       "score": "7.0",
-      "courses": [
-        "1r, 2n, 3r y 4t de ESO"
-      ]
+      "courses": ["1r, 2n, 3r y 4t de ESO"]
     }
-    ],
-    "awards": [{
+  ],
+  "awards": [
+    {
       "title": "Award",
       "date": "2014-11-01",
       "awarder": "Company",
       "summary": "There is no spoon."
-    }],
-    "certificates": [{
+    }
+  ],
+  "certificates": [
+    {
       "name": "Certificate",
       "date": "2021-11-07",
       "issuer": "Company",
       "url": "https://certificate.com"
-    }],
-    "publications": [{
+    }
+  ],
+  "publications": [
+    {
       "name": "Publication",
       "publisher": "Company",
       "releaseDate": "2014-10-01",
       "url": "https://publication.com",
       "summary": "Description…"
-    }],
-    "skills": [
-      {
-        "name": "HTML",
-        "level": "Basico",
-        "keywords": [
-          "Desarrollo Web", "Frontend"
-        ]
-      },
-      {
-        "name": "CSS",
-        "level": "Basico",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "Diseño Responsive"
-        ]
-      },
-      {
-        "name": "JavaScript",
-        "level": "Basico",
-        "keywords": [
-          "Desarrollo Web", "Frontend", "Backend", "Fullstack"
-        ]
-      }
-    ],
-    "languages": [{
+    }
+  ],
+  "skills": [
+    {
+      "name": "HTML",
+      "level": "Basico",
+      "keywords": ["Desarrollo Web", "Frontend"]
+    },
+    {
+      "name": "CSS",
+      "level": "Basico",
+      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+    },
+    {
+      "name": "JavaScript",
+      "level": "Basico",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
+    }
+  ],
+  "languages": [
+    {
       "language": "English",
       "fluency": "Native speaker"
-    }],
-    "interests": [{
+    }
+  ],
+  "interests": [
+    {
       "name": "Wildlife",
-      "keywords": [
-        "Ferrets",
-        "Unicorns"
-      ]
-    }],
-    "references": [{
+      "keywords": ["Ferrets", "Unicorns"]
+    }
+  ],
+  "references": [
+    {
       "name": "Jane Doe",
       "reference": "Reference…"
-    }],
-    "projects": [
-      {
+    }
+  ],
+  "projects": [
+    {
       "name": "Mi porfolio",
       "isActive": true,
       "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
-      "highlights": [
-        "Todo sobre mi", "Astro"
-      ],
+      "highlights": ["Todo sobre mi", "Astro"],
       "url": "https://ezequielmenor.es/"
     },
     {
       "name": "Tarjetas",
       "isActive": false,
       "description": "Este proyecto es una pagina para crear tarjetas y borrar tarjetas con informacion",
-      "highlights": [
-        "Next.js", "CRUD (Create, Read, Update, Delete)"
-      ],
+      "highlights": ["Next.js", "CRUD (Create, Read, Update, Delete)"],
       "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
     },
     {
       "name": "Clon de Spotify",
       "isActive": false,
       "description": "Este proyecto se basa en un clon de Spotify.",
-      "highlights": [
-        "Astro", "Spotify Clon"
-      ],
-      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+      "highlights": ["Astro", "Spotify Clon"],
+      "url": "https://github.com/EzequielMenor/Spotify-Clon"
     },
     {
       "name": "Ticketing-App",
-      "isActive": true,
+      "isActive": false,
       "description": "Está págna web sirve para la creación de tickets de lo que quieras. ",
-      "highlights": [
-        "Next.js", "Ticketing-App"
-      ],
-      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+      "highlights": ["Next.js", "Ticketing-App"],
+      "url": "https://github.com/EzequielMenor/Ticketing-App"
     },
     {
       "name": "SpaceX",
       "isActive": false,
       "description": "Esto es un proyecto de conexión con Api de SpaceX",
-      "highlights": [
-        "SpaceX", "Astro"
-      ],
+      "highlights": ["SpaceX", "Astro"],
       "url": "https://github.com/EzequielMenor/SpaceX-Launcher"
     }
   ]
-  }
+}
