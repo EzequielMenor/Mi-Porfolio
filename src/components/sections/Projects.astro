@@ -5,26 +5,29 @@ import { projects } from "@cv";
 ---
 
 <Section title="Proyectos">
-    <ul>
+  <ul>
     {
-        projects.map(({ url, description, highlights, name, isActive }) => {
+      projects.map(({ url, description, highlights, name, isActive }) => {
         return (
-            <li>
+          <li>
             <article>
-                <header>
+              <header>
                 <h3>
-                    <a href={url} title={`Ver el proyecto ${name}`}>
+                  <a href={url} title={`Ver el proyecto ${name}`}>
                     {name}
-                    </a>
-                    {isActive && <span>&bull;</span>}
+                  </a>
+                  {isActive && <span>&bull;</span>}
                 </h3>
                 <p>{description}</p>
-                </header>
-                <footer>
+              </header>
+              <footer>
                 {highlights.map((highlights) => {
                   return <span>{highlights}</span>;
                 })}
               </footer>
+              {/* <div class="button-container">
+                <button>Prueba</button>
+              </div> */}
             </article>
           </li>
         );
@@ -86,10 +89,23 @@ import { projects } from "@cv";
 
   footer span {
     border-radius: 6px;
-    background: #eee;
-    color: #333;
+    background: #000;
+    color: #ffff;
     font-size: 0.8rem;
     font-weight: 500;
     padding: 0.2rem 0.6rem;
   }
+
+  /* .button-container {
+    margin-top: 8px;
+    text-align: center;
+  }
+
+  .button-container button {
+    border-radius: 6px;
+    background: #000;
+    color: #ffff;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.6rem;
+  } */
 </style>

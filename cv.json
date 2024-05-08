@@ -154,7 +154,7 @@
       "name": "Tarjetas",
       "isActive": false,
       "description": "Este proyecto es una pagina para crear tarjetas y borrar tarjetas con informacion",
-      "highlights": ["Next.js", "CRUD (Create, Read, Update, Delete)"],
+      "highlights": ["Next.js", "C.R.U.D"],
       "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
     },
     {
