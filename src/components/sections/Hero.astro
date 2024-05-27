@@ -6,6 +6,7 @@ import Phone from '@/icons/Phone.astro'
 import LinkedIn from '@/icons/LinkedIn.astro'
 import GitHub from '@/icons/Github.astro'
 import WorldMap from '@/icons/WorldMap.astro'
+import InfoJobs from '@/icons/InfoJobs.astro'
 
 
 const { name, label, image, location, profiles, phone, email } = basics
@@ -13,7 +14,8 @@ const { city, region } = location
 
 const SOCIAL_ICONS: Record<string, any> = {
     GitHub,
-    LinkedIn
+    LinkedIn,
+    InfoJobs
 }
 
 const linkedInfo = profiles.find(({ network }) => network === "LinkedIn")

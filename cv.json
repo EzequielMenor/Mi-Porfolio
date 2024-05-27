@@ -24,6 +24,11 @@
         "network": "LinkedIn",
         "username": "Ezequiel Menor",
         "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+      },
+      {
+        "network": "InfoJobs",
+        "username": "Ezequiel Menor",
+        "url": "https://www.infojobs.net/candidate/cv/view/index.xhtml"
       }
     ]
   },
@@ -33,7 +38,7 @@
       "position": "Informatico",
       "url": "https://company.com",
       "startDate": "2024-03-20",
-      "endDate": null,
+      "endDate": "2024-05-30",
       "summary": "",
       "highlights": ["Started the company"]
     },
@@ -67,9 +72,7 @@
       "startDate": "2022-09-12",
       "endDate": null,
       "score": null,
-      "courses": [
-        "1r y 2n de grado medio de Sistemas Microinformaticos y redes"
-      ]
+      "courses": ["1r y 2n de grado medio de Sistemas Microinformaticos y redes"]
     },
     {
       "institution": "Ausias March",
@@ -177,6 +180,13 @@
       "description": "Esto es un proyecto de conexión con Api de SpaceX",
       "highlights": ["SpaceX", "Astro"],
       "url": "https://github.com/EzequielMenor/SpaceX-Launcher"
+    },
+    {
+      "name": "Curso React",
+      "isActive": false,
+      "description": "Este proyecto es un curso de React",
+      "highlights": ["React"],
+      "url": "https://github.com/EzequielMenor/Aprendiendo-React"
     }
   ]
 }
