@@ -1,192 +1,156 @@
 {
-  "basics": {
-    "name": "Ezequiel Menor",
-    "label": "Estudiante",
-    "image": "/mia2.jpeg",
-    "email": "ezequielmenor@gmail.com",
-    "phone": "",
-    "url": "",
-    "summary": "Como estudiante de sistemas microinformáticos y redes, me apasiona la programación y la tecnología. Estoy interesado en seguir mi formación con el grado superior de desarrollo de aplicaciones multiplataforma. Me atrae la idea de aprender a crear aplicaciones que funcionen en diferentes dispositivos y sistemas operativos. Creo que este campo me permitirá explorar mi creatividad y contribuir al mundo de la tecnología de una manera emocionante y práctica.",
-    "location": {
-      "address": "2712 Broadway St",
-      "postalCode": "46702",
-      "city": "Gandía",
-      "countryCode": "ES",
-      "region": "Valencia"
-    },
-    "profiles": [
-      {
-        "network": "GitHub",
-        "username": "EzequielMenor",
-        "url": "https://github.com/EzequielMenor"
-      },
-      {
-        "network": "LinkedIn",
-        "username": "Ezequiel Menor",
-        "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
-      },
-      {
-        "network": "InfoJobs",
-        "username": "Ezequiel Menor",
-        "url": "https://www.infojobs.net/candidate/cv/view/index.xhtml"
-      }
-    ]
-  },
-  "work": [
+	"basics": {
+		"name": "Ezequiel Menor",
+		"label": "Desarrollador Full-Stack",
+		"image": "/mia3.jpeg",
+		"email": "ezequielmenor@gmail.com",
+		"phone": "",
+		"url": "",
+		"summary": "Desarrollador Full-Stack, creo aplicaciones y sitios web con tecnologías modernas como Flutter, Spring Boot y Astro. Actualmente en prácticas en Clínicas Dorsia y disponible para proyectos freelance. Me apasiona construir soluciones reales que ayudan a negocios y personas.",
+		"location": {
+			"address": "2712 Broadway St",
+			"postalCode": "46702",
+			"city": "Gandía",
+			"countryCode": "ES",
+			"region": "Valencia"
+		},
+		"profiles": [
+			{
+				"network": "GitHub",
+				"username": "EzequielMenor",
+				"url": "https://github.com/EzequielMenor"
+			},
+			{
+				"network": "LinkedIn",
+				"username": "Ezequiel Menor",
+				"url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+			},
+			{
+				"network": "InfoJobs",
+				"username": "Ezequiel Menor",
+				"url": "https://www.infojobs.net/candidate/cv/view/index.xhtml"
+			}
+		]
+	},
+	"work": [
     {
-      "name": "Practicas",
-      "position": "Informatico",
-      "url": "https://company.com",
-      "startDate": "2024-03-20",
-      "endDate": "2024-05-30",
-      "summary": "",
-      "highlights": ["Started the company"]
+      "name": "Clínicas Dorsia",
+      "position": "Desarrollador de apps (FCT)",
+      "url": "https://www.clinicasdorsia.com/",
+      "startDate": "2026-03-01",
+      "endDate": null,
+      "summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas.",
+      "highlights": ["Desarrollo móvil con Flutter", "App en producción"]
     },
     {
       "name": "Antica",
       "position": "Camarero",
-      "url": "https://company.com",
+      "url": "",
       "startDate": "2022-07-11",
       "endDate": "2022-09-05",
-      "summary": "Mi primer trabajo fue en la antica, un restaurante de Pizza y otras cosas. Estuve ese verando de camararero.",
-      "highlights": ["Started the company"]
+      "summary": "Trabajo de verano como camarero en un restaurante. Atención al cliente, trabajo en equipo y gestión de pedidos bajo presión.",
+      "highlights": ["Atención al cliente", "Trabajo en equipo"]
     }
-  ],
-  "volunteer": [
-    {
-      "organization": "Organization",
-      "position": "Volunteer",
-      "url": "https://organization.com/",
-      "startDate": "2012-01-01",
-      "endDate": "2013-01-01",
-      "summary": "Description…",
-      "highlights": ["Awarded 'Volunteer of the Month'"]
-    }
-  ],
-  "education": [
-    {
-      "institution": "María Enriquez",
-      "url": "https://portal.edu.gva.es/mariaenriquez/",
-      "area": "Grado Medio",
-      "studyType": "Estudiante",
-      "startDate": "2022-09-12",
-      "endDate": null,
-      "score": null,
-      "courses": ["1r y 2n de grado medio de Sistemas Microinformaticos y redes"]
-    },
-    {
-      "institution": "Ausias March",
-      "url": "https://portal.edu.gva.es/iesausiasmarch/",
-      "area": "ESO",
-      "studyType": "Estudiante",
-      "startDate": "2018-09-10",
-      "endDate": "2022-06-20",
-      "score": "7.0",
-      "courses": ["1r, 2n, 3r y 4t de ESO"]
-    }
-  ],
-  "awards": [
-    {
-      "title": "Award",
-      "date": "2014-11-01",
-      "awarder": "Company",
-      "summary": "There is no spoon."
-    }
-  ],
-  "certificates": [
-    {
-      "name": "Certificate",
-      "date": "2021-11-07",
-      "issuer": "Company",
-      "url": "https://certificate.com"
-    }
-  ],
-  "publications": [
-    {
-      "name": "Publication",
-      "publisher": "Company",
-      "releaseDate": "2014-10-01",
-      "url": "https://publication.com",
-      "summary": "Description…"
-    }
-  ],
+	],
+	"education": [
+		{
+			"institution": "Ausias March",
+			"url": "https://portal.edu.gva.es/iesausiasmarch/",
+			"area": "DAM (Desarrollo de Aplicaciones Multiplataforma)",
+			"studyType": "Grado Superior",
+			"startDate": "2024-09-01",
+			"endDate": "2026-06-01",
+			"score": null,
+			"courses": [
+				"Programación con Java y Spring Boot",
+				"Desarrollo de apps con Flutter",
+				"Bases de datos SQL y NoSQL",
+				"Desarrollo web con HTML, CSS, JavaScript, Astro, Next.js"
+			]
+		},
+		{
+			"institution": "María Enriquez",
+			"url": "https://portal.edu.gva.es/mariaenriquez/",
+			"area": "SMR (Sistemas Microinformáticos y Redes)",
+			"studyType": "Grado Medio",
+			"startDate": "2022-09-12",
+			"endDate": "2024-06-20",
+			"score": null,
+			"courses": ["Sistemas microinformáticos y redes"]
+		},
+		{
+			"institution": "Ausias March",
+			"url": "https://portal.edu.gva.es/iesausiasmarch/",
+			"area": "ESO",
+			"studyType": "Educación Secundaria",
+			"startDate": "2018-09-10",
+			"endDate": "2022-06-20",
+			"score": "7.0",
+			"courses": ["Educación Secundaria Obligatoria"]
+		}
+	],
+
   "skills": [
     {
-      "name": "HTML",
-      "level": "Basico",
-      "keywords": ["Desarrollo Web", "Frontend"]
+      "name": "Flutter & Dart",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Móvil", "Frontend", "Multiplataforma"]
     },
     {
-      "name": "CSS",
-      "level": "Basico",
-      "keywords": ["Desarrollo Web", "Frontend", "Diseño Responsive"]
+      "name": "Java & Spring Boot",
+      "level": "Intermedio",
+      "keywords": ["Backend", "API REST", "Microservicios"]
     },
     {
-      "name": "JavaScript",
-      "level": "Basico",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend", "Fullstack"]
-    }
-  ],
-  "languages": [
+      "name": "JavaScript & TypeScript",
+      "level": "Intermedio",
+      "keywords": ["Desarrollo Web", "Frontend", "Backend"]
+    },
     {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "interests": [
+      "name": "Astro & Next.js",
+      "level": "Básico",
+      "keywords": ["Desarrollo Web", "Frontend", "SSR", "SSG"]
+    },
     {
-      "name": "Wildlife",
-      "keywords": ["Ferrets", "Unicorns"]
+      "name": "SQL & Bases de datos",
+      "level": "Intermedio",
+      "keywords": ["MySQL", "PostgreSQL", "MongoDB"]
     }
   ],
-  "references": [
-    {
-      "name": "Jane Doe",
-      "reference": "Reference…"
-    }
-  ],
+	"languages": [
+		{
+			"language": "Inglés",
+			"fluency": "Intermedio (B1)"
+		}
+	],
   "projects": [
     {
-      "name": "Mi porfolio",
+      "name": "GymAnalytics",
       "isActive": true,
-      "description": "Este proyecto es basicamente mi portfolio creado por mi utilizando astro",
-      "highlights": ["Todo sobre mi", "Astro"],
-      "url": "https://ezequielmenor.es/"
+      "featured": true,
+      "description": "Aplicación completa para gestión de gimnasios: app móvil + escritorio + backend. Desarrollada como TFG de DAM con una arquitectura full-stack real.",
+      "highlights": ["Flutter", "Spring Boot", "Java", "App Móvil", "API REST", "MySQL"],
+      "repos": {
+        "mobile": "https://github.com/EzequielMenor/AppTFG",
+        "desktop": "https://github.com/EzequielMenor/DesktopTFG",
+        "backend": "https://github.com/EzequielMenor/BackendTFG"
+      }
     },
     {
-      "name": "Tarjetas",
+      "name": "Game Tower Defense",
       "isActive": false,
-      "description": "Este proyecto es una pagina para crear tarjetas y borrar tarjetas con informacion",
-      "highlights": ["Next.js", "C.R.U.D"],
-      "url": "https://github.com/EzequielMenor/CRUD_MongoDB"
+      "featured": false,
+      "description": "Juego tower defense desarrollado en Java como proyecto de clase. Mecánicas de oleadas, torres y enemigos.",
+      "highlights": ["Java", "POO", "Juego"],
+      "url": "https://github.com/EzequielMenor/GameTowerDefense"
     },
     {
-      "name": "Clon de Spotify",
-      "isActive": false,
-      "description": "Este proyecto se basa en un clon de Spotify.",
-      "highlights": ["Astro", "Spotify Clon"],
-      "url": "https://github.com/EzequielMenor/Spotify-Clon"
-    },
-    {
-      "name": "Ticketing-App",
-      "isActive": false,
-      "description": "Está págna web sirve para la creación de tickets de lo que quieras. ",
-      "highlights": ["Next.js", "Ticketing-App"],
-      "url": "https://github.com/EzequielMenor/Ticketing-App"
-    },
-    {
-      "name": "SpaceX",
-      "isActive": false,
-      "description": "Esto es un proyecto de conexión con Api de SpaceX",
-      "highlights": ["SpaceX", "Astro"],
-      "url": "https://github.com/EzequielMenor/SpaceX-Launcher"
-    },
-    {
-      "name": "Curso React",
-      "isActive": false,
-      "description": "Este proyecto es un curso de React",
-      "highlights": ["React"],
-      "url": "https://github.com/EzequielMenor/Aprendiendo-React"
+      "name": "Mi Portfolio",
+      "isActive": true,
+      "featured": false,
+      "description": "Mi portfolio personal, construido con Astro y Tailwind. Diseño minimalista, datos desde JSON Resume, paleta de comandos incluida.",
+      "highlights": ["Astro", "Tailwind CSS", "JSON Resume"],
+      "url": "https://github.com/EzequielMenor/Mi-Porfolio"
     }
   ]
 }

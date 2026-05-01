@@ -2,13 +2,38 @@
 import Section from "../Section.astro";
 
 import { projects } from "@cv";
+
+const featured = projects.filter((p) => p.featured);
+const other = projects.filter((p) => !p.featured);
 ---
 
 <Section title="Proyectos">
-  <ul>
-    {
-      projects.map(({ url, description, highlights, name, isActive }) => {
-        return (
+  {
+    featured.map(({ name, description, highlights, repos }) => (
+      <article class="featured">
+        <header>
+          <h3>
+            {name}
+            <span class="badge">Destacado</span>
+          </h3>
+          <p>{description}</p>
+        </header>
+        <footer>
+          {highlights.map((h) => <span>{h}</span>)}
+        </footer>
+        <div class="repos">
+          {repos?.mobile && <a href={repos.mobile}>App móvil →</a>}
+          {repos?.desktop && <a href={repos.desktop}>App escritorio →</a>}
+          {repos?.backend && <a href={repos.backend}>Backend →</a>}
+        </div>
+      </article>
+    ))
+  }
+
+  {
+    other.length > 0 && (
+      <ul>
+        {other.map(({ url, description, highlights, name }) => (
           <li>
             <article>
               <header>
@@ -16,34 +41,104 @@ import { projects } from "@cv";
                   <a href={url} title={`Ver el proyecto ${name}`}>
                     {name}
                   </a>
-                  {isActive && <span>&bull;</span>}
                 </h3>
                 <p>{description}</p>
               </header>
               <footer>
-                {highlights.map((highlights) => {
-                  return <span>{highlights}</span>;
-                })}
+                {highlights.map((h) => <span>{h}</span>)}
               </footer>
-              {/* <div class="button-container">
-                <button>Prueba</button>
-              </div> */}
             </article>
           </li>
-        );
-      })
-    }
-  </ul>
+        ))}
+      </ul>
+    )
+  }
 </Section>
 
 <style>
+  article.featured {
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  article.featured h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  article.featured h3 a {
+    color: #111;
+  }
+
+  article.featured h3 a:hover {
+    text-decoration: underline;
+  }
+
+  article.featured .badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: #111;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  article.featured p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  article.featured footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  article.featured footer span {
+    border-radius: 6px;
+    background: #000;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .repos {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .repos a {
+    font-size: 0.8rem;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+
+  .repos a:hover {
+    background: #f5f5f5;
+    color: #111;
+    border-color: #bbb;
+  }
+
   ul {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
   }
 
-  article {
+  ul article {
     border-radius: 8px;
     border: 1px solid #f2f2f2;
     gap: 16px;
@@ -53,59 +148,41 @@ import { projects } from "@cv";
     height: 100%;
   }
 
-  article header {
+  ul article header {
     flex: 1;
   }
 
-  article h3 {
+  ul article h3 {
     font-size: 1.17em;
     font-weight: bold;
   }
 
-  article a {
+  ul article h3 a {
     color: #111;
   }
 
-  article a:hover {
+  ul article h3 a:hover {
     text-decoration: underline;
   }
 
-  article p {
+  ul article p {
     font-size: 0.75rem;
     line-height: 1.2rem;
     margin-bottom: 4px;
   }
 
-  article h3 span {
-    color: rgb(0, 188, 47);
-  }
-
-  footer {
+  ul article footer {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
-    font-size: 0.6rem;
+    gap: 6px;
   }
 
-  footer span {
+  ul article footer span {
     border-radius: 6px;
     background: #000;
-    color: #ffff;
-    font-size: 0.8rem;
-    font-weight: 500; 
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 500;
     padding: 0.2rem 0.6rem;
   }
-
-  /* .button-container {
-    margin-top: 8px;
-    text-align: center;
-  }
-
-  .button-container button {
-    border-radius: 6px;
-    background: #000;
-    color: #ffff;
-    font-size: 0.8rem;
-    padding: 0.2rem 0.6rem;
-  } */
 </style>
