@@ -10,26 +10,142 @@ const { title } = Astro.props
 <html lang='es'>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content='Astro description' />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='description' content='Portfolio de Ezequiel Menor — Desarrollador Full-Stack especializado en Flutter, React y Kotlin' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' href='/letra-e.png' />
     <meta name='generator' content={Astro.generator} />
+
+    <!-- Google Fonts -->
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap'
+      rel='stylesheet'
+    />
+
     <title>{title}</title>
+
+    <!-- Theme init — blocking to prevent FOUC -->
+    <script is:inline>
+      (function () {
+        const theme =
+          localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: light)').matches
+            ? 'light'
+            : 'dark');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
+    <!-- Theme toggle button -->
+    <button
+      id='theme-toggle'
+      aria-label='Cambiar tema'
+      title='Cambiar entre modo claro y oscuro'
+      class='fixed top-4 right-4 z-50 p-2 rounded-lg bg-overlay/80 dark:bg-light-surface/20 backdrop-blur-sm border border-border-color dark:border-light-surface/30 text-dark-muted dark:text-light-text/70 hover:text-mint dark:hover:text-mint transition-colors duration-300'
+    >
+      <!-- Sun icon (visible in dark mode) -->
+      <svg
+        id='theme-icon-sun'
+        class='w-5 h-5 hidden dark:block'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='2'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
+        aria-hidden='true'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
+        />
+      </svg>
+      <!-- Moon icon (visible in light mode) -->
+      <svg
+        id='theme-icon-moon'
+        class='w-5 h-5 block dark:hidden'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='2'
+        viewBox='0 0 24 24'
+        xmlns='http://www.w3.org/2000/svg'
+        aria-hidden='true'
+      >
+        <path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
+        />
+      </svg>
+    </button>
+
     <slot />
   </body>
 </html>
+
 <style is:global>
+  /* ============================================
+       CSS Custom Properties — Design Tokens
+     ============================================ */
+
+  :root {
+    /* Light mode — colores de acento MÁS OSCUROS para buen contraste */
+    --color-bg: #f8f9fa;
+    --color-surface: #ffffff;
+    --color-surface-2: #f0f0f5;
+    --color-text: #1a1a2e;
+    --color-text-muted: #6c7086;
+    --color-accent-mint: #0d9488;
+    --color-accent-peach: #c2410c;
+    --color-accent-blue: #1d4ed8;
+    --color-overlay: #e2e2ea;
+    --color-border: #d1d5db;
+  }
+
+  .dark {
+    /* Dark mode overrides */
+    --color-bg: #0f0f1a;
+    --color-surface: #181825;
+    --color-surface-2: #1e1e2e;
+    --color-text: #cdd6f4;
+    --color-text-muted: #6c7086;
+    --color-accent-mint: #94e2d5;
+    --color-accent-peach: #fab387;
+    --color-accent-blue: #89b4fa;
+    --color-overlay: #313244;
+    --color-border: #45475a;
+  }
+
+  /* Smooth theme transitions */
   html {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      'Courier New',
-      Courier,
-      monospace;
-    background: #fff;
+    transition: background-color 0.3s ease;
+  }
+
+  html,
+  body,
+  main,
+  header,
+  footer,
+  section,
+  div,
+  a,
+  button {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  /* Base resets */
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
     letter-spacing: -0.025rem;
   }
 
@@ -60,22 +176,10 @@ const { title } = Astro.props
   h3,
   h4 {
     margin: 0;
-    font-family:
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      'Segoe UI',
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      'Open Sans',
-      'Helvetica Neue',
-      sans-serif;
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
   }
 
   p {
-    color: #666;
     font-size: 0.9rem;
     line-height: 1.5;
     margin: 0;
@@ -95,16 +199,94 @@ const { title } = Astro.props
       display: block !important;
     }
   }
+
+  /* ============================================
+       Entrance Animations
+     ============================================ */
+
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ninja-keys command palette — themed */
+  ninja-keys {
+    --ninja-primary-color: var(--color-accent-mint);
+    --ninja-accent-color: var(--color-accent-blue);
+    --ninja-background: var(--color-surface);
+    --ninja-text-color: var(--color-text);
+    --ninja-modal-background: var(--color-bg);
+    --ninja-modal-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    --ninja-search-background: var(--color-surface-2);
+    --ninja-search-color: var(--color-text);
+    --ninja-selected-background: var(--color-overlay);
+    --ninja-footer-background: var(--color-surface);
+    --ninja-placeholder-color: var(--color-text-muted);
+    --ninja-border-color: var(--color-border);
+    --ninja-font: 'Inter', system-ui, sans-serif;
+    --ninja-font-size: 0.875rem;
+  }
+
+  /* Respect prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-on-scroll {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 </style>
 
-<script>
+<script is:inline>
+  // Theme toggle handler
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    toggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  })();
+
+  // Print styles — hide header/footer during print
   window.onbeforeprint = function () {
-    document.querySelector('header').style.display = 'none' // Reemplaza 'header' por el selector adecuado para tu encabezado
-    document.querySelector('footer').style.display = 'none' // Reemplaza 'footer' por el selector adecuado para tu pie de página
-  }
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    if (header) header.style.display = 'none';
+    if (footer) footer.style.display = 'none';
+  };
 
   window.onafterprint = function () {
-    document.querySelector('header').style.display = '' // Restaura la visualización del encabezado después de la impresión
-    document.querySelector('footer').style.display = '' // Restaura la visualización del pie de página después de la impresión
-  }
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    if (header) header.style.display = '';
+    if (footer) footer.style.display = '';
+  };
+
+  // Entrance animations — Intersection Observer
+  (function () {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('[data-animate="true"]').forEach((el) => {
+      el.classList.add('animate-on-scroll');
+      observer.observe(el);
+    });
+  })();
 </script>

@@ -1,6 +1,5 @@
 ---
-import Section from "../Section.astro";
-
+import Section from "@/components/Section.astro";
 import { projects } from "@cv";
 
 const featured = projects.filter((p) => p.featured);
@@ -10,21 +9,65 @@ const other = projects.filter((p) => !p.featured);
 <Section title="Proyectos">
   {
     featured.map(({ name, description, highlights, repos }) => (
-      <article class="featured">
-        <header>
-          <h3>
+      <article class="rounded-xl overflow-hidden shadow-card mb-10">
+        <!-- Gradient header bar -->
+        <div class="h-24 bg-gradient-to-r from-[var(--color-surface-2)] to-[var(--color-overlay)] border-b border-[var(--color-border)] p-6 flex items-end relative">
+          <h3 class="text-[var(--color-text)] font-heading font-bold text-xl tracking-tight">
             {name}
-            <span class="badge">Destacado</span>
           </h3>
-          <p>{description}</p>
-        </header>
-        <footer>
-          {highlights.map((h) => <span>{h}</span>)}
-        </footer>
-        <div class="repos">
-          {repos?.mobile && <a href={repos.mobile}>App móvil →</a>}
-          {repos?.desktop && <a href={repos.desktop}>App escritorio →</a>}
-          {repos?.backend && <a href={repos.backend}>Backend →</a>}
+          <span class="absolute top-3 right-3 bg-[var(--color-accent-mint)]/20 backdrop-blur-sm text-[var(--color-accent-mint)] text-xs font-semibold font-code px-2.5 py-0.5 rounded-full">
+            Destacado
+          </span>
+        </div>
+
+        <!-- Card body -->
+        <div class="p-6 bg-[var(--color-surface)]">
+          <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
+            {description}
+          </p>
+
+          <!-- Tech badges -->
+          <div class="flex flex-wrap gap-2 mb-5">
+            {highlights.map((h: string) => (
+              <span class="text-xs font-code px-2.5 py-1 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]">
+                {h}
+              </span>
+            ))}
+          </div>
+
+          <!-- Repository links -->
+          <div class="flex flex-wrap gap-3">
+            {repos?.mobile && (
+              <a
+                href={repos.mobile}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
+              >
+                App móvil →
+              </a>
+            )}
+            {repos?.desktop && (
+              <a
+                href={repos.desktop}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
+              >
+                App escritorio →
+              </a>
+            )}
+            {repos?.backend && (
+              <a
+                href={repos.backend}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
+              >
+                Backend →
+              </a>
+            )}
+          </div>
         </div>
       </article>
     ))
@@ -32,157 +75,32 @@ const other = projects.filter((p) => !p.featured);
 
   {
     other.length > 0 && (
-      <ul>
-        {other.map(({ url, description, highlights, name }) => (
-          <li>
-            <article>
-              <header>
-                <h3>
-                  <a href={url} title={`Ver el proyecto ${name}`}>
-                    {name}
-                  </a>
-                </h3>
-                <p>{description}</p>
-              </header>
-              <footer>
-                {highlights.map((h) => <span>{h}</span>)}
-              </footer>
-            </article>
-          </li>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {other.map(({ name, description, highlights, url }) => (
+          <article class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-card hover:shadow-card-hover transition-shadow duration-300 flex flex-col h-full">
+            <h3 class="font-heading font-bold text-[var(--color-text)] mb-2">
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-[var(--color-accent-mint)] transition-colors"
+              >
+                {name} →
+              </a>
+            </h3>
+            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed mb-3 flex-1">
+              {description}
+            </p>
+            <div class="flex flex-wrap gap-1.5 mt-auto">
+              {highlights.map((h: string) => (
+                <span class="text-xs font-code px-2 py-0.5 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]">
+                  {h}
+                </span>
+              ))}
+            </div>
+          </article>
         ))}
-      </ul>
+      </div>
     )
   }
 </Section>
-
-<style>
-  article.featured {
-    border-radius: 8px;
-    border: 1px solid #e0e0e0;
-    padding: 24px;
-    margin-bottom: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  article.featured h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-  }
-
-  article.featured h3 a {
-    color: #111;
-  }
-
-  article.featured h3 a:hover {
-    text-decoration: underline;
-  }
-
-  article.featured .badge {
-    font-size: 0.65rem;
-    font-weight: 600;
-    background: #111;
-    color: #fff;
-    padding: 2px 8px;
-    border-radius: 4px;
-    margin-left: 8px;
-    vertical-align: middle;
-  }
-
-  article.featured p {
-    font-size: 0.85rem;
-    line-height: 1.5;
-  }
-
-  article.featured footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  article.featured footer span {
-    border-radius: 6px;
-    background: #000;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.2rem 0.6rem;
-  }
-
-  .repos {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .repos a {
-    font-size: 0.8rem;
-    color: #555;
-    border: 1px solid #ddd;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
-  }
-
-  .repos a:hover {
-    background: #f5f5f5;
-    color: #111;
-    border-color: #bbb;
-  }
-
-  ul {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-  }
-
-  ul article {
-    border-radius: 8px;
-    border: 1px solid #f2f2f2;
-    gap: 16px;
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    height: 100%;
-  }
-
-  ul article header {
-    flex: 1;
-  }
-
-  ul article h3 {
-    font-size: 1.17em;
-    font-weight: bold;
-  }
-
-  ul article h3 a {
-    color: #111;
-  }
-
-  ul article h3 a:hover {
-    text-decoration: underline;
-  }
-
-  ul article p {
-    font-size: 0.75rem;
-    line-height: 1.2rem;
-    margin-bottom: 4px;
-  }
-
-  ul article footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  ul article footer span {
-    border-radius: 6px;
-    background: #000;
-    color: #fff;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.2rem 0.6rem;
-  }
-</style>

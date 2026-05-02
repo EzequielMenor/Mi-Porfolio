@@ -5,30 +5,37 @@ import { education } from '@cv'
 ---
 
 <Section title='Educación'>
-  <ul>
+  <ul class='flex flex-col gap-6'>
     {
       education.map(({ institution, startDate, endDate, area, score, courses }) => {
         const startYear = new Date(startDate).getFullYear()
         const endYear = endDate != null ? new Date(endDate).getFullYear() : 'Actual'
         const years = `${startYear} - ${endYear}`
-        const notaMedia =
-          score != null ? `Nota media: ${score}` : 'Todavía no hay nota media.'
+        const notaMedia = score != null ? `Nota media: ${score}` : null
 
         return (
-          <li>
+          <li class='border-l-2 border-[var(--color-border)] pl-4 py-1 hover:border-[var(--color-accent-mint)] transition-colors duration-300'>
             <article>
-              <header>
+              <header class='flex justify-between items-start mb-3'>
                 <div>
-                  <h3>{institution}</h3>
-                  <h4>{area}</h4>
+                  <h3 class='font-bold text-[var(--color-text)]'>{institution}</h3>
+                  <h4 class='text-[var(--color-text-muted)] font-normal text-sm mt-0.5'>{area}</h4>
                 </div>
 
-                <time>{years}</time>
+                <time class='text-[var(--color-text-muted)] text-xs min-w-[100px] text-right flex-shrink-0'>{years}</time>
               </header>
 
-              <footer>
-                <p>{`Cursos: ${courses}`}</p>
-                <p>{notaMedia}</p>
+              <footer class='flex flex-wrap gap-1.5'>
+                {Array.isArray(courses) && courses.map((course: string) => (
+                  <span class='text-xs px-2 py-0.5 rounded-md bg-[var(--color-surface-2)] text-[var(--color-text-muted)] font-code'>
+                    {course}
+                  </span>
+                ))}
+                {notaMedia && (
+                  <span class='text-xs px-2 py-0.5 rounded-md bg-mint/20 text-mint font-code'>
+                    {notaMedia}
+                  </span>
+                )}
               </footer>
             </article>
           </li>
@@ -37,83 +44,3 @@ import { education } from '@cv'
     }
   </ul>
 </Section>
-
-<style>
-  ul {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-  }
-
-  article h3 {
-    font-weight: 500;
-    color: #111;
-  }
-
-  article a {
-    color: #111;
-  }
-
-  article a:hover {
-    text-decoration: underline;
-  }
-
-  article h4 {
-    color: #222;
-    font-weight: 400;
-  }
-
-  header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 4px;
-  }
-
-  time {
-    color: #555;
-    font-size: 0.85rem;
-    min-width: 102px;
-    cursor: default;
-  }
-
-  [data-title]:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease-in-out 0.5s;
-    visibility: visible;
-  }
-
-  [data-title]:after {
-    content: attr(data-title);
-    background-color: #333;
-    color: #fff;
-    font-size: 0.75rem;
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      'Courier New',
-      monospace;
-    position: absolute;
-    padding: 0.2rem 0.5rem;
-    bottom: -1.4rem;
-    left: 50%;
-    white-space: nowrap;
-    box-shadow: 1px 1px 1px #222222;
-    opacity: 0;
-    border: 1px solid #111111;
-    z-index: 99999;
-    visibility: hidden;
-    border-radius: 6px;
-  }
-
-  [data-title] {
-    position: relative;
-  }
-
-  @media (width <= 700px) {
-    time {
-      text-align: right;
-    }
-  }
-</style>

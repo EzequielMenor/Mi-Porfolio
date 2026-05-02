@@ -17,5 +17,11 @@ pnpm-debug.log*
 .env
 .env.production
 
+# visual companion artifacts
+.superpowers/
+
+# SDD artifact store (no subir - es local del proyecto)
+openspec/
+
 # macOS-specific files
 .DS_Store

@@ -3,7 +3,7 @@
 		"name": "Ezequiel Menor",
 		"label": "Desarrollador Full-Stack",
 		"image": "/mia3.jpeg",
-		"email": "ezequielmenor@gmail.com",
+		"email": "",
 		"phone": "",
 		"url": "",
 		"summary": "Desarrollador Full-Stack, creo aplicaciones y sitios web con tecnologías modernas como Flutter, Spring Boot y Astro. Actualmente en prácticas en Clínicas Dorsia y disponible para proyectos freelance. Me apasiona construir soluciones reales que ayudan a negocios y personas.",
@@ -33,24 +33,24 @@
 		]
 	},
 	"work": [
-    {
-      "name": "Clínicas Dorsia",
-      "position": "Desarrollador de apps (FCT)",
-      "url": "https://www.clinicasdorsia.com/",
-      "startDate": "2026-03-01",
-      "endDate": null,
-      "summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas.",
-      "highlights": ["Desarrollo móvil con Flutter", "App en producción"]
-    },
-    {
-      "name": "Antica",
-      "position": "Camarero",
-      "url": "",
-      "startDate": "2022-07-11",
-      "endDate": "2022-09-05",
-      "summary": "Trabajo de verano como camarero en un restaurante. Atención al cliente, trabajo en equipo y gestión de pedidos bajo presión.",
-      "highlights": ["Atención al cliente", "Trabajo en equipo"]
-    }
+		{
+			"name": "Clínicas Dorsia",
+			"position": "Desarrollador de apps (FCT)",
+			"url": "https://www.clinicasdorsia.com/",
+			"startDate": "2026-03-01",
+			"endDate": null,
+			"summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas.",
+			"highlights": ["Desarrollo móvil con Flutter", "App en producción"]
+		},
+		{
+			"name": "Antica",
+			"position": "Camarero",
+			"url": "",
+			"startDate": "2022-07-11",
+			"endDate": "2022-09-05",
+			"summary": "Trabajo de verano como camarero en un restaurante. Atención al cliente, trabajo en equipo y gestión de pedidos bajo presión.",
+			"highlights": ["Atención al cliente", "Trabajo en equipo"]
+		}
 	],
 	"education": [
 		{
@@ -90,67 +90,74 @@
 		}
 	],
 
-  "skills": [
-    {
-      "name": "Flutter & Dart",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Móvil", "Frontend", "Multiplataforma"]
-    },
-    {
-      "name": "Java & Spring Boot",
-      "level": "Intermedio",
-      "keywords": ["Backend", "API REST", "Microservicios"]
-    },
-    {
-      "name": "JavaScript & TypeScript",
-      "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend"]
-    },
-    {
-      "name": "Astro & Next.js",
-      "level": "Básico",
-      "keywords": ["Desarrollo Web", "Frontend", "SSR", "SSG"]
-    },
-    {
-      "name": "SQL & Bases de datos",
-      "level": "Intermedio",
-      "keywords": ["MySQL", "PostgreSQL", "MongoDB"]
-    }
-  ],
+	"skills": [
+		{
+			"name": "Flutter & Dart",
+			"level": "Intermedio",
+			"keywords": ["Desarrollo Móvil", "Frontend", "Multiplataforma"]
+		},
+		{
+			"name": "Java & Spring Boot",
+			"level": "Intermedio",
+			"keywords": ["Backend", "API REST", "Microservicios"]
+		},
+		{
+			"name": "JavaScript & TypeScript",
+			"level": "Intermedio",
+			"keywords": ["Desarrollo Web", "Frontend", "Backend"]
+		},
+		{
+			"name": "Astro & Next.js",
+			"level": "Básico",
+			"keywords": ["Desarrollo Web", "Frontend", "SSR", "SSG"]
+		},
+		{
+			"name": "SQL & Bases de datos",
+			"level": "Intermedio",
+			"keywords": ["MySQL", "PostgreSQL", "MongoDB"]
+		}
+	],
 	"languages": [
 		{
 			"language": "Inglés",
 			"fluency": "Intermedio (B1)"
 		}
 	],
-  "projects": [
-    {
-      "name": "GymAnalytics",
-      "isActive": true,
-      "featured": true,
-      "description": "Aplicación completa para gestión de gimnasios: app móvil + escritorio + backend. Desarrollada como TFG de DAM con una arquitectura full-stack real.",
-      "highlights": ["Flutter", "Spring Boot", "Java", "App Móvil", "API REST", "MySQL"],
-      "repos": {
-        "mobile": "https://github.com/EzequielMenor/AppTFG",
-        "desktop": "https://github.com/EzequielMenor/DesktopTFG",
-        "backend": "https://github.com/EzequielMenor/BackendTFG"
-      }
-    },
-    {
-      "name": "Game Tower Defense",
-      "isActive": false,
-      "featured": false,
-      "description": "Juego tower defense desarrollado en Java como proyecto de clase. Mecánicas de oleadas, torres y enemigos.",
-      "highlights": ["Java", "POO", "Juego"],
-      "url": "https://github.com/EzequielMenor/GameTowerDefense"
-    },
-    {
-      "name": "Mi Portfolio",
-      "isActive": true,
-      "featured": false,
-      "description": "Mi portfolio personal, construido con Astro y Tailwind. Diseño minimalista, datos desde JSON Resume, paleta de comandos incluida.",
-      "highlights": ["Astro", "Tailwind CSS", "JSON Resume"],
-      "url": "https://github.com/EzequielMenor/Mi-Porfolio"
-    }
-  ]
+	"projects": [
+		{
+			"name": "GymAnalytics",
+			"isActive": true,
+			"featured": true,
+			"description": "Aplicación completa para gestión de gimnasios: app móvil + escritorio + backend. Desarrollada como TFG de DAM con una arquitectura full-stack real.",
+			"highlights": [
+				"Flutter",
+				"Spring Boot",
+				"Java",
+				"App Móvil",
+				"API REST",
+				"MySQL"
+			],
+			"repos": {
+				"mobile": "https://github.com/EzequielMenor/AppTFG",
+				"desktop": "https://github.com/EzequielMenor/DesktopTFG",
+				"backend": "https://github.com/EzequielMenor/BackendTFG"
+			}
+		},
+		{
+			"name": "Game Tower Defense",
+			"isActive": false,
+			"featured": false,
+			"description": "Juego tower defense desarrollado en Java como proyecto de clase. Mecánicas de oleadas, torres y enemigos.",
+			"highlights": ["Java", "POO", "Juego"],
+			"url": "https://github.com/EzequielMenor/GameTowerDefense"
+		},
+		{
+			"name": "Mi Portfolio",
+			"isActive": true,
+			"featured": false,
+			"description": "Mi portfolio personal, construido con Astro y Tailwind. Diseño minimalista, datos desde JSON Resume, paleta de comandos incluida.",
+			"highlights": ["Astro", "Tailwind CSS", "JSON Resume"],
+			"url": "https://github.com/EzequielMenor/Mi-Porfolio"
+		}
+	]
 }

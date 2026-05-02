@@ -8,29 +8,74 @@ import Hero from "@/components/sections/Hero.astro";
 import Projects from "@/components/sections/Projects.astro";
 import Skills from "@/components/sections/Skills.astro";
 import KeyboardManager from "@/components/KeyboardManager.astro";
+import GithubIcon from "@/icons/Github.astro";
+import LinkedInIcon from "@/icons/LinkedIn.astro";
 
 import { basics } from "@cv";
-const { name, label } = basics;
+const { name, label, profiles } = basics;
+
+const SOCIAL_ICONS: Record<string, any> = {
+  GitHub: GithubIcon,
+  LinkedIn: LinkedInIcon,
+};
 ---
 
 <Layout title={`Portfolio de ${name} - ${label}`}>
-  <main>
-    <Hero />
-    <About />
-    <Education />
-    <Experience />
-    <Projects />
-    <Skills />
+  <!-- Hero — full width, outside main -->
+  <Hero />
+
+  <main class="p-8 md:p-12 lg:p-16 mx-auto w-full max-w-4xl bg-[var(--color-bg)]">
+    <div data-animate="true" style="transition-delay: 0s">
+      <About />
+    </div>
+    <div data-animate="true" style="transition-delay: 0.1s">
+      <Education />
+    </div>
+    <div data-animate="true" style="transition-delay: 0.2s">
+      <Experience />
+    </div>
+    <div data-animate="true" style="transition-delay: 0.3s">
+      <Projects />
+    </div>
+    <div data-animate="true" style="transition-delay: 0.4s">
+      <Skills />
+    </div>
   </main>
+
+  <footer class="print:hidden border-t border-[var(--color-border)] py-8 px-4 text-center">
+    <p class="text-sm text-[var(--color-text-muted)] mb-3">
+      &copy; 2026 {name} &middot; Built with{' '}
+      <a
+        href="https://astro.build"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:text-[var(--color-accent-mint)] transition-colors underline decoration-[var(--color-accent-mint)]/50 underline-offset-2"
+      >
+        Astro
+      </a>
+    </p>
+
+    <!-- Social icons -->
+    <div class="flex justify-center gap-4">
+      {
+        profiles.map(({ network, url, username }) => {
+          const Icon = SOCIAL_ICONS[network]
+          if (!Icon) return null
+          return (
+            <a
+              href={url}
+              title={`${network}: @${username}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] transition-colors duration-300"
+            >
+              <Icon />
+            </a>
+          )
+        })
+      }
+    </div>
+  </footer>
 
   <KeyboardManager />
 </Layout>
-
-<style>
-  main {
-    padding: 4rem;
-    margin: auto;
-    width: 100%;
-  }
-	
-</style>
