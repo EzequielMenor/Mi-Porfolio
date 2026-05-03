@@ -5,64 +5,68 @@
 
 ## Project Conventions
 
-| File | Status | Path |
-|------|--------|------|
-| AGENTS.md | ❌ Not found | Project root |
-| CLAUDE.md | ❌ Not found | Project root |
-| GEMINI.md | ❌ Not found | Project root |
-| .cursorrules | ❌ Not found | Project root |
+| File                    | Status       | Path         |
+| ----------------------- | ------------ | ------------ |
+| AGENTS.md               | ❌ Not found | Project root |
+| CLAUDE.md               | ❌ Not found | Project root |
+| GEMINI.md               | ❌ Not found | Project root |
+| .cursorrules            | ❌ Not found | Project root |
 | copilot-instructions.md | ❌ Not found | Project root |
 
 ## Active Skills
 
 ### Framework & Stack
-| Skill | Trigger | Source |
-|-------|---------|--------|
-| **astro** | Astro framework, .astro files, SSG, islands, content collections | ~/.agents/skills/astro/SKILL.md |
-| **frontend-design** | Build web components, pages, landing pages, dashboards, styling | ~/.agents/skills/frontend-design/SKILL.md |
-| **seo** | Improve SEO, meta tags, structured data, sitemap optimization | ~/.agents/skills/seo/SKILL.md |
-| **accessibility** | a11y audit, WCAG compliance, screen reader support, keyboard navigation | ~/.agents/skills/accessibility/SKILL.md |
-| **remotion-best-practices** | Remotion video creation in React | ~/.agents/skills/remotion-best-practices/SKILL.md |
-| **flutter-expert** | Flutter 3+ and Dart cross-platform apps | ~/.agents/skills/flutter-expert/SKILL.md |
-| **odoo-development** | Odoo ERP development (Python ORM, XML views) | ~/.agents/skills/odoo-development/SKILL.md |
+
+| Skill                       | Trigger                                                                 | Source                                            |
+| --------------------------- | ----------------------------------------------------------------------- | ------------------------------------------------- |
+| **astro**                   | Astro framework, .astro files, SSG, islands, content collections        | ~/.agents/skills/astro/SKILL.md                   |
+| **frontend-design**         | Build web components, pages, landing pages, dashboards, styling         | ~/.agents/skills/frontend-design/SKILL.md         |
+| **seo**                     | Improve SEO, meta tags, structured data, sitemap optimization           | ~/.agents/skills/seo/SKILL.md                     |
+| **accessibility**           | a11y audit, WCAG compliance, screen reader support, keyboard navigation | ~/.agents/skills/accessibility/SKILL.md           |
+| **remotion-best-practices** | Remotion video creation in React                                        | ~/.agents/skills/remotion-best-practices/SKILL.md |
+| **flutter-expert**          | Flutter 3+ and Dart cross-platform apps                                 | ~/.agents/skills/flutter-expert/SKILL.md          |
+| **odoo-development**        | Odoo ERP development (Python ORM, XML views)                            | ~/.agents/skills/odoo-development/SKILL.md        |
 
 ### SDD Lifecycle
-| Skill | Trigger | Source |
-|-------|---------|--------|
-| **sdd-explore** | Explore and investigate ideas before committing to a change | ~/.config/opencode/skills/sdd-explore/SKILL.md |
-| **sdd-propose** | Create a change proposal with intent, scope, and approach | ~/.config/opencode/skills/sdd-propose/SKILL.md |
-| **sdd-spec** | Write specifications with requirements and scenarios | ~/.config/opencode/skills/sdd-spec/SKILL.md |
-| **sdd-design** | Create technical design document with architecture decisions | ~/.config/opencode/skills/sdd-design/SKILL.md |
-| **sdd-tasks** | Break down a change into an implementation task checklist | ~/.config/opencode/skills/sdd-tasks/SKILL.md |
-| **sdd-apply** | Implement tasks from the change, writing actual code | ~/.config/opencode/skills/sdd-apply/SKILL.md |
-| **sdd-verify** | Validate that implementation matches specs, design, and tasks | ~/.config/opencode/skills/sdd-verify/SKILL.md |
+
+| Skill           | Trigger                                                       | Source                                         |
+| --------------- | ------------------------------------------------------------- | ---------------------------------------------- |
+| **sdd-explore** | Explore and investigate ideas before committing to a change   | ~/.config/opencode/skills/sdd-explore/SKILL.md |
+| **sdd-propose** | Create a change proposal with intent, scope, and approach     | ~/.config/opencode/skills/sdd-propose/SKILL.md |
+| **sdd-spec**    | Write specifications with requirements and scenarios          | ~/.config/opencode/skills/sdd-spec/SKILL.md    |
+| **sdd-design**  | Create technical design document with architecture decisions  | ~/.config/opencode/skills/sdd-design/SKILL.md  |
+| **sdd-tasks**   | Break down a change into an implementation task checklist     | ~/.config/opencode/skills/sdd-tasks/SKILL.md   |
+| **sdd-apply**   | Implement tasks from the change, writing actual code          | ~/.config/opencode/skills/sdd-apply/SKILL.md   |
+| **sdd-verify**  | Validate that implementation matches specs, design, and tasks | ~/.config/opencode/skills/sdd-verify/SKILL.md  |
 | **sdd-archive** | Sync delta specs to main specs and archive a completed change | ~/.config/opencode/skills/sdd-archive/SKILL.md |
-| **sdd-init** | Initialize Spec-Driven Development context in any project | ~/.config/opencode/skills/sdd-init/SKILL.md |
-| **sdd-onboard** | Guided end-to-end walkthrough of the SDD workflow | ~/.claude/skills/sdd-onboard/SKILL.md |
+| **sdd-init**    | Initialize Spec-Driven Development context in any project     | ~/.config/opencode/skills/sdd-init/SKILL.md    |
+| **sdd-onboard** | Guided end-to-end walkthrough of the SDD workflow             | ~/.claude/skills/sdd-onboard/SKILL.md          |
 
 ### DevOps & Quality
-| Skill | Trigger | Source |
-|-------|---------|--------|
-| **go-testing** | Go tests, Bubbletea TUI testing, teatest | ~/.config/opencode/skills/go-testing/SKILL.md |
-| **issue-creation** | Create a GitHub issue, report a bug, request a feature | ~/.config/opencode/skills/issue-creation/SKILL.md |
-| **branch-pr** | Create a pull request following issue-first enforcement | ~/.config/opencode/skills/branch-pr/SKILL.md |
-| **judgment-day** | Parallel adversarial review protocol (dual review) | ~/.config/opencode/skills/judgment-day/SKILL.md |
+
+| Skill              | Trigger                                                 | Source                                            |
+| ------------------ | ------------------------------------------------------- | ------------------------------------------------- |
+| **go-testing**     | Go tests, Bubbletea TUI testing, teatest                | ~/.config/opencode/skills/go-testing/SKILL.md     |
+| **issue-creation** | Create a GitHub issue, report a bug, request a feature  | ~/.config/opencode/skills/issue-creation/SKILL.md |
+| **branch-pr**      | Create a pull request following issue-first enforcement | ~/.config/opencode/skills/branch-pr/SKILL.md      |
+| **judgment-day**   | Parallel adversarial review protocol (dual review)      | ~/.config/opencode/skills/judgment-day/SKILL.md   |
 
 ### Automation & Content
-| Skill | Trigger | Source |
-|-------|---------|--------|
-| **graphify** | Any input → knowledge graph → clustered communities → HTML/JSON | ~/.config/opencode/skills/graphify/SKILL.md |
-| **mockup-builder-ai** | Rapid landing page generation (index.html + Tailwind CDN) | ~/.config/opencode/skills/mockup-builder-ai/SKILL.md |
-| **ventas-copy-pro** | Copywriting persuasivo AIDA para negocios locales sin web | ~/.config/opencode/skills/ventas-copy-pro/SKILL.md |
-| **frontend-express-landing-page-skill** | Landing page mobile-first para un sector específico | ~/.claude/skills/frontend-express-landing-page-skill/SKILL.md |
-| **copywriting-de-ventas-fr-as-para-webs-de-negocios-locales-espa-a** | Mensajes de ventas frías para locales sin web en España | ~/.claude/skills/copywriting-de-ventas-fr-as-para-webs-de-negocios-locales-espa-a/SKILL.md |
-| **lead-hunter-negocios-locales-sin-web** | Prospección de negocios locales sin web | ~/.claude/skills/lead-hunter-negocios-locales-sin-web/SKILL.md |
-| **inbox-organizer** | Organización semántica y etiquetado de vault de Obsidian | ~/.gemini/skills/inbox-organizer/SKILL.md |
-| **elite-2025** | Coach personal de alto rendimiento (nutrición, entrenamiento DUP) | ~/.gemini/skills/elite-2025/SKILL.md |
-| **experto-documentacion-proyectos** | Documentación técnica y académica de proyectos de software | ~/.gemini/skills/experto-documentacion-proyectos/SKILL.md |
-| **creador-de-habilidades** | Crear nuevas habilidades (skills) para el agente en español | ~/.gemini/skills/creador-de-habilidades/SKILL.md |
-| **skill-creator** | Create new AI agent skills following the Agent Skills spec | ~/.config/opencode/skills/skill-creator/SKILL.md |
-| **skill-registry** | Create or update the skill registry for the current project | ~/.config/opencode/skills/skill-registry/SKILL.md |
+
+| Skill                                                                | Trigger                                                           | Source                                                                                     |
+| -------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **graphify**                                                         | Any input → knowledge graph → clustered communities → HTML/JSON   | ~/.config/opencode/skills/graphify/SKILL.md                                                |
+| **mockup-builder-ai**                                                | Rapid landing page generation (index.html + Tailwind CDN)         | ~/.config/opencode/skills/mockup-builder-ai/SKILL.md                                       |
+| **ventas-copy-pro**                                                  | Copywriting persuasivo AIDA para negocios locales sin web         | ~/.config/opencode/skills/ventas-copy-pro/SKILL.md                                         |
+| **frontend-express-landing-page-skill**                              | Landing page mobile-first para un sector específico               | ~/.claude/skills/frontend-express-landing-page-skill/SKILL.md                              |
+| **copywriting-de-ventas-fr-as-para-webs-de-negocios-locales-espa-a** | Mensajes de ventas frías para locales sin web en España           | ~/.claude/skills/copywriting-de-ventas-fr-as-para-webs-de-negocios-locales-espa-a/SKILL.md |
+| **lead-hunter-negocios-locales-sin-web**                             | Prospección de negocios locales sin web                           | ~/.claude/skills/lead-hunter-negocios-locales-sin-web/SKILL.md                             |
+| **inbox-organizer**                                                  | Organización semántica y etiquetado de vault de Obsidian          | ~/.gemini/skills/inbox-organizer/SKILL.md                                                  |
+| **elite-2025**                                                       | Coach personal de alto rendimiento (nutrición, entrenamiento DUP) | ~/.gemini/skills/elite-2025/SKILL.md                                                       |
+| **experto-documentacion-proyectos**                                  | Documentación técnica y académica de proyectos de software        | ~/.gemini/skills/experto-documentacion-proyectos/SKILL.md                                  |
+| **creador-de-habilidades**                                           | Crear nuevas habilidades (skills) para el agente en español       | ~/.gemini/skills/creador-de-habilidades/SKILL.md                                           |
+| **skill-creator**                                                    | Create new AI agent skills following the Agent Skills spec        | ~/.config/opencode/skills/skill-creator/SKILL.md                                           |
+| **skill-registry**                                                   | Create or update the skill registry for the current project       | ~/.config/opencode/skills/skill-registry/SKILL.md                                          |
 
 ## Registry Maintenance
 
