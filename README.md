@@ -2,7 +2,7 @@
 
 <div align="center">
 <a href="https://ezequielmenor.es/">
-<img src="./public/Mi-porfolio.png" alt="Visualización de la página web Mi porfolio">
+<img src="./public/Mi-porfolio2.png" alt="Visualización de la página web Mi porfolio">
 </a>
 <p></p>
 </div>
@@ -14,3 +14,4 @@ Esquema del JSON de CV de <a href="https://jsonresume.org/schema/">jsonresume.or
 <p>
 Basado en el diseño de <a href="https://github.com/BartoszJarocki/cv">Bartosz Jarocki</a>
 </p>
+ﬂﬂ
