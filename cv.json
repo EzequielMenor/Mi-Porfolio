@@ -34,6 +34,19 @@
 	},
 	"work": [
 		{
+			"name": "Stackd",
+			"position": "Co-fundador y desarrollador",
+			"url": "https://www.stackd.codes",
+			"startDate": "2026-01-01",
+			"endDate": null,
+			"summary": "Agencia de software bersama primos. Construimos webs, apps, SaaS, automatización con IA y mantenimiento. Tres personas, un mismo proyecto cada vez.",
+			"highlights": [
+				"Webs, apps, SaaS, automatización con IA",
+				"Proyectos reales en producción: SMASH, NOOK, Volea.io, Getflow",
+				"Co-fundador junto a Arnau y Mateo"
+			]
+		},
+		{
 			"name": "Clínicas Dorsia",
 			"position": "Desarrollador de apps (FCT)",
 			"url": "https://www.clinicasdorsia.com/",
@@ -124,6 +137,18 @@
 		}
 	],
 	"projects": [
+		{
+			"name": "Stackd",
+			"isActive": true,
+			"featured": true,
+			"description": "Agencia de software que construimos tres primos. webs, apps, SaaS, automatización con IA y mantenimiento — con el mismo equipo de principio a fin.",
+			"highlights": [
+				"Co-fundadores: Arnau, Ezequiel y Mateo",
+				"Proyectos: SMASH, NOOK, Volea.io, Getflow",
+				"stackd.codes"
+			],
+			"url": "https://www.stackd.codes"
+		},
 		{
 			"name": "GymAnalytics",
 			"isActive": true,
