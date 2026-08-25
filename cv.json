@@ -128,7 +128,10 @@
       "featured": true,
       "description": "Harness para orquestar agentes de IA: definición de flujos, herramientas y evaluación. En desarrollo activo.",
       "highlights": ["Agentes IA", "LLMs", "Harness"],
-      "url": "https://github.com/EzequielMenor/AIES"
+      "url": "https://aies.ezequielmenor.es/",
+      "repos": {
+        "repo": "https://github.com/EzequielMenor/AIES"
+      }
     },
     {
       "name": "Stackd",
