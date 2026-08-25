@@ -45,12 +45,17 @@ const other = projects.filter((p) => !p.featured)
                 name
               )}
             </h3>
-            <span class='text-xs font-mono text-[var(--color-text-muted)] mt-1 block'>
-              {name === 'AIES'
-                ? 'AI Agents Harness'
-                : name === 'Stackd'
-                  ? 'Co-fundador / Agencia'
-                  : 'TFG Full-Stack'}
+            <span class='text-xs font-mono text-[var(--color-text-muted)] mt-1 flex items-center gap-1.5'>
+              {name === 'AIES' && (
+                <span class='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block' />
+              )}
+              <span>
+                {name === 'AIES'
+                  ? dict.projects.aiesTag
+                  : name === 'Stackd'
+                    ? dict.projects.stackdTag
+                    : dict.projects.tfgTag}
+              </span>
             </span>
           </div>
 

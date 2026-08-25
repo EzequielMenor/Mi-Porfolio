@@ -28,6 +28,9 @@ export const en: Dict = {
   },
   projects: {
     featured: 'Featured',
+    aiesTag: 'AI Agents Harness · In active development',
+    stackdTag: 'Co-founder / Agency',
+    tfgTag: 'Full-Stack Thesis',
     repoMobile: 'Mobile app →',
     repoDesktop: 'Desktop app →',
     repoBackend: 'Backend →',

@@ -28,6 +28,9 @@ export const es: Dict = {
   },
   projects: {
     featured: 'Destacado',
+    aiesTag: 'Harness IA · En desarrollo activo',
+    stackdTag: 'Co-fundador / Agencia',
+    tfgTag: 'TFG Full-Stack',
     repoMobile: 'App móvil →',
     repoDesktop: 'App escritorio →',
     repoBackend: 'Backend →',

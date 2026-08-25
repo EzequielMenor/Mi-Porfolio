@@ -31,6 +31,9 @@ export interface Dict {
   }
   projects: {
     featured: string
+    aiesTag: string
+    stackdTag: string
+    tfgTag: string
     repoMobile: string
     repoDesktop: string
     repoBackend: string
