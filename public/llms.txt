@@ -1,0 +1,20 @@
+# Ezequiel Menor — Portfolio
+
+Desarrollador Full-Stack ubicado en Gandía, Valencia. Especializado en Flutter, Spring Boot, Java y desarrollo web con Astro y agentes de IA.
+
+## Tecnologías
+Flutter, Dart, Java, Spring Boot, JavaScript, TypeScript, Astro, SQL, MySQL, Agentes de IA
+
+## Proyectos Principales
+- AIES: Harness para orquestar agentes de IA (definición de flujos, herramientas y evaluación). En desarrollo activo.
+- GymAnalytics: Sistema completo de gestión de gimnasios (app móvil en Flutter, de escritorio en Java, y backend REST en Spring Boot con MySQL). TFG de DAM con arquitectura full-stack real.
+- Mi Portfolio: Este sitio, construido con Astro y Tailwind CSS, con datos desde JSON Resume.
+
+## Experiencia
+- Stackd: Desarrollador y co-fundador de agencia de software. Construcción de webs, apps, SaaS y automatización con IA.
+- Clínicas Dorsia: Desarrollador de apps (FCT). Desarrollo de aplicación móvil con Flutter para gestión de pacientes y clínicas.
+
+## Contacto
+- GitHub: https://github.com/EzequielMenor
+- LinkedIn: https://www.linkedin.com/in/ezequiel-menor-4a690027a/
+- Portfolio: https://ezequielemenor.es

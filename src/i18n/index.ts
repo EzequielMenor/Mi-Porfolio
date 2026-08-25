@@ -13,6 +13,7 @@ export interface Dict {
     skills: string
   }
   hero: {
+    bio: string
     email: string
     phone: string
     tooltips: {

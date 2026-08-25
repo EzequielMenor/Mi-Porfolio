@@ -10,6 +10,7 @@ export const en: Dict = {
     skills: 'Skills',
   },
   hero: {
+    bio: 'DAM graduate and co-founder at Stackd. Building software leveraging modern AI tools, autonomous agents, and robust architectures to ship real products with speed and technical excellence.',
     email: 'Email',
     phone: 'Phone',
     tooltips: {

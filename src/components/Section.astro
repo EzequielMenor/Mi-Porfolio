@@ -1,13 +1,22 @@
 ---
-const { title } = Astro.props
+interface Props {
+  title?: string
+  id?: string
+  subtitle?: string
+}
+
+const { title, id, subtitle } = Astro.props
 ---
 
-<section class='mb-12 mx-auto w-full'>
+<section id={id} class='mb-16 mx-auto w-full scroll-mt-20'>
   {
     title && (
-      <h2 class='text-xl md:text-2xl font-heading font-bold text-[var(--color-text)] mb-8 pb-2 border-b-2 border-[var(--color-accent-mint)] w-fit'>
-        {title}
-      </h2>
+      <div class='flex items-baseline justify-between border-b border-[var(--color-border)] pb-2.5 mb-6 text-[var(--color-text)]'>
+        <h2 class='font-serif text-2xl font-normal tracking-tight'>{title}</h2>
+        {subtitle && (
+          <span class='text-xs font-mono text-[var(--color-text-muted)]'>{subtitle}</span>
+        )}
+      </div>
     )
   }
   <slot />

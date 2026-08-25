@@ -1,17 +1,14 @@
 ---
-import Section from '@/components/Section.astro'
-import Mail from '@/icons/Mail.astro'
-import LinkedIn from '@/icons/LinkedIn.astro'
-import GitHub from '@/icons/Github.astro'
-import WorldMap from '@/icons/WorldMap.astro'
 import type { Dict } from '@/i18n'
 
 interface Props {
   basics: {
     name: string
     label: string
+    image?: string
     email: string
     phone: string
+    summary: string
     techTags: string[]
     location: { city: string; region: string }
     profiles: { network: string; username: string; url: string }[]
@@ -20,121 +17,52 @@ interface Props {
 }
 
 const { basics, dict } = Astro.props
-const { name, label, location, profiles, email, phone, techTags } = basics
+const { name, location, profiles, summary } = basics
 const { city, region } = location
-
-const SOCIAL_ICONS: Record<string, any> = {
-  GitHub,
-  LinkedIn,
-}
-
-const linkedInfo = profiles.find(({ network }) => network === 'LinkedIn')
-const linkedUrl = linkedInfo?.url
-
-const printInfo = [email, linkedUrl].filter(Boolean).join(' • ')
 ---
 
-<div
-  class='bg-gradient-to-br from-[var(--color-bg)] to-[var(--color-surface)] py-12 md:py-16 px-8 md:px-12 lg:px-16'
->
-  <div class='max-w-4xl mx-auto'>
-    <!-- Terminal bar -->
-    <div
-      class='flex items-center gap-2 text-xs font-code text-[var(--color-text-muted)] mb-4 px-3 py-1.5 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] w-fit'
-    >
-      <span class='text-[var(--color-accent-mint)]'>ezequiel@portfolio</span>
-      <span>~/main</span>
-    </div>
+<section id='hero' class='pt-12 pb-16 space-y-6'>
+  <div
+    class='flex items-center justify-between text-xs font-mono text-[var(--color-text-muted)] uppercase tracking-widest'
+  >
+    <span>{name} &mdash; Portfolio</span>
+    <span>{city}, {region}</span>
+  </div>
 
-    <div class='flex flex-col md:flex-row items-start gap-6'>
-      <!-- Text content -->
-      <div class='flex flex-col gap-3 flex-1'>
-        <div>
-          <h1
-            class='text-3xl md:text-5xl font-heading font-bold bg-gradient-to-r from-[var(--color-text)] to-[var(--color-accent-mint)] bg-clip-text text-transparent'
+  <h1
+    class='font-serif text-4xl sm:text-5xl md:text-6xl text-[var(--color-text)] font-normal tracking-tight leading-[1.12]'
+  >
+    {summary}
+  </h1>
+
+  <div
+    class='flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pt-4 border-t border-[var(--color-border)] text-[var(--color-text-muted)] text-sm'
+  >
+    <p class='max-w-md font-light leading-relaxed'>
+      {dict.hero.bio}
+    </p>
+
+    <div class='flex flex-wrap items-center gap-4 text-xs font-mono'>
+      {
+        profiles.map(({ network, url }) => (
+          <a
+            href={url}
+            target='_blank'
+            rel='noopener noreferrer'
+            class='text-[var(--color-text)] hover:underline underline-offset-4 decoration-[var(--color-border-hover)] hover:decoration-[var(--color-text)] transition-colors'
           >
-            {name}
-          </h1>
-          <p class='text-lg text-[var(--color-text-muted)] mt-2'>
-            {label}
-          </p>
-        </div>
-
-        <!-- Tech tags -->
-        <div
-          class='flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-[var(--color-text-muted)]'
-        >
-          {
-            techTags.map((tag, i) => (
-              <>
-                <span class='text-[var(--color-accent-blue)]'>·</span>
-                {tag}
-                {i === techTags.length - 1 ? '' : ''}
-              </>
-            ))
-          }
-        </div>
-
-        <!-- Location -->
-        <span class='flex items-center gap-1 text-sm text-[var(--color-text-muted)]'>
-          <WorldMap />
-          {city}, {region}
-        </span>
-
-        <!-- Contact badges -->
-        <div class='flex flex-wrap gap-2 mt-1'>
-          {
-            email && (
-              <a
-                href={`mailto:${email}`}
-                title={dict.hero.tooltips.email(name)}
-                target='_blank'
-                rel='noopener noreferrer'
-                class='inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface)] transition-colors duration-300'
-              >
-                <Mail />
-                <span class='text-sm font-medium'>{dict.hero.email}</span>
-              </a>
-            )
-          }
-          {
-            phone && (
-              <a
-                href={`tel:${phone}`}
-                title={dict.hero.tooltips.phone(name)}
-                target='_blank'
-                rel='noopener noreferrer'
-                class='inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-peach)] hover:border-[var(--color-accent-peach)] hover:bg-[var(--color-surface)] transition-colors duration-300'
-              >
-                <span class='text-sm font-medium'>{dict.hero.phone}</span>
-              </a>
-            )
-          }
-          {
-            profiles.map(({ network, url, username }) => {
-              const Icon = SOCIAL_ICONS[network]
-              if (!Icon) return null
-              return (
-                <a
-                  href={url}
-                  title={dict.hero.tooltips.profile(name, network)}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  class='inline-flex items-center gap-2 px-3 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface)] transition-colors duration-300'
-                >
-                  <Icon />
-                  <span class='text-sm font-medium'>{network}</span>
-                </a>
-              )
-            })
-          }
-        </div>
-
-        <!-- Print-only contact info -->
-        <footer class='print'>
-          {printInfo}
-        </footer>
-      </div>
+            {network} &nearr;
+          </a>
+        ))
+      }
+      <a
+        href='https://www.stackd.codes'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='text-[var(--color-text)] hover:underline underline-offset-4 decoration-[var(--color-border-hover)] hover:decoration-[var(--color-text)] transition-colors'
+      >
+        Stackd &nearr;
+      </a>
     </div>
   </div>
-</div>
+</section>

@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ezequiel Menor",
-    "label": "Full-Stack Developer",
+    "label": "Software & AI Developer",
     "image": "/mia3.jpeg",
     "email": "",
     "phone": "",
     "url": "",
-    "summary": "Full-stack developer and co-founder of Stackd, an agency where I build websites, apps and AI automation. Currently developing Flutter apps at Clínicas Dorsia. My current focus: AI agents and real product in production.",
+    "summary": "Software developer building products and systems powered by artificial intelligence.",
     "location": {
       "city": "Gandía",
       "countryCode": "ES",
@@ -32,19 +32,6 @@
     ]
   },
   "work": [
-    {
-      "name": "Stackd",
-      "position": "Developer",
-      "url": "https://www.stackd.codes",
-      "startDate": "2026-01-01",
-      "endDate": null,
-      "summary": "Software agency with my cousins. We build websites, apps, SaaS, AI automation and maintenance. Three people, one project at a time.",
-      "highlights": [
-        "Websites, apps, SaaS, AI automation",
-        "Real projects in production: SMASH, NOOK, Volea.io, Getflow",
-        "Co-founder alongside Arnau and Mateo"
-      ]
-    },
     {
       "name": "Clínicas Dorsia",
       "position": "App Developer (internship)",
@@ -92,7 +79,6 @@
       "courses": ["Microcomputer systems and networks"]
     }
   ],
-
   "skills": [
     {
       "name": "Flutter & Dart",
@@ -137,7 +123,8 @@
       "isActive": true,
       "featured": true,
       "description": "A harness to orchestrate AI agents: flow definition, tools and evaluation. Actively in development.",
-      "highlights": ["AI Agents", "LLMs", "Harness"]
+      "highlights": ["AI Agents", "LLMs", "Harness"],
+      "url": "https://github.com/EzequielMenor/AIES"
     },
     {
       "name": "Stackd",

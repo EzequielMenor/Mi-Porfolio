@@ -180,20 +180,20 @@ Creating reusable custom utility classes with variant support.
 }
 
 @utility tab-* {
-  tab-size: --value(--tab-size- *);
+  tab-size: --value(--tab-size-*);
 }
 
 /* Supporting arbitrary, bare, and theme values */
 @utility opacity-* {
   opacity: --value([percentage]);
   opacity: calc(--value(integer) * 1%);
-  opacity: --value(--opacity- *);
+  opacity: --value(--opacity-*);
 }
 
 /* Utility with modifiers */
 @utility text-* {
-  font-size: --value(--text- *, [length]);
-  line-height: --modifier(--leading- *, [length], [ *]);
+  font-size: --value(--text-*, [length]);
+  line-height: --modifier(--leading-*, [length], [*]);
 }
 
 /* Negative value support */

@@ -5,63 +5,44 @@ import type { Dict } from '@/i18n'
 interface Props {
   education: Array<{
     institution: string
-    startDate: string
-    endDate: string | null
+    url?: string
     area: string
-    score: string | number | null
+    studyType: string
+    startDate: string
+    endDate: string
     courses?: string[]
   }>
   dict: Dict
 }
 
 const { education, dict } = Astro.props
+
+function formatYear(date: string) {
+  return date ? date.slice(0, 4) : ''
+}
 ---
 
 <Section title={dict.sections.education}>
-  <ul class='flex flex-col gap-6'>
+  <div class='divide-y divide-[var(--color-border)]'>
     {
-      education.map(({ institution, startDate, endDate, area, score, courses }) => {
-        const startYear = new Date(startDate).getFullYear()
-        const endYear =
-          endDate != null
-            ? new Date(endDate).getFullYear().toString()
-            : dict.education.present
-        const years = `${startYear} - ${endYear}`
-        const notaMedia = score != null ? dict.education.gpa(score) : null
+      education.map(({ institution, area, studyType, startDate, endDate }) => {
+        const startYear = formatYear(startDate)
+        const endYear = formatYear(endDate)
 
         return (
-          <li class='border-l-2 border-[var(--color-border)] pl-4 py-1 hover:border-[var(--color-accent-mint)] transition-colors duration-300'>
-            <article>
-              <header class='flex justify-between items-start mb-3'>
-                <div>
-                  <h3 class='font-bold text-[var(--color-text)]'>{institution}</h3>
-                  <h4 class='text-[var(--color-text-muted)] font-normal text-sm mt-0.5'>
-                    {area}
-                  </h4>
-                </div>
-
-                <time class='text-[var(--color-text-muted)] text-xs min-w-[100px] text-right flex-shrink-0'>
-                  {years}
-                </time>
-              </header>
-
-              <footer class='flex flex-wrap gap-1.5'>
-                {Array.isArray(courses) &&
-                  courses.map((course: string) => (
-                    <span class='text-xs px-2 py-0.5 rounded-md bg-[var(--color-surface-2)] text-[var(--color-text-muted)] font-code'>
-                      {course}
-                    </span>
-                  ))}
-                {notaMedia && (
-                  <span class='text-xs px-2 py-0.5 rounded-md bg-mint/20 text-mint font-code'>
-                    {notaMedia}
-                  </span>
-                )}
-              </footer>
-            </article>
-          </li>
+          <div class='py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1'>
+            <div>
+              <h3 class='text-sm font-medium text-[var(--color-text)]'>{area}</h3>
+              <p class='text-xs font-mono text-[var(--color-text-muted)]'>
+                {institution} &bull; {studyType}
+              </p>
+            </div>
+            <span class='text-xs font-mono text-[var(--color-text-muted)]'>
+              {startYear} &mdash; {endYear}
+            </span>
+          </div>
         )
       })
     }
-  </ul>
+  </div>
 </Section>

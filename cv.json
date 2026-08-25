@@ -1,12 +1,12 @@
 {
   "basics": {
     "name": "Ezequiel Menor",
-    "label": "Desarrollador Full-Stack",
+    "label": "Desarrollador de Software & IA",
     "image": "/mia3.jpeg",
     "email": "",
     "phone": "",
     "url": "",
-    "summary": "Desarrollador full-stack y co-fundador de Stackd, agencia donde construyo webs, apps y automatización con IA. Actualmente desarrollo apps Flutter en Clínicas Dorsia. Mi foco actual: agentes de IA y producto real en producción.",
+    "summary": "Desarrollador de software creando productos y sistemas potenciados por inteligencia artificial.",
     "location": {
       "city": "Gandía",
       "countryCode": "ES",
@@ -32,19 +32,6 @@
     ]
   },
   "work": [
-    {
-      "name": "Stackd",
-      "position": "Desarrollador",
-      "url": "https://www.stackd.codes",
-      "startDate": "2026-01-01",
-      "endDate": null,
-      "summary": "Agencia de software con mis primos. Construimos webs, apps, SaaS, automatización con IA y mantenimiento. Tres personas, un mismo proyecto cada vez.",
-      "highlights": [
-        "Webs, apps, SaaS, automatización con IA",
-        "Proyectos reales en producción: SMASH, NOOK, Volea.io, Getflow",
-        "Co-fundador junto a Arnau y Mateo"
-      ]
-    },
     {
       "name": "Clínicas Dorsia",
       "position": "Desarrollador de apps (FCT)",
@@ -92,7 +79,6 @@
       "courses": ["Sistemas microinformáticos y redes"]
     }
   ],
-
   "skills": [
     {
       "name": "Flutter & Dart",
@@ -115,17 +101,21 @@
       "keywords": ["Desarrollo Web", "Frontend", "SSR", "SSG"]
     },
     {
-      "name": "SQL & Bases de datos",
+      "name": "SQL & Bases de Datos",
       "level": "Intermedio",
       "keywords": ["MySQL", "PostgreSQL", "MongoDB"]
     },
     {
-      "name": "IA & LLMs",
+      "name": "AI & LLMs",
       "level": "Intermedio",
       "keywords": ["Agentes IA", "Harness", "Prompting"]
     }
   ],
   "languages": [
+    {
+      "language": "Español",
+      "fluency": "Nativo"
+    },
     {
       "language": "Inglés",
       "fluency": "Intermedio (B1)"
@@ -137,7 +127,8 @@
       "isActive": true,
       "featured": true,
       "description": "Harness para orquestar agentes de IA: definición de flujos, herramientas y evaluación. En desarrollo activo.",
-      "highlights": ["Agentes IA", "LLMs", "Harness"]
+      "highlights": ["Agentes IA", "LLMs", "Harness"],
+      "url": "https://github.com/EzequielMenor/AIES"
     },
     {
       "name": "Stackd",

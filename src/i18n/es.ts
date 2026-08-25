@@ -10,6 +10,7 @@ export const es: Dict = {
     skills: 'Habilidades',
   },
   hero: {
+    bio: 'Graduado en DAM y co-fundador de Stackd. Desarrollo software dominando herramientas de IA, agentes autónomos y arquitecturas modernas para crear productos reales con agilidad y solidez técnica.',
     email: 'Email',
     phone: 'Teléfono',
     tooltips: {

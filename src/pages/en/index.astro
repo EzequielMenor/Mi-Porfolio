@@ -2,14 +2,11 @@
 import Layout from '../../layouts/Layout.astro'
 
 import Experience from '@/components/sections/Experience.astro'
-import About from '@/components/sections/About.astro'
 import Education from '@/components/sections/Education.astro'
 import Hero from '@/components/sections/Hero.astro'
 import Projects from '@/components/sections/Projects.astro'
 import Skills from '@/components/sections/Skills.astro'
 import KeyboardManager from '@/components/KeyboardManager.astro'
-import GithubIcon from '@/icons/Github.astro'
-import LinkedInIcon from '@/icons/LinkedIn.astro'
 
 import cv from '@cv-en'
 import { getDict } from '@/i18n'
@@ -18,69 +15,61 @@ const { basics, work, education, skills, projects } = cv
 const { name, label, profiles } = basics
 const dict = getDict('en')
 
-const SOCIAL_ICONS: Record<string, any> = {
-  GitHub: GithubIcon,
-  LinkedIn: LinkedInIcon,
-}
-
 const title = dict.layout.pageTitle(name, label)
 const description = dict.layout.metaDescription(name, label)
 ---
 
 <Layout title={title} description={description} lang='en'>
-  <Hero basics={basics} dict={dict} />
+  <main class='px-6 mx-auto w-full max-w-3xl space-y-16 pb-20'>
+    <Hero basics={basics} dict={dict} />
 
-  <main class='p-8 md:p-12 lg:p-16 mx-auto w-full max-w-4xl bg-[var(--color-bg)]'>
-    <div data-animate='true' style='transition-delay: 0s'>
-      <About summary={basics.summary} dict={dict} />
-    </div>
-    <div data-animate='true' style='transition-delay: 0.1s'>
-      <Education education={education} dict={dict} />
-    </div>
-    <div data-animate='true' style='transition-delay: 0.2s'>
-      <Experience work={work} dict={dict} />
-    </div>
-    <div data-animate='true' style='transition-delay: 0.3s'>
+    <div id='projects' data-animate='true'>
       <Projects projects={projects} dict={dict} />
     </div>
-    <div data-animate='true' style='transition-delay: 0.4s'>
+
+    <div id='experience' data-animate='true'>
+      <Experience work={work} dict={dict} />
+    </div>
+
+    <div id='skills' data-animate='true'>
       <Skills skills={skills} dict={dict} />
+    </div>
+
+    <div id='education' data-animate='true'>
+      <Education education={education} dict={dict} />
     </div>
   </main>
 
   <footer
-    class='print:hidden border-t border-[var(--color-border)] py-8 px-4 text-center'
+    class='print:hidden border-t border-[var(--color-border)] py-12 px-6 text-center transition-colors'
   >
-    <p class='text-sm text-[var(--color-text-muted)] mb-3'>
-      &copy; 2026 {name} &middot; {dict.footer.builtWith}{' '}
-      <a
-        href='https://astro.build'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='hover:text-[var(--color-accent-mint)] transition-colors underline decoration-[var(--color-accent-mint)]/50 underline-offset-2'
-      >
-        Astro
-      </a>
-    </p>
+    <div
+      class='max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[var(--color-text-muted)] gap-4'
+    >
+      <p>
+        &copy; 2026 {name} &mdash; {dict.footer.builtWith}
+        <a
+          href='https://astro.build'
+          target='_blank'
+          rel='noopener noreferrer'
+          class='text-[var(--color-text)] underline underline-offset-2'>Astro</a
+        >
+      </p>
 
-    <div class='flex justify-center gap-4'>
-      {
-        profiles.map(({ network, url, username }) => {
-          const Icon = SOCIAL_ICONS[network]
-          if (!Icon) return null
-          return (
+      <div class='flex items-center gap-4'>
+        {
+          profiles.map(({ network, url }) => (
             <a
               href={url}
-              title={`${network}: @${username}`}
               target='_blank'
               rel='noopener noreferrer'
-              class='inline-flex items-center justify-center w-9 h-9 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] transition-colors duration-300'
+              class='text-[var(--color-text)] hover:underline'
             >
-              <Icon />
+              {network}
             </a>
-          )
-        })
-      }
+          ))
+        }
+      </div>
     </div>
   </footer>
 
