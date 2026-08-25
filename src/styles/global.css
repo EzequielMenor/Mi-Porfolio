@@ -29,6 +29,15 @@
   --color-border: #45475a;
 }
 
+html {
+  background-color: var(--color-bg);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 @theme {
   /* Colors */
   --color-dark-bg: #0f0f1a;
