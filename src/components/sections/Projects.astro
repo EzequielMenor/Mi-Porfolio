@@ -1,73 +1,82 @@
 ---
-import Section from "@/components/Section.astro";
-import { projects } from "@cv";
+import Section from '@/components/Section.astro'
+import type { Dict } from '@/i18n'
 
-const featured = projects.filter((p) => p.featured);
-const other = projects.filter((p) => !p.featured);
+interface Props {
+  projects: Array<{
+    name: string
+    description: string
+    highlights: string[]
+    featured?: boolean
+    url?: string
+    repos?: { mobile?: string; desktop?: string; backend?: string }
+  }>
+  dict: Dict
+}
+
+const { projects, dict } = Astro.props
+const featured = projects.filter((p) => p.featured)
+const other = projects.filter((p) => !p.featured)
 ---
 
-<Section title="Proyectos">
+<Section title={dict.sections.projects}>
   {
     featured.map(({ name, description, highlights, repos }) => (
-      <article class="rounded-xl overflow-hidden shadow-card mb-10">
-        <!-- Gradient header bar -->
-        <div class="h-24 bg-gradient-to-r from-[var(--color-surface-2)] to-[var(--color-overlay)] border-b border-[var(--color-border)] p-6 flex items-end relative">
-          <h3 class="text-[var(--color-text)] font-heading font-bold text-xl tracking-tight">
+      <article class='rounded-xl overflow-hidden shadow-card mb-10'>
+        <div class='h-24 bg-gradient-to-r from-[var(--color-surface-2)] to-[var(--color-overlay)] border-b border-[var(--color-border)] p-6 flex items-end relative'>
+          <h3 class='text-[var(--color-text)] font-heading font-bold text-xl tracking-tight'>
             {name}
           </h3>
-          <span class="absolute top-3 right-3 bg-[var(--color-accent-mint)]/20 backdrop-blur-sm text-[var(--color-accent-mint)] text-xs font-semibold font-code px-2.5 py-0.5 rounded-full">
-            Destacado
+          <span class='absolute top-3 right-3 bg-[var(--color-accent-mint)]/20 backdrop-blur-sm text-[var(--color-accent-mint)] text-xs font-semibold font-code px-2.5 py-0.5 rounded-full'>
+            {dict.projects.featured}
           </span>
         </div>
 
-        <!-- Card body -->
-        <div class="p-6 bg-[var(--color-surface)]">
-          <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
-            {description}
-          </p>
+        <div class='p-6 bg-[var(--color-surface)]'>
+          <p class='text-[var(--color-text-muted)] leading-relaxed mb-4'>{description}</p>
 
-          <!-- Tech badges -->
-          <div class="flex flex-wrap gap-2 mb-5">
+          <div class='flex flex-wrap gap-2 mb-5'>
             {highlights.map((h: string) => (
-              <span class="text-xs font-code px-2.5 py-1 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]">
+              <span class='text-xs font-code px-2.5 py-1 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]'>
                 {h}
               </span>
             ))}
           </div>
 
-          <!-- Repository links -->
-          <div class="flex flex-wrap gap-3">
-            {repos?.mobile && (
-              <a
-                href={repos.mobile}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
-              >
-                App móvil →
-              </a>
-            )}
-            {repos?.desktop && (
-              <a
-                href={repos.desktop}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
-              >
-                App escritorio →
-              </a>
-            )}
-            {repos?.backend && (
-              <a
-                href={repos.backend}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300"
-              >
-                Backend →
-              </a>
-            )}
-          </div>
+          {(repos?.mobile || repos?.desktop || repos?.backend) && (
+            <div class='flex flex-wrap gap-3'>
+              {repos?.mobile && (
+                <a
+                  href={repos.mobile}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300'
+                >
+                  {dict.projects.repoMobile}
+                </a>
+              )}
+              {repos?.desktop && (
+                <a
+                  href={repos.desktop}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300'
+                >
+                  {dict.projects.repoDesktop}
+                </a>
+              )}
+              {repos?.backend && (
+                <a
+                  href={repos.backend}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='inline-flex items-center gap-1.5 text-xs font-code px-4 py-2 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] hover:bg-[var(--color-surface-2)] transition-colors duration-300'
+                >
+                  {dict.projects.repoBackend}
+                </a>
+              )}
+            </div>
+          )}
         </div>
       </article>
     ))
@@ -75,25 +84,29 @@ const other = projects.filter((p) => !p.featured);
 
   {
     other.length > 0 && (
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {other.map(({ name, description, highlights, url }) => (
-          <article class="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-card hover:shadow-card-hover transition-shadow duration-300 flex flex-col h-full">
-            <h3 class="font-heading font-bold text-[var(--color-text)] mb-2">
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-[var(--color-accent-mint)] transition-colors"
-              >
-                {name} →
-              </a>
+          <article class='rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] p-5 shadow-card hover:shadow-card-hover transition-shadow duration-300 flex flex-col h-full'>
+            <h3 class='font-heading font-bold text-[var(--color-text)] mb-2'>
+              {url ? (
+                <a
+                  href={url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='hover:text-[var(--color-accent-mint)] transition-colors'
+                >
+                  {name} →
+                </a>
+              ) : (
+                name
+              )}
             </h3>
-            <p class="text-sm text-[var(--color-text-muted)] leading-relaxed mb-3 flex-1">
+            <p class='text-sm text-[var(--color-text-muted)] leading-relaxed mb-3 flex-1'>
               {description}
             </p>
-            <div class="flex flex-wrap gap-1.5 mt-auto">
+            <div class='flex flex-wrap gap-1.5 mt-auto'>
               {highlights.map((h: string) => (
-                <span class="text-xs font-code px-2 py-0.5 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]">
+                <span class='text-xs font-code px-2 py-0.5 rounded-md bg-[var(--color-overlay)] text-[var(--color-accent-mint)]'>
                   {h}
                 </span>
               ))}

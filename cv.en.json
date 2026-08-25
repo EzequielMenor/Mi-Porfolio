@@ -1,0 +1,175 @@
+{
+  "basics": {
+    "name": "Ezequiel Menor",
+    "label": "Full-Stack Developer",
+    "image": "/mia3.jpeg",
+    "email": "",
+    "phone": "",
+    "url": "",
+    "summary": "Full-stack developer and co-founder of Stackd, an agency where I build websites, apps and AI automation. Currently developing Flutter apps at Clínicas Dorsia. My current focus: AI agents and real product in production.",
+    "location": {
+      "city": "Gandía",
+      "countryCode": "ES",
+      "region": "Valencia"
+    },
+    "techTags": ["Flutter", "Spring Boot", "Astro", "AI Agents"],
+    "profiles": [
+      {
+        "network": "GitHub",
+        "username": "EzequielMenor",
+        "url": "https://github.com/EzequielMenor"
+      },
+      {
+        "network": "LinkedIn",
+        "username": "Ezequiel Menor",
+        "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+      },
+      {
+        "network": "InfoJobs",
+        "username": "Ezequiel Menor",
+        "url": "https://www.infojobs.net/candidate/cv/view/index.xhtml"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Stackd",
+      "position": "Developer",
+      "url": "https://www.stackd.codes",
+      "startDate": "2026-01-01",
+      "endDate": null,
+      "summary": "Software agency with my cousins. We build websites, apps, SaaS, AI automation and maintenance. Three people, one project at a time.",
+      "highlights": [
+        "Websites, apps, SaaS, AI automation",
+        "Real projects in production: SMASH, NOOK, Volea.io, Getflow",
+        "Co-founder alongside Arnau and Mateo"
+      ]
+    },
+    {
+      "name": "Clínicas Dorsia",
+      "position": "App Developer (internship)",
+      "url": "https://www.clinicasdorsia.com/",
+      "startDate": "2026-03-01",
+      "endDate": null,
+      "summary": "Mobile app development with Flutter for patient and clinic management.",
+      "highlights": ["Flutter mobile development", "App in production"]
+    },
+    {
+      "name": "Antica",
+      "position": "Waiter",
+      "url": "",
+      "startDate": "2022-07-11",
+      "endDate": "2022-09-05",
+      "type": "secondary",
+      "summary": "Summer job as a waiter at a restaurant. Customer service, teamwork and order management under pressure.",
+      "highlights": ["Customer service", "Teamwork"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "María Enriquez",
+      "url": "https://portal.edu.gva.es/mariaenriquez/",
+      "area": "DAM (Multiplatform Application Development)",
+      "studyType": "Higher Vocational Training",
+      "startDate": "2024-09-01",
+      "endDate": "2026-06-01",
+      "score": null,
+      "courses": [
+        "Programming with Java and Spring Boot",
+        "App development with Flutter",
+        "SQL and NoSQL databases",
+        "Web development with HTML, CSS, JavaScript, Astro, Next.js"
+      ]
+    },
+    {
+      "institution": "María Enriquez",
+      "url": "https://portal.edu.gva.es/mariaenriquez/",
+      "area": "SMR (Microcomputer Systems and Networks)",
+      "studyType": "Vocational Training",
+      "startDate": "2022-09-12",
+      "endDate": "2024-06-20",
+      "score": null,
+      "courses": ["Microcomputer systems and networks"]
+    }
+  ],
+
+  "skills": [
+    {
+      "name": "Flutter & Dart",
+      "level": "Intermediate",
+      "keywords": ["Mobile Development", "Frontend", "Cross-platform"]
+    },
+    {
+      "name": "Java & Spring Boot",
+      "level": "Intermediate",
+      "keywords": ["Backend", "REST API", "Microservices"]
+    },
+    {
+      "name": "JavaScript & TypeScript",
+      "level": "Intermediate",
+      "keywords": ["Web Development", "Frontend", "Backend"]
+    },
+    {
+      "name": "Astro & Next.js",
+      "level": "Basic",
+      "keywords": ["Web Development", "Frontend", "SSR", "SSG"]
+    },
+    {
+      "name": "SQL & Databases",
+      "level": "Intermediate",
+      "keywords": ["MySQL", "PostgreSQL", "MongoDB"]
+    },
+    {
+      "name": "AI & LLMs",
+      "level": "Intermediate",
+      "keywords": ["AI Agents", "Harness", "Prompting"]
+    }
+  ],
+  "languages": [
+    {
+      "language": "English",
+      "fluency": "Intermediate (B1)"
+    }
+  ],
+  "projects": [
+    {
+      "name": "AIES",
+      "isActive": true,
+      "featured": true,
+      "description": "A harness to orchestrate AI agents: flow definition, tools and evaluation. Actively in development.",
+      "highlights": ["AI Agents", "LLMs", "Harness"]
+    },
+    {
+      "name": "Stackd",
+      "isActive": true,
+      "featured": true,
+      "description": "Software agency built by three cousins. Websites, apps, SaaS, AI automation and maintenance — with the same team from start to finish.",
+      "highlights": [
+        "Co-founders: Arnau, Ezequiel and Mateo",
+        "Projects: SMASH, NOOK, Volea.io, Getflow",
+        "stackd.codes"
+      ],
+      "url": "https://www.stackd.codes"
+    },
+    {
+      "name": "GymAnalytics",
+      "isActive": true,
+      "featured": true,
+      "description": "Complete application for gym management: mobile + desktop app + backend. Developed as DAM final project with a real full-stack architecture.",
+      "highlights": ["Flutter", "Spring Boot", "Java", "Mobile App", "REST API", "MySQL"],
+      "repos": {
+        "mobile": "https://github.com/EzequielMenor/AppTFG",
+        "desktop": "https://github.com/EzequielMenor/DesktopTFG",
+        "backend": "https://github.com/EzequielMenor/BackendTFG"
+      }
+    },
+    {
+      "name": "My Portfolio",
+      "isActive": true,
+      "featured": false,
+      "description": "My personal portfolio, built with Astro and Tailwind. Minimalist design, data from JSON Resume, command palette included.",
+      "highlights": ["Astro", "Tailwind CSS", "JSON Resume"],
+      "url": "https://github.com/EzequielMenor/Mi-Porfolio"
+    }
+  ]
+}

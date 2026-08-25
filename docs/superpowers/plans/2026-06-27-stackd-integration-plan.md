@@ -23,6 +23,7 @@
 ### Task 1: Añadir Stackd como entrada en Work
 
 **Files:**
+
 - Modify: `cv.json` — inserting new work entry in `work` array
 
 - [ ] **Step 1: Añadir entrada de trabajo de Stackd en cv.json**
@@ -56,6 +57,7 @@ git add cv.json && git commit -m "feat: add Stackd as co-founder work experience
 ### Task 2: Añadir Stackd como proyecto destacado
 
 **Files:**
+
 - Modify: `cv.json` — inserting new project entry in `projects` array
 
 - [ ] **Step 1: Añadir proyecto Stackd en cv.json**
@@ -88,6 +90,7 @@ git add cv.json && git commit -m "feat: add Stackd as featured project with link
 ## Verification
 
 Después de ambos commits, verificar que:
+
 1. `npm run dev` levanta sin errores
 2. La sección Experience muestra Stackd como primera entrada
 3. La sección Projects muestra Stackd como proyecto destacado

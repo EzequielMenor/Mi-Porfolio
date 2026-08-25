@@ -1,62 +1,69 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from '../layouts/Layout.astro'
 
-import Experience from "@/components/sections/Experience.astro";
-import About from "@/components/sections/About.astro";
-import Education from "@/components/sections/Education.astro";
-import Hero from "@/components/sections/Hero.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Skills from "@/components/sections/Skills.astro";
-import KeyboardManager from "@/components/KeyboardManager.astro";
-import GithubIcon from "@/icons/Github.astro";
-import LinkedInIcon from "@/icons/LinkedIn.astro";
+import Experience from '@/components/sections/Experience.astro'
+import About from '@/components/sections/About.astro'
+import Education from '@/components/sections/Education.astro'
+import Hero from '@/components/sections/Hero.astro'
+import Projects from '@/components/sections/Projects.astro'
+import Skills from '@/components/sections/Skills.astro'
+import KeyboardManager from '@/components/KeyboardManager.astro'
+import GithubIcon from '@/icons/Github.astro'
+import LinkedInIcon from '@/icons/LinkedIn.astro'
 
-import { basics } from "@cv";
-const { name, label, profiles } = basics;
+import cv from '@cv'
+import { getDict } from '@/i18n'
+
+const { basics, work, education, skills, projects } = cv
+const { name, label, profiles } = basics
+const dict = getDict('es')
 
 const SOCIAL_ICONS: Record<string, any> = {
   GitHub: GithubIcon,
   LinkedIn: LinkedInIcon,
-};
+}
+
+const title = dict.layout.pageTitle(name, label)
+const description = dict.layout.metaDescription(name, label)
 ---
 
-<Layout title={`Portfolio de ${name} - ${label}`}>
-  <!-- Hero — full width, outside main -->
-  <Hero />
+<Layout title={title} description={description} lang='es'>
+  <Hero basics={basics} dict={dict} />
 
-  <main class="p-8 md:p-12 lg:p-16 mx-auto w-full max-w-4xl bg-[var(--color-bg)]">
-    <div data-animate="true" style="transition-delay: 0s">
-      <About />
+  <main class='p-8 md:p-12 lg:p-16 mx-auto w-full max-w-4xl bg-[var(--color-bg)]'>
+    <div data-animate='true' style='transition-delay: 0s'>
+      <About summary={basics.summary} dict={dict} />
     </div>
-    <div data-animate="true" style="transition-delay: 0.1s">
-      <Education />
+    <div data-animate='true' style='transition-delay: 0.1s'>
+      <Education education={education} dict={dict} />
     </div>
-    <div data-animate="true" style="transition-delay: 0.2s">
-      <Experience />
+    <div data-animate='true' style='transition-delay: 0.2s'>
+      <Experience work={work} dict={dict} />
     </div>
-    <div data-animate="true" style="transition-delay: 0.3s">
-      <Projects />
+    <div data-animate='true' style='transition-delay: 0.3s'>
+      <Projects projects={projects} dict={dict} />
     </div>
-    <div data-animate="true" style="transition-delay: 0.4s">
-      <Skills />
+    <div data-animate='true' style='transition-delay: 0.4s'>
+      <Skills skills={skills} dict={dict} />
     </div>
   </main>
 
-  <footer class="print:hidden border-t border-[var(--color-border)] py-8 px-4 text-center">
-    <p class="text-sm text-[var(--color-text-muted)] mb-3">
-      &copy; 2026 {name} &middot; Built with{' '}
+  <footer
+    class='print:hidden border-t border-[var(--color-border)] py-8 px-4 text-center'
+  >
+    <p class='text-sm text-[var(--color-text-muted)] mb-3'>
+      &copy; 2026 {name} &middot; {dict.footer.builtWith}{' '}
       <a
-        href="https://astro.build"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="hover:text-[var(--color-accent-mint)] transition-colors underline decoration-[var(--color-accent-mint)]/50 underline-offset-2"
+        href='https://astro.build'
+        target='_blank'
+        rel='noopener noreferrer'
+        class='hover:text-[var(--color-accent-mint)] transition-colors underline decoration-[var(--color-accent-mint)]/50 underline-offset-2'
       >
         Astro
       </a>
     </p>
 
-    <!-- Social icons -->
-    <div class="flex justify-center gap-4">
+    <div class='flex justify-center gap-4'>
       {
         profiles.map(({ network, url, username }) => {
           const Icon = SOCIAL_ICONS[network]
@@ -65,9 +72,9 @@ const SOCIAL_ICONS: Record<string, any> = {
             <a
               href={url}
               title={`${network}: @${username}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] transition-colors duration-300"
+              target='_blank'
+              rel='noopener noreferrer'
+              class='inline-flex items-center justify-center w-9 h-9 rounded-lg border border-[var(--color-border)] text-[var(--color-text-muted)] hover:text-[var(--color-accent-mint)] hover:border-[var(--color-accent-mint)] transition-colors duration-300'
             >
               <Icon />
             </a>
@@ -77,5 +84,5 @@ const SOCIAL_ICONS: Record<string, any> = {
     </div>
   </footer>
 
-  <KeyboardManager />
+  <KeyboardManager profiles={profiles} dict={dict} />
 </Layout>

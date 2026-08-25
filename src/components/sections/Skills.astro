@@ -1,21 +1,28 @@
 ---
-import Section from "@/components/Section.astro";
-import { skills } from "@cv";
+import Section from '@/components/Section.astro'
+import type { Dict } from '@/i18n'
 
-// Icon imports
-import FlutterIcon from "@/icons/flutter.astro";
-import ReactIcon from "@/icons/react.astro";
-import JavaScriptIcon from "@/icons/javascript.astro";
-import KotlinIcon from "@/icons/kotlin.astro";
-import SqlIcon from "@/icons/sql.astro";
-import NodeIcon from "@/icons/node.astro";
-import NextIcon from "@/icons/next.astro";
-import CssIcon from "@/icons/css.astro";
-import HtmlIcon from "@/icons/html.astro";
-import GitIcon from "@/icons/git.astro";
-import TailwindIcon from "@/icons/tailwind.astro";
-import SwiftIcon from "@/icons/swift.astro";
-import TypeIcon from "@/icons/type.astro";
+import FlutterIcon from '@/icons/flutter.astro'
+import ReactIcon from '@/icons/react.astro'
+import JavaScriptIcon from '@/icons/javascript.astro'
+import KotlinIcon from '@/icons/kotlin.astro'
+import SqlIcon from '@/icons/sql.astro'
+import NodeIcon from '@/icons/node.astro'
+import NextIcon from '@/icons/next.astro'
+import CssIcon from '@/icons/css.astro'
+import HtmlIcon from '@/icons/html.astro'
+import GitIcon from '@/icons/git.astro'
+import TailwindIcon from '@/icons/tailwind.astro'
+import SwiftIcon from '@/icons/swift.astro'
+import TypeIcon from '@/icons/type.astro'
+import AiIcon from '@/icons/ai.astro'
+
+interface Props {
+  skills: Array<{ name: string; level: string }>
+  dict: Dict
+}
+
+const { skills, dict } = Astro.props
 
 const ICON_MAP: Record<string, any> = {
   flutter: FlutterIcon,
@@ -32,65 +39,70 @@ const ICON_MAP: Record<string, any> = {
   swift: SwiftIcon,
   typescript: TypeIcon,
   type: TypeIcon,
-};
+  ai: AiIcon,
+  llm: AiIcon,
+}
 
 const LEVEL_WIDTH: Record<string, string> = {
-  "Básico": "25%",
-  "Intermedio": "50%",
-  "Avanzado": "75%",
-  "Experto": "100%",
-};
+  Básico: '25%',
+  Intermedio: '50%',
+  Avanzado: '75%',
+  Experto: '100%',
+  Basic: '25%',
+  Intermediate: '50%',
+  Advanced: '75%',
+  Expert: '100%',
+}
 
 function getIcon(name: string) {
-  const lower = name.toLowerCase();
+  const lower = name.toLowerCase()
   for (const [key, component] of Object.entries(ICON_MAP)) {
     if (lower.includes(key)) {
-      return component;
+      return component
     }
   }
-  return null;
+  return null
 }
 ---
 
-<Section title="Habilidades">
-  <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-    {skills.map(({ name, level }) => {
-      const Icon = getIcon(name);
-      const width = LEVEL_WIDTH[level] || "50%";
+<Section title={dict.sections.skills}>
+  <div class='grid grid-cols-2 md:grid-cols-3 gap-4'>
+    {
+      skills.map(({ name, level }) => {
+        const Icon = getIcon(name)
+        const width = LEVEL_WIDTH[level] || '50%'
 
-      return (
-        <div class="bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-col gap-3 hover:border-[var(--color-accent-mint)] transition-colors duration-300">
-          <!-- Icon + name -->
-          <div class="flex items-center gap-2.5 min-w-0">
-            {Icon ? (
-              <span class="text-[var(--color-accent-mint)] w-5 h-5 flex-shrink-0">
-                <Icon />
+        return (
+          <div class='bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl p-4 flex flex-col gap-3 hover:border-[var(--color-accent-mint)] transition-colors duration-300'>
+            <div class='flex items-center gap-2.5 min-w-0'>
+              {Icon ? (
+                <span class='text-[var(--color-accent-mint)] w-5 h-5 flex-shrink-0'>
+                  <Icon />
+                </span>
+              ) : (
+                <span class='w-5 h-5 flex items-center justify-center rounded bg-[var(--color-overlay)] text-[var(--color-accent-mint)] text-xs font-bold flex-shrink-0'>
+                  {name.slice(0, 2).toUpperCase()}
+                </span>
+              )}
+              <span class='text-sm font-medium text-[var(--color-text)] truncate'>
+                {name}
               </span>
-            ) : (
-              <span class="w-5 h-5 flex items-center justify-center rounded bg-[var(--color-overlay)] text-[var(--color-accent-mint)] text-xs font-bold flex-shrink-0">
-                {name.slice(0, 2).toUpperCase()}
-              </span>
-            )}
-            <span class="text-sm font-medium text-[var(--color-text)] truncate">
-              {name}
-            </span>
-          </div>
-
-          <!-- Progress bar -->
-          <div class="flex items-center gap-2">
-            <div class="flex-1 h-2 bg-[var(--color-overlay)] rounded-full overflow-hidden">
-              <div
-                class="h-full bg-[var(--color-accent-mint)] rounded-full transition-all duration-500"
-                style={{ width }}
-              >
-              </div>
             </div>
-            <span class="text-xs font-code text-[var(--color-text-muted)] whitespace-nowrap">
-              {level}
-            </span>
+
+            <div class='flex items-center gap-2'>
+              <div class='flex-1 h-2 bg-[var(--color-overlay)] rounded-full overflow-hidden'>
+                <div
+                  class='h-full bg-[var(--color-accent-mint)] rounded-full transition-all duration-500'
+                  style={{ width }}
+                />
+              </div>
+              <span class='text-xs font-code text-[var(--color-text-muted)] whitespace-nowrap'>
+                {level}
+              </span>
+            </div>
           </div>
-        </div>
-      );
-    })}
+        )
+      })
+    }
   </div>
 </Section>

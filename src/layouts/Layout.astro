@@ -1,22 +1,39 @@
 ---
 import Analytics from '@vercel/analytics/astro'
+import type { Lang } from '@/i18n'
+import { getDict } from '@/i18n'
+import '@/styles/global.css'
 
 interface Props {
   title: string
+  description: string
+  lang: Lang
 }
 
-const { title } = Astro.props
+const { title, description, lang } = Astro.props
+const dict = getDict(lang)
+
+const switcherHref = lang === 'es' ? '/en/' : '/'
+const switcherLabel = lang === 'es' ? dict.layout.switcherEn : dict.layout.switcherEs
+
+// TODO: cuando exista dominio propio, derivar hreflang desde Astro.site (URLs absolutas requeridas por Google).
+const hrefEs = '/'
+const hrefEn = '/en/'
+const hrefDefault = '/'
 ---
 
-
 <!doctype html>
-<html lang='es'>
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
-    <meta name='description' content='Portfolio de Ezequiel Menor — Desarrollador Full-Stack especializado en Flutter, React y Kotlin' />
+    <meta name='description' content={description} />
     <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' href='/letra-e.png' />
     <meta name='generator' content={Astro.generator} />
+
+    <link rel='alternate' hreflang='es' href={hrefEs} />
+    <link rel='alternate' hreflang='en' href={hrefEn} />
+    <link rel='alternate' hreflang='x-default' href={hrefDefault} />
 
     <!-- Google Fonts -->
     <link rel='preconnect' href='https://fonts.googleapis.com' />
@@ -30,27 +47,24 @@ const { title } = Astro.props
 
     <!-- Theme init — blocking to prevent FOUC -->
     <script is:inline>
-      (function () {
+      ;(function () {
         const theme =
           localStorage.getItem('theme') ||
-          (window.matchMedia('(prefers-color-scheme: light)').matches
-            ? 'light'
-            : 'dark');
+          (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
         if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
+          document.documentElement.classList.add('dark')
         }
-      })();
+      })()
     </script>
   </head>
   <body>
     <!-- Theme toggle button -->
     <button
       id='theme-toggle'
-      aria-label='Cambiar tema'
-      title='Cambiar entre modo claro y oscuro'
+      aria-label={dict.layout.themeToggle}
+      title={dict.layout.themeToggleTitle}
       class='fixed top-4 right-4 z-50 p-2 rounded-lg bg-overlay/80 dark:bg-light-surface/20 backdrop-blur-sm border border-border-color dark:border-light-surface/30 text-dark-muted dark:text-light-text/70 hover:text-mint dark:hover:text-mint transition-colors duration-300'
     >
-      <!-- Sun icon (visible in dark mode) -->
       <svg
         id='theme-icon-sun'
         class='w-5 h-5 hidden dark:block'
@@ -65,9 +79,8 @@ const { title } = Astro.props
           stroke-linecap='round'
           stroke-linejoin='round'
           d='M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z'
-        />
+        ></path>
       </svg>
-      <!-- Moon icon (visible in light mode) -->
       <svg
         id='theme-icon-moon'
         class='w-5 h-5 block dark:hidden'
@@ -82,9 +95,19 @@ const { title } = Astro.props
           stroke-linecap='round'
           stroke-linejoin='round'
           d='M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z'
-        />
+        ></path>
       </svg>
     </button>
+
+    <!-- Language switcher -->
+    <a
+      href={switcherHref}
+      hreflang={lang === 'es' ? 'en' : 'es'}
+      aria-label={switcherLabel}
+      class='print:hidden fixed top-4 right-16 z-50 px-3 py-1.5 rounded-lg bg-overlay/80 dark:bg-light-surface/20 backdrop-blur-sm border border-border-color dark:border-light-surface/30 text-dark-muted dark:text-light-text/70 hover:text-mint dark:hover:text-mint transition-colors duration-300 text-sm font-code'
+    >
+      {switcherLabel}
+    </a>
 
     <Analytics />
 
@@ -93,39 +116,6 @@ const { title } = Astro.props
 </html>
 
 <style is:global>
-  /* ============================================
-       CSS Custom Properties — Design Tokens
-     ============================================ */
-
-  :root {
-    /* Light mode — colores de acento MÁS OSCUROS para buen contraste */
-    --color-bg: #f8f9fa;
-    --color-surface: #ffffff;
-    --color-surface-2: #f0f0f5;
-    --color-text: #1a1a2e;
-    --color-text-muted: #6c7086;
-    --color-accent-mint: #0d9488;
-    --color-accent-peach: #c2410c;
-    --color-accent-blue: #1d4ed8;
-    --color-overlay: #e2e2ea;
-    --color-border: #d1d5db;
-  }
-
-  .dark {
-    /* Dark mode overrides */
-    --color-bg: #0f0f1a;
-    --color-surface: #181825;
-    --color-surface-2: #1e1e2e;
-    --color-text: #cdd6f4;
-    --color-text-muted: #6c7086;
-    --color-accent-mint: #94e2d5;
-    --color-accent-peach: #fab387;
-    --color-accent-blue: #89b4fa;
-    --color-overlay: #313244;
-    --color-border: #45475a;
-  }
-
-  /* Smooth theme transitions */
   html {
     transition: background-color 0.3s ease;
   }
@@ -146,11 +136,8 @@ const { title } = Astro.props
       box-shadow 0.3s ease;
   }
 
-  /* Base resets */
   html {
     font-family: 'Inter', system-ui, sans-serif;
-    background: var(--color-bg);
-    color: var(--color-text);
     letter-spacing: -0.025rem;
   }
 
@@ -205,14 +192,12 @@ const { title } = Astro.props
     }
   }
 
-  /* ============================================
-       Entrance Animations
-     ============================================ */
-
   .animate-on-scroll {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition:
+      opacity 0.6s ease-out,
+      transform 0.6s ease-out;
   }
 
   .animate-on-scroll.visible {
@@ -220,25 +205,23 @@ const { title } = Astro.props
     transform: translateY(0);
   }
 
-  /* ninja-keys command palette — themed */
   ninja-keys {
-    --ninja-primary-color: var(--color-accent-mint);
-    --ninja-accent-color: var(--color-accent-blue);
-    --ninja-background: var(--color-surface);
-    --ninja-text-color: var(--color-text);
-    --ninja-modal-background: var(--color-bg);
+    --ninja-primary-color: #94e2d5;
+    --ninja-accent-color: #89b4fa;
+    --ninja-background: #181825;
+    --ninja-text-color: #cdd6f4;
+    --ninja-modal-background: #0f0f1a;
     --ninja-modal-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    --ninja-search-background: var(--color-surface-2);
-    --ninja-search-color: var(--color-text);
-    --ninja-selected-background: var(--color-overlay);
-    --ninja-footer-background: var(--color-surface);
-    --ninja-placeholder-color: var(--color-text-muted);
-    --ninja-border-color: var(--color-border);
+    --ninja-search-background: #1e1e2e;
+    --ninja-search-color: #cdd6f4;
+    --ninja-selected-background: #313244;
+    --ninja-footer-background: #181825;
+    --ninja-placeholder-color: #6c7086;
+    --ninja-border-color: #45475a;
     --ninja-font: 'Inter', system-ui, sans-serif;
     --ninja-font-size: 0.875rem;
   }
 
-  /* Respect prefers-reduced-motion */
   @media (prefers-reduced-motion: reduce) {
     .animate-on-scroll {
       opacity: 1;
@@ -249,49 +232,45 @@ const { title } = Astro.props
 </style>
 
 <script is:inline>
-  // Theme toggle handler
-  (function () {
-    const toggle = document.getElementById('theme-toggle');
-    if (!toggle) return;
+  ;(function () {
+    const toggle = document.getElementById('theme-toggle')
+    if (!toggle) return
 
     toggle.addEventListener('click', () => {
-      const html = document.documentElement;
-      const isDark = html.classList.toggle('dark');
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
-  })();
+      const html = document.documentElement
+      const isDark = html.classList.toggle('dark')
+      localStorage.setItem('theme', isDark ? 'dark' : 'light')
+    })
+  })()
 
-  // Print styles — hide header/footer during print
   window.onbeforeprint = function () {
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    if (header) header.style.display = 'none';
-    if (footer) footer.style.display = 'none';
-  };
+    const header = document.querySelector('header')
+    const footer = document.querySelector('footer')
+    if (header) header.style.display = 'none'
+    if (footer) footer.style.display = 'none'
+  }
 
   window.onafterprint = function () {
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    if (header) header.style.display = '';
-    if (footer) footer.style.display = '';
-  };
-
-  // Entrance animations — Intersection Observer
-  (function () {
+    const header = document.querySelector('header')
+    const footer = document.querySelector('footer')
+    if (header) header.style.display = ''
+    if (footer) footer.style.display = ''
+  }
+  ;(function () {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+            entry.target.classList.add('visible')
           }
-        });
+        })
       },
-      { threshold: 0.1 }
-    );
+      { threshold: 0.1 },
+    )
 
     document.querySelectorAll('[data-animate="true"]').forEach((el) => {
-      el.classList.add('animate-on-scroll');
-      observer.observe(el);
-    });
-  })();
+      el.classList.add('animate-on-scroll')
+      observer.observe(el)
+    })
+  })()
 </script>

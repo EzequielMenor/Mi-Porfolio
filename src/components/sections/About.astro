@@ -1,11 +1,17 @@
 ---
-import Section from "../Section.astro";
-import { basics } from "@cv"
-const { summary } = basics
+import Section from '../Section.astro'
+import type { Dict } from '@/i18n'
+
+interface Props {
+  summary: string
+  dict: Dict
+}
+
+const { summary, dict } = Astro.props
 ---
 
-<Section title="Sobre mí">
-    <p class="text-base md:text-lg leading-relaxed text-[var(--color-text-muted)]">
-        {summary}
-    </p>
+<Section title={dict.sections.about}>
+  <p class='text-base md:text-lg leading-relaxed text-[var(--color-text-muted)]'>
+    {summary}
+  </p>
 </Section>

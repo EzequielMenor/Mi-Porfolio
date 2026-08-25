@@ -14,6 +14,7 @@ Añadir presencia de Stackd (agencia de software de Ezequiel y sus primos) en su
 ## Enfoque
 
 Mezcla entre opción 1 y 2:
+
 - Nueva entrada en `work` (Experience) como co-fundador
 - Proyecto "Stackd" en `projects` con link a stackd.codes
 - Formato sutil, sin sección dedicada — integrado en el flujo existente
