@@ -30,7 +30,10 @@ function formatYear(date: string) {
         const endYear = formatYear(endDate)
 
         return (
-          <div class='py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1'>
+          <div
+            data-stagger-item
+            class='py-4 flex flex-col sm:flex-row sm:items-baseline justify-between gap-1'
+          >
             <div>
               <h3 class='text-sm font-medium text-[var(--color-text)]'>{area}</h3>
               <p class='text-xs font-mono text-[var(--color-text-muted)]'>

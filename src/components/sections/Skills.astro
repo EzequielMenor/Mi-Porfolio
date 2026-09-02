@@ -13,7 +13,8 @@ const { skills, dict } = Astro.props
 <Section title={dict.sections.skills}>
   <div class='grid grid-cols-1 sm:grid-cols-3 gap-6 font-mono text-xs'>
     <div
-      class='space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
+      data-stagger-item
+      class='skill-card space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
     >
       <span
         class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold block'
@@ -29,7 +30,8 @@ const { skills, dict } = Astro.props
     </div>
 
     <div
-      class='space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
+      data-stagger-item
+      class='skill-card space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
     >
       <span
         class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold block'
@@ -45,7 +47,8 @@ const { skills, dict } = Astro.props
     </div>
 
     <div
-      class='space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
+      data-stagger-item
+      class='skill-card space-y-2.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
     >
       <span
         class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold block'

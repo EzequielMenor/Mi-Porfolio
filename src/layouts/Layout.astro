@@ -240,21 +240,73 @@ const hrefDefault = '/'
       })()
 
       ;(function () {
+        const reducedMotion = window.matchMedia(
+          '(prefers-reduced-motion: reduce)',
+        ).matches
+
+        // Baseline class for stagger items (sets opacity:0 + transition)
+        document.querySelectorAll('[data-stagger-item]').forEach((el) => {
+          el.classList.add('stagger-item')
+        })
+
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible')
+              if (!entry.isIntersecting) return
+              const container = entry.target
+              const items = container.querySelectorAll('[data-stagger-item]')
+              if (items.length > 0) {
+                items.forEach((item, i) => {
+                  setTimeout(() => item.classList.add('visible'), i * 80)
+                })
+              } else {
+                container.classList.add('visible')
               }
+              observer.unobserve(container)
             })
           },
           { threshold: 0.08 },
         )
 
         document.querySelectorAll('[data-animate="true"]').forEach((el) => {
-          el.classList.add('animate-on-scroll')
+          const hasStagger = el.querySelectorAll('[data-stagger-item]').length > 0
+          if (!hasStagger) {
+            el.classList.add('animate-on-scroll')
+          }
           observer.observe(el)
         })
+
+        // Hero load-based stagger
+        if (!reducedMotion) {
+          document.querySelectorAll('[data-hero-stagger]').forEach((el, i) => {
+            el.classList.add('hero-stagger-item')
+            setTimeout(() => el.classList.add('visible'), 100 + i * 120)
+          })
+        }
+
+        // Typing effect on the hero h1
+        const typingEl = document.querySelector('[data-typing-text]')
+        if (typingEl && !reducedMotion) {
+          const text = typingEl.dataset.typingText || ''
+          typingEl.textContent = ''
+          const cursor = document.createElement('span')
+          cursor.className = 'typing-cursor'
+          cursor.textContent = '|'
+          typingEl.appendChild(cursor)
+
+          let i = 0
+          const speed = 25
+          function type() {
+            if (i < text.length) {
+              typingEl.insertBefore(document.createTextNode(text[i]), cursor)
+              i++
+              setTimeout(type, speed)
+            } else {
+              setTimeout(() => cursor.remove(), 800)
+            }
+          }
+          setTimeout(type, 600)
+        }
       })()
     </script>
   </body>

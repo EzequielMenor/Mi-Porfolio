@@ -23,6 +23,7 @@ const { city, region } = location
 
 <section id='hero' class='pt-12 pb-16 space-y-6'>
   <div
+    data-hero-stagger
     class='flex items-center justify-between text-xs font-mono text-[var(--color-text-muted)] uppercase tracking-widest'
   >
     <span>{name} &mdash; Portfolio</span>
@@ -30,12 +31,16 @@ const { city, region } = location
   </div>
 
   <h1
+    data-typing-text={summary}
+    data-hero-stagger
+    aria-label={summary}
     class='font-serif text-4xl sm:text-5xl md:text-6xl text-[var(--color-text)] font-normal tracking-tight leading-[1.12]'
   >
-    {summary}
+    <noscript>{summary}</noscript>
   </h1>
 
   <div
+    data-hero-stagger
     class='flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 pt-4 border-t border-[var(--color-border)] text-[var(--color-text-muted)] text-sm'
   >
     <p class='max-w-md font-light leading-relaxed'>
@@ -49,9 +54,10 @@ const { city, region } = location
             href={url}
             target='_blank'
             rel='noopener noreferrer'
-            class='text-[var(--color-text)] hover:underline underline-offset-4 decoration-[var(--color-border-hover)] hover:decoration-[var(--color-text)] transition-colors'
+            class='link-underline text-[var(--color-text)] hover:text-[var(--color-text)] transition-colors'
           >
-            {network} &nearr;
+            {network}
+            <span class='arrow-hover'>&nearr;</span>
           </a>
         ))
       }
@@ -59,9 +65,10 @@ const { city, region } = location
         href='https://www.stackd.codes'
         target='_blank'
         rel='noopener noreferrer'
-        class='text-[var(--color-text)] hover:underline underline-offset-4 decoration-[var(--color-border-hover)] hover:decoration-[var(--color-text)] transition-colors'
+        class='link-underline text-[var(--color-text)] hover:text-[var(--color-text)] transition-colors'
       >
-        Stackd &nearr;
+        Stackd
+        <span class='arrow-hover'>&nearr;</span>
       </a>
     </div>
   </div>
