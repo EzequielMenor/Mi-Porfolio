@@ -34,11 +34,20 @@
   "work": [
     {
       "name": "Clínicas Dorsia",
-      "position": "Desarrollador de aplicaciones móviles",
+      "position": "Desarrollador de aplicaciones móviles — Prácticas",
       "url": "https://www.dorsia.es/",
       "startDate": "2026-03-01",
       "endDate": "2026-06-01",
-      "summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas en un entorno profesional.",
+      "summary": "Prácticas de desarrollo móvil con Flutter para la gestión de pacientes y clínicas.",
+      "highlights": ["Flutter", "Desarrollo móvil", "Flujos de gestión clínica"]
+    },
+    {
+      "name": "Clínicas Dorsia",
+      "position": "Desarrollador de aplicaciones móviles",
+      "url": "https://www.dorsia.es/",
+      "startDate": "2026-06-01",
+      "endDate": "2026-08-31",
+      "summary": "Continuación profesional del desarrollo de la aplicación móvil con Flutter para la gestión de pacientes y clínicas.",
       "highlights": ["Flutter", "Desarrollo móvil", "Flujos de gestión clínica"]
     },
     {

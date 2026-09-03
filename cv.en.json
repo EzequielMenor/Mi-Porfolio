@@ -34,11 +34,20 @@
   "work": [
     {
       "name": "Clínicas Dorsia",
-      "position": "Mobile Application Developer",
+      "position": "Mobile Application Developer — Internship",
       "url": "https://www.dorsia.es/",
       "startDate": "2026-03-01",
       "endDate": "2026-06-01",
-      "summary": "Developed a Flutter mobile application for patient and clinic management in a professional environment.",
+      "summary": "Mobile development internship using Flutter for patient and clinic management.",
+      "highlights": ["Flutter", "Mobile development", "Clinical management flows"]
+    },
+    {
+      "name": "Clínicas Dorsia",
+      "position": "Mobile Application Developer",
+      "url": "https://www.dorsia.es/",
+      "startDate": "2026-06-01",
+      "endDate": "2026-08-31",
+      "summary": "Continued professionally developing the Flutter mobile application for patient and clinic management.",
       "highlights": ["Flutter", "Mobile development", "Clinical management flows"]
     },
     {

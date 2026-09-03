@@ -14,14 +14,21 @@ interface Props {
     type?: string
   }>
   dict: Dict
+  locale: string
 }
 
-const { work, dict } = Astro.props
+const { work, dict, locale } = Astro.props
 const main = work.filter((w) => w.type !== 'secondary')
 const secondary = work.filter((w) => w.type === 'secondary')
 
-function formatYear(date: string) {
-  return date ? date.slice(0, 4) : ''
+function formatDate(date: string) {
+  return date
+    ? new Intl.DateTimeFormat(locale, {
+        month: 'short',
+        year: 'numeric',
+        timeZone: 'UTC',
+      }).format(new Date(`${date.slice(0, 10)}T00:00:00Z`))
+    : ''
 }
 ---
 
@@ -29,8 +36,8 @@ function formatYear(date: string) {
   <div class='divide-y divide-[var(--color-border)]'>
     {
       main.map(({ name, startDate, endDate, position, summary, highlights, url }) => {
-        const startYear = formatYear(startDate)
-        const endLabel = endDate ? formatYear(endDate) : dict.experience.present
+        const startLabel = formatDate(startDate)
+        const endLabel = endDate ? formatDate(endDate) : dict.experience.present
 
         return (
           <article
@@ -55,7 +62,7 @@ function formatYear(date: string) {
                 )}
               </p>
               <time class='text-xs font-mono text-[var(--color-text-muted)] opacity-80 block mt-1'>
-                {startYear} &mdash; {endLabel}
+                {startLabel} &mdash; {endLabel}
               </time>
             </div>
 
@@ -87,8 +94,8 @@ function formatYear(date: string) {
         </h4>
         <ul class='space-y-2'>
           {secondary.map(({ name, position, startDate, endDate }) => {
-            const startYear = formatYear(startDate)
-            const endLabel = endDate ? formatYear(endDate) : dict.experience.present
+            const startLabel = formatDate(startDate)
+            const endLabel = endDate ? formatDate(endDate) : dict.experience.present
             return (
               <li
                 data-stagger-item
@@ -99,7 +106,7 @@ function formatYear(date: string) {
                   &bull; {position}
                 </span>
                 <span>
-                  {startYear} &mdash; {endLabel}
+                  {startLabel} &mdash; {endLabel}
                 </span>
               </li>
             )
