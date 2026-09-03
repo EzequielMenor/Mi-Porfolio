@@ -19,6 +19,7 @@ interface Props {
 const { basics, dict } = Astro.props
 const { name, location, profiles, summary } = basics
 const { city, region } = location
+const cvUrl = '/CV_Ezequiel_Menor.pdf'
 ---
 
 <section id='hero' class='pt-12 pb-16 space-y-6'>
@@ -48,6 +49,13 @@ const { city, region } = location
     </p>
 
     <div class='flex flex-wrap items-center gap-4 text-xs font-mono'>
+      <a
+        href={cvUrl}
+        download
+        class='inline-flex items-center rounded-full border border-[var(--color-text)] px-3 py-1 text-[var(--color-text)] hover:bg-[var(--color-text)] hover:text-[var(--color-bg)] transition-colors'
+      >
+        {dict.hero.downloadCV}
+      </a>
       {
         profiles.map(({ network, url }) => (
           <a
@@ -61,15 +69,6 @@ const { city, region } = location
           </a>
         ))
       }
-      <a
-        href='https://www.stackd.codes'
-        target='_blank'
-        rel='noopener noreferrer'
-        class='link-underline text-[var(--color-text)] hover:text-[var(--color-text)] transition-colors'
-      >
-        Stackd
-        <span class='arrow-hover'>&nearr;</span>
-      </a>
     </div>
   </div>
 </section>

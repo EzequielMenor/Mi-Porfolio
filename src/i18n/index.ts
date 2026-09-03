@@ -14,6 +14,7 @@ export interface Dict {
   }
   hero: {
     bio: string
+    downloadCV: string
     email: string
     phone: string
     tooltips: {

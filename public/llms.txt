@@ -1,20 +1,22 @@
 # Ezequiel Menor — Portfolio
 
-Desarrollador Full-Stack ubicado en Gandía, Valencia. Especializado en Flutter, Spring Boot, Java y desarrollo web con Astro y agentes de IA.
+Desarrollador de software especializado en aplicaciones móviles y backend, ubicado en Gandía, Valencia. Construye productos full-stack con TypeScript, React Native, Java/Spring Boot, Flutter e IA aplicada.
 
 ## Tecnologías
-Flutter, Dart, Java, Spring Boot, JavaScript, TypeScript, Astro, SQL, MySQL, Agentes de IA
+TypeScript, JavaScript, React, React Native, Flutter, Dart, Java, Spring Boot, APIs REST, PostgreSQL, SQL, Git, IA aplicada al desarrollo
 
 ## Proyectos Principales
 - AIES: Harness para orquestar agentes de IA (definición de flujos, herramientas y evaluación). En desarrollo activo.
-- GymAnalytics: Sistema completo de gestión de gimnasios (app móvil en Flutter, de escritorio en Java, y backend REST en Spring Boot con MySQL). TFG de DAM con arquitectura full-stack real.
+- GymAnalytics: Plataforma full-stack de seguimiento y análisis de entrenamientos. Importa historiales de Hevy y transforma datos en métricas como 1RM, volumen y distribución muscular.
+- Stackd: Agencia de software construida por tres primos para webs, apps, SaaS, automatización con IA y mantenimiento.
 - Mi Portfolio: Este sitio, construido con Astro y Tailwind CSS, con datos desde JSON Resume.
 
 ## Experiencia
-- Stackd: Desarrollador y co-fundador de agencia de software. Construcción de webs, apps, SaaS y automatización con IA.
-- Clínicas Dorsia: Desarrollador de apps (FCT). Desarrollo de aplicación móvil con Flutter para gestión de pacientes y clínicas.
+- Clínicas Dorsia: Desarrollador de aplicaciones móviles. Desarrollo de aplicación móvil con Flutter para gestión de pacientes y clínicas en un entorno profesional.
 
 ## Contacto
-- GitHub: https://github.com/EzequielMenor
+- CV: https://ezequielmenor.es/CV_Ezequiel_Menor.pdf
 - LinkedIn: https://www.linkedin.com/in/ezequiel-menor-4a690027a/
-- Portfolio: https://ezequielemenor.es
+- GitHub: https://github.com/EzequielMenor
+- InfoJobs: https://www.infojobs.net/candidate/cv/view/index.xhtml
+- Portfolio: https://ezequielmenor.es

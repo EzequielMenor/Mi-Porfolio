@@ -10,7 +10,8 @@ export const es: Dict = {
     skills: 'Habilidades',
   },
   hero: {
-    bio: 'Graduado en DAM y co-fundador de Stackd. Desarrollo software dominando herramientas de IA, agentes autónomos y arquitecturas modernas para crear productos reales con agilidad y solidez técnica.',
+    bio: 'Construyo productos full-stack con TypeScript, React Native, Java/Spring Boot e inteligencia artificial.',
+    downloadCV: 'Descargar CV',
     email: 'Email',
     phone: 'Teléfono',
     tooltips: {
@@ -50,7 +51,7 @@ export const es: Dict = {
     switcherEs: 'ES',
     pageTitle: (name, label) => `Portfolio de ${name} - ${label}`,
     metaDescription: (name, label) =>
-      `Portfolio de ${name} — ${label} especializado en webs, apps y agentes de IA`,
+      `Portfolio de ${name} — ${label} especializado en aplicaciones móviles, backend e IA aplicada`,
   },
   footer: {
     builtWith: 'Built with',

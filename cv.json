@@ -1,28 +1,28 @@
 {
   "basics": {
     "name": "Ezequiel Menor",
-    "label": "Desarrollador de Software & IA",
+    "label": "Desarrollador de software móvil y backend",
     "image": "/mia3.jpeg",
     "email": "",
     "phone": "",
     "url": "",
-    "summary": "Desarrollador de software creando productos y sistemas potenciados por inteligencia artificial.",
+    "summary": "Desarrollador de software especializado en aplicaciones móviles y backend.",
     "location": {
       "city": "Gandía",
       "countryCode": "ES",
       "region": "Valencia"
     },
-    "techTags": ["Flutter", "Spring Boot", "Astro", "AI Agents"],
+    "techTags": ["TypeScript", "React Native", "Spring Boot", "Flutter"],
     "profiles": [
-      {
-        "network": "GitHub",
-        "username": "EzequielMenor",
-        "url": "https://github.com/EzequielMenor"
-      },
       {
         "network": "LinkedIn",
         "username": "Ezequiel Menor",
         "url": "https://www.linkedin.com/in/ezequiel-menor-4a690027a/"
+      },
+      {
+        "network": "GitHub",
+        "username": "EzequielMenor",
+        "url": "https://github.com/EzequielMenor"
       },
       {
         "network": "InfoJobs",
@@ -34,12 +34,12 @@
   "work": [
     {
       "name": "Clínicas Dorsia",
-      "position": "Desarrollador de apps (FCT)",
-      "url": "https://www.clinicasdorsia.com/",
+      "position": "Desarrollador de aplicaciones móviles",
+      "url": "https://www.dorsia.es/",
       "startDate": "2026-03-01",
-      "endDate": null,
-      "summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas.",
-      "highlights": ["Desarrollo móvil con Flutter", "App en producción"]
+      "endDate": "2026-06-01",
+      "summary": "Desarrollo de aplicación móvil con Flutter para la gestión de pacientes y clínicas en un entorno profesional.",
+      "highlights": ["Flutter", "Desarrollo móvil", "Flujos de gestión clínica"]
     },
     {
       "name": "Antica",
@@ -81,34 +81,34 @@
   ],
   "skills": [
     {
-      "name": "Flutter & Dart",
+      "name": "TypeScript & JavaScript",
       "level": "Intermedio",
-      "keywords": ["Desarrollo Móvil", "Frontend", "Multiplataforma"]
+      "keywords": ["Frontend", "Backend", "Desarrollo web"]
+    },
+    {
+      "name": "React & React Native",
+      "level": "Intermedio",
+      "keywords": ["Frontend", "Aplicaciones móviles", "TypeScript"]
     },
     {
       "name": "Java & Spring Boot",
       "level": "Intermedio",
-      "keywords": ["Backend", "API REST", "Microservicios"]
+      "keywords": ["Backend", "API REST", "Arquitectura"]
     },
     {
-      "name": "JavaScript & TypeScript",
+      "name": "Flutter & Dart",
       "level": "Intermedio",
-      "keywords": ["Desarrollo Web", "Frontend", "Backend"]
+      "keywords": ["Desarrollo móvil", "Multiplataforma", "Frontend"]
     },
     {
-      "name": "Astro & Next.js",
-      "level": "Básico",
-      "keywords": ["Desarrollo Web", "Frontend", "SSR", "SSG"]
-    },
-    {
-      "name": "SQL & Bases de Datos",
+      "name": "PostgreSQL & SQL",
       "level": "Intermedio",
-      "keywords": ["MySQL", "PostgreSQL", "MongoDB"]
+      "keywords": ["Bases de datos", "Modelado de datos", "Consultas SQL"]
     },
     {
-      "name": "AI & LLMs",
+      "name": "IA aplicada al desarrollo",
       "level": "Intermedio",
-      "keywords": ["Agentes IA", "Harness", "Prompting"]
+      "keywords": ["LLMs", "Agentes IA", "Prompting"]
     }
   ],
   "languages": [
@@ -149,8 +149,15 @@
       "name": "GymAnalytics",
       "isActive": true,
       "featured": true,
-      "description": "Aplicación completa para gestión de gimnasios: app móvil + escritorio + backend. Desarrollada como TFG de DAM con una arquitectura full-stack real.",
-      "highlights": ["Flutter", "Spring Boot", "Java", "App Móvil", "API REST", "MySQL"],
+      "description": "Plataforma full-stack de seguimiento y análisis de entrenamientos. Importa historiales de Hevy y transforma datos en métricas como 1RM, volumen y distribución muscular.",
+      "highlights": [
+        "Flutter",
+        "Spring Boot",
+        "Java",
+        "REST API",
+        "PostgreSQL",
+        "Hevy CSV"
+      ],
       "repos": {
         "mobile": "https://github.com/EzequielMenor/AppTFG",
         "desktop": "https://github.com/EzequielMenor/DesktopTFG",

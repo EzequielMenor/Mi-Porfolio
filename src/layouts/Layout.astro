@@ -45,24 +45,24 @@ const hrefDefault = '/'
     <title>{title}</title>
 
     <!-- Canonical URL -->
-    <link rel='canonical' href={`https://ezequielemenor.es${Astro.url.pathname}`} />
+    <link rel='canonical' href={`https://ezequielmenor.es${Astro.url.pathname}`} />
 
     <!-- Open Graph / Facebook -->
     <meta property='og:type' content='website' />
-    <meta property='og:url' content={`https://ezequielemenor.es${Astro.url.pathname}`} />
+    <meta property='og:url' content={`https://ezequielmenor.es${Astro.url.pathname}`} />
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
-    <meta property='og:image' content='https://ezequielemenor.es/Mi-porfolio2.png' />
+    <meta property='og:image' content='https://ezequielmenor.es/Mi-porfolio2.png' />
 
     <!-- Twitter -->
     <meta property='twitter:card' content='summary_large_image' />
     <meta
       property='twitter:url'
-      content={`https://ezequielemenor.es${Astro.url.pathname}`}
+      content={`https://ezequielmenor.es${Astro.url.pathname}`}
     />
     <meta property='twitter:title' content={title} />
     <meta property='twitter:description' content={description} />
-    <meta property='twitter:image' content='https://ezequielemenor.es/Mi-porfolio2.png' />
+    <meta property='twitter:image' content='https://ezequielmenor.es/Mi-porfolio2.png' />
 
     <!-- JSON-LD Structured Data -->
     <script
@@ -72,17 +72,17 @@ const hrefDefault = '/'
         '@graph': [
           {
             '@type': 'Person',
-            '@id': 'https://ezequielemenor.es/#person',
+            '@id': 'https://ezequielmenor.es/#person',
             name: 'Ezequiel Menor',
-            url: 'https://ezequielemenor.es',
+            url: 'https://ezequielmenor.es',
             jobTitle:
               lang === 'es'
-                ? 'Desarrollador de Software & IA'
-                : 'Software & AI Developer',
+                ? 'Desarrollador de software móvil y backend'
+                : 'Mobile and backend software developer',
             description:
               lang === 'es'
-                ? 'Desarrollador Full-Stack especializado en Flutter, Spring Boot, TypeScript y Agentes de IA.'
-                : 'Full-Stack Developer specialized in Flutter, Spring Boot, TypeScript and AI Agents.',
+                ? 'Desarrollador de software especializado en aplicaciones móviles, backend e IA aplicada.'
+                : 'Software developer specialized in mobile applications, backend and applied AI.',
             sameAs: [
               'https://github.com/EzequielMenor',
               'https://www.linkedin.com/in/ezequiel-menor-4a690027a/',
@@ -92,20 +92,15 @@ const hrefDefault = '/'
               'Dart',
               'Java',
               'Spring Boot',
+              'React Native',
               'JavaScript',
               'TypeScript',
               'Astro',
               'SQL',
-              'MySQL',
+              'PostgreSQL',
+              'REST APIs',
               'AI Agents',
               'LLMs',
-            ],
-            worksFor: [
-              {
-                '@type': 'Organization',
-                name: 'Clínicas Dorsia',
-                url: 'https://www.clinicasdorsia.com/',
-              },
             ],
             address: {
               '@type': 'PostalAddress',
@@ -116,10 +111,10 @@ const hrefDefault = '/'
           },
           {
             '@type': 'WebSite',
-            '@id': 'https://ezequielemenor.es/#website',
+            '@id': 'https://ezequielmenor.es/#website',
             name: 'Ezequiel Menor — Portfolio',
-            url: 'https://ezequielemenor.es',
-            author: { '@id': 'https://ezequielemenor.es/#person' },
+            url: 'https://ezequielmenor.es',
+            author: { '@id': 'https://ezequielmenor.es/#person' },
           },
         ],
       })}
