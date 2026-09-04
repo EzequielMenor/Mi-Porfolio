@@ -3,19 +3,21 @@
 Desarrollador de software especializado en aplicaciones móviles y backend, ubicado en Gandía, Valencia. Construye productos full-stack con TypeScript, React Native, Java/Spring Boot, Flutter e IA aplicada.
 
 ## Tecnologías
-TypeScript, JavaScript, React, React Native, Flutter, Dart, Java, Spring Boot, APIs REST, PostgreSQL, SQL, Git, IA aplicada al desarrollo
+TypeScript, JavaScript, React, React Native, Expo, Flutter, Dart, Java, Spring Boot, APIs REST, PostgreSQL, SQLite, SQL, Git, IA aplicada al desarrollo
 
 ## Proyectos Principales
+- CoreOS: Sistema personal local-first ("Capture first. Organize later"). Permite capturar pensamientos en texto libre y persistirlos en SQLite antes de clasificarlos y organizarlos automáticamente mediante IA en notas, tareas, gastos, hábitos y sueño. Sin backend ni cuentas de usuario. (Web: https://coreos.ezequielmenor.es | GitHub: https://github.com/EzequielMenor/CoreOS)
 - AIES: Harness para orquestar agentes de IA (definición de flujos, herramientas y evaluación). En desarrollo activo.
-- GymAnalytics: Plataforma full-stack de seguimiento y análisis de entrenamientos. Importa historiales de Hevy y transforma datos en métricas como 1RM, volumen y distribución muscular.
 - Stackd: Agencia de software construida por tres primos para webs, apps, SaaS, automatización con IA y mantenimiento.
+- GymAnalytics: Plataforma full-stack de seguimiento y análisis de entrenamientos desarrollada como TFG de DAM (app móvil en Flutter, escritorio en Java, backend en Spring Boot con PostgreSQL).
 - Mi Portfolio: Este sitio, construido con Astro y Tailwind CSS, con datos desde JSON Resume.
 
 ## Experiencia
 - Clínicas Dorsia: Desarrollador de aplicaciones móviles. Desarrollo de aplicación móvil con Flutter para gestión de pacientes y clínicas en un entorno profesional.
 
 ## Contacto
-- CV: https://ezequielmenor.es/CV_Ezequiel_Menor.pdf
+- CV (ES): https://ezequielmenor.es/CV_Ezequiel_Menor.pdf
+- CV (EN): https://ezequielmenor.es/CV_Ezequiel_Menor_EN.pdf
 - LinkedIn: https://www.linkedin.com/in/ezequiel-menor-4a690027a/
 - GitHub: https://github.com/EzequielMenor
 - InfoJobs: https://www.infojobs.net/candidate/cv/view/index.xhtml

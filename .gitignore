@@ -27,3 +27,4 @@ openspec/
 .DS_Store
 .vercel
 .env*
+.cursor/

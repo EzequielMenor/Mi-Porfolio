@@ -93,11 +93,13 @@ const hrefDefault = '/'
               'Java',
               'Spring Boot',
               'React Native',
+              'Expo',
               'JavaScript',
               'TypeScript',
               'Astro',
               'SQL',
               'PostgreSQL',
+              'SQLite',
               'REST APIs',
               'AI Agents',
               'LLMs',
@@ -108,6 +110,20 @@ const hrefDefault = '/'
               addressRegion: 'Valencia',
               addressCountry: 'ES',
             },
+          },
+          {
+            '@type': 'SoftwareApplication',
+            '@id': 'https://coreos.ezequielmenor.es/#app',
+            name: 'CoreOS',
+            headline: 'CoreOS — Capture first. Organize later.',
+            description:
+              lang === 'es'
+                ? 'Sistema personal local-first para capturar cualquier pensamiento en texto libre y organizarlo posteriormente mediante IA, sin perder nunca el contenido original.'
+                : 'A local-first personal operating system for capturing thoughts freely and organizing them later with AI, while keeping the original content safe on device.',
+            url: 'https://coreos.ezequielmenor.es',
+            applicationCategory: 'ProductivityApplication',
+            operatingSystem: 'iOS, Android',
+            author: { '@id': 'https://ezequielmenor.es/#person' },
           },
           {
             '@type': 'WebSite',

@@ -19,7 +19,8 @@ interface Props {
 const { basics, dict } = Astro.props
 const { name, location, profiles, summary } = basics
 const { city, region } = location
-const cvUrl = '/CV_Ezequiel_Menor.pdf'
+const isEnglish = Astro.url.pathname.startsWith('/en') || dict.layout.switcherEn === 'ES'
+const cvUrl = isEnglish ? '/CV_Ezequiel_Menor_EN.pdf' : '/CV_Ezequiel_Menor.pdf'
 ---
 
 <section id='hero' class='pt-12 pb-16 space-y-6'>

@@ -32,9 +32,14 @@ export interface Dict {
   }
   projects: {
     featured: string
+    coreosTag: string
     aiesTag: string
     stackdTag: string
     tfgTag: string
+    otherProjects: string
+    visitWebsite: string
+    visitCoreos: string
+    repoSource: string
     repoMobile: string
     repoDesktop: string
     repoBackend: string

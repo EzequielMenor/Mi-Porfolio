@@ -128,6 +128,26 @@
   ],
   "projects": [
     {
+      "name": "CoreOS",
+      "isActive": true,
+      "featured": true,
+      "description": "A local-first personal operating system for capturing thoughts freely and organizing them later with AI, while keeping the original content safe on device.",
+      "highlights": [
+        "React Native / Expo",
+        "Local-first · SQLite",
+        "AI classification",
+        "No backend or accounts"
+      ],
+      "cvHighlights": [
+        "Built a local-first mobile app for capturing free-form text and automatically organizing it through AI classification.",
+        "Designed the persistence flow so raw input is stored in SQLite before AI processing, preventing data loss on failure."
+      ],
+      "url": "https://coreos.ezequielmenor.es",
+      "repos": {
+        "repo": "https://github.com/EzequielMenor/CoreOS"
+      }
+    },
+    {
       "name": "AIES",
       "isActive": true,
       "featured": true,
@@ -149,17 +169,11 @@
     },
     {
       "name": "GymAnalytics",
-      "isActive": true,
-      "featured": true,
-      "description": "Full-stack workout tracking and analytics platform. It imports Hevy histories and turns training data into metrics such as 1RM, volume and muscle distribution.",
-      "highlights": [
-        "Flutter",
-        "Spring Boot",
-        "Java",
-        "REST API",
-        "PostgreSQL",
-        "Hevy CSV"
-      ],
+      "isActive": false,
+      "featured": false,
+      "description": "Full-stack workout tracking and analytics platform built as higher degree thesis (DAM). Mobile app in Flutter, desktop in Java, and REST backend in Spring Boot with PostgreSQL.",
+      "highlights": ["DAM Thesis", "Flutter", "Spring Boot", "Java", "PostgreSQL"],
+      "url": "https://github.com/EzequielMenor/AppTFG",
       "repos": {
         "mobile": "https://github.com/EzequielMenor/AppTFG",
         "desktop": "https://github.com/EzequielMenor/DesktopTFG",

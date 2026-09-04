@@ -9,7 +9,7 @@ interface Props {
     highlights: string[]
     featured?: boolean
     url?: string
-    repos?: { mobile?: string; desktop?: string; backend?: string }
+    repos?: { mobile?: string; desktop?: string; backend?: string; repo?: string }
   }>
   dict: Dict
 }
@@ -49,15 +49,17 @@ const other = projects.filter((p) => !p.featured)
               )}
             </h3>
             <span class='text-xs font-mono text-[var(--color-text-muted)] mt-1 flex items-center gap-1.5'>
-              {name === 'AIES' && (
+              {(name === 'CoreOS' || name === 'AIES') && (
                 <span class='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block' />
               )}
               <span>
-                {name === 'AIES'
-                  ? dict.projects.aiesTag
-                  : name === 'Stackd'
-                    ? dict.projects.stackdTag
-                    : dict.projects.tfgTag}
+                {name === 'CoreOS'
+                  ? dict.projects.coreosTag
+                  : name === 'AIES'
+                    ? dict.projects.aiesTag
+                    : name === 'Stackd'
+                      ? dict.projects.stackdTag
+                      : dict.projects.tfgTag}
               </span>
             </span>
           </div>
@@ -84,7 +86,19 @@ const other = projects.filter((p) => !p.featured)
                     rel='noopener noreferrer'
                     class='font-medium text-[var(--color-text)] underline underline-offset-4 decoration-[var(--color-border)] hover:decoration-[var(--color-text)] transition-colors'
                   >
-                    Sitio web &nearr;
+                    {name === 'CoreOS'
+                      ? dict.projects.visitCoreos
+                      : dict.projects.visitWebsite}
+                  </a>
+                )}
+                {repos?.repo && (
+                  <a
+                    href={repos.repo}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors'
+                  >
+                    {dict.projects.repoSource}
                   </a>
                 )}
                 {repos?.mobile && (
@@ -129,7 +143,7 @@ const other = projects.filter((p) => !p.featured)
     other.length > 0 && (
       <div class='pt-6 border-t border-[var(--color-border)] mt-4'>
         <h4 class='text-xs font-mono uppercase tracking-widest text-[var(--color-text-muted)] mb-4'>
-          Otros Proyectos
+          {dict.projects.otherProjects}
         </h4>
         <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
           {other.map(({ name, description, highlights, url }) => (

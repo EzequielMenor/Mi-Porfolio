@@ -132,6 +132,26 @@
   ],
   "projects": [
     {
+      "name": "CoreOS",
+      "isActive": true,
+      "featured": true,
+      "description": "Sistema personal local-first para capturar cualquier pensamiento en texto libre y organizarlo posteriormente mediante IA, sin perder nunca el contenido original.",
+      "highlights": [
+        "React Native / Expo",
+        "Local-first · SQLite",
+        "Clasificación con IA",
+        "Sin backend ni cuentas"
+      ],
+      "cvHighlights": [
+        "Desarrollé una app móvil local-first para capturar notas en texto libre y clasificarlas automáticamente con IA.",
+        "Diseñé la persistencia para almacenar el texto en SQLite antes de procesar con IA, evitando pérdida de datos ante fallos."
+      ],
+      "url": "https://coreos.ezequielmenor.es",
+      "repos": {
+        "repo": "https://github.com/EzequielMenor/CoreOS"
+      }
+    },
+    {
       "name": "AIES",
       "isActive": true,
       "featured": true,
@@ -156,17 +176,11 @@
     },
     {
       "name": "GymAnalytics",
-      "isActive": true,
-      "featured": true,
-      "description": "Plataforma full-stack de seguimiento y análisis de entrenamientos. Importa historiales de Hevy y transforma datos en métricas como 1RM, volumen y distribución muscular.",
-      "highlights": [
-        "Flutter",
-        "Spring Boot",
-        "Java",
-        "REST API",
-        "PostgreSQL",
-        "Hevy CSV"
-      ],
+      "isActive": false,
+      "featured": false,
+      "description": "Plataforma full-stack de seguimiento y análisis de entrenamientos desarrollada como TFG de DAM. App móvil en Flutter, escritorio en Java y backend REST en Spring Boot con PostgreSQL.",
+      "highlights": ["TFG DAM", "Flutter", "Spring Boot", "Java", "PostgreSQL"],
+      "url": "https://github.com/EzequielMenor/AppTFG",
       "repos": {
         "mobile": "https://github.com/EzequielMenor/AppTFG",
         "desktop": "https://github.com/EzequielMenor/DesktopTFG",
