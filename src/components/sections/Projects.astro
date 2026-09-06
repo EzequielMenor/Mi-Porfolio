@@ -17,6 +17,8 @@ interface Props {
 const { projects, dict } = Astro.props
 const featured = projects.filter((p) => p.featured)
 const other = projects.filter((p) => !p.featured)
+const isEn = Astro.url.pathname.startsWith('/en')
+const caseStudySlugs: Record<string, string> = { CoreOS: 'coreos', AIES: 'aies' }
 ---
 
 <Section title={dict.sections.projects} subtitle='2024 — 2026'>
@@ -79,12 +81,20 @@ const other = projects.filter((p) => !p.featured)
               </div>
 
               <div class='flex items-center gap-3'>
+                {caseStudySlugs[name] && (
+                  <a
+                    href={`${isEn ? '/en' : ''}/case-studies/${caseStudySlugs[name]}/`}
+                    class='font-medium text-[var(--color-text)] underline underline-offset-4 decoration-[var(--color-border)] hover:decoration-[var(--color-text)] transition-colors'
+                  >
+                    {dict.projects.caseStudy}
+                  </a>
+                )}
                 {url && (
                   <a
                     href={url}
                     target='_blank'
                     rel='noopener noreferrer'
-                    class='font-medium text-[var(--color-text)] underline underline-offset-4 decoration-[var(--color-border)] hover:decoration-[var(--color-text)] transition-colors'
+                    class='font-medium text-[var(--color-text-muted)] hover:text-[var(--color-text)] underline underline-offset-4 decoration-[var(--color-border)] hover:decoration-[var(--color-text)] transition-colors'
                   >
                     {name === 'CoreOS'
                       ? dict.projects.visitCoreos

@@ -1,0 +1,17 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import CaseStudy from '@/components/CaseStudy.astro'
+import { caseStudies, caseStudySlugs } from '@/data/case-studies'
+import { getDict } from '@/i18n'
+
+export function getStaticPaths() {
+  return caseStudySlugs.map((slug) => ({ params: { project: slug } }))
+}
+
+const dict = getDict('en')
+const study = caseStudies.en[Astro.params.project as (typeof caseStudySlugs)[number]]
+---
+
+<Layout title={study.meta.title} description={study.meta.description} lang='en'>
+  <CaseStudy study={study} dict={dict} base='/en' />
+</Layout>

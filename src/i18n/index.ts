@@ -44,6 +44,19 @@ export interface Dict {
     repoMobile: string
     repoDesktop: string
     repoBackend: string
+    caseStudy: string
+  }
+  caseStudy: {
+    kicker: string
+    back: string
+    problem: string
+    decisions: string
+    built: string
+    tradeoff: string
+    state: string
+    stack: string
+    links: string
+    bridge: string
   }
   workflow: {
     kicker: string

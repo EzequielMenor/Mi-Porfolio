@@ -16,9 +16,12 @@ const dict = getDict(lang)
 const switcherHref = lang === 'es' ? '/en/' : '/'
 const switcherLabel = lang === 'es' ? dict.layout.switcherEn : dict.layout.switcherEs
 
-const hrefEs = '/'
-const hrefEn = '/en/'
-const hrefDefault = '/'
+// Alternates por idioma relativos a la ruta actual (home y case studies)
+const basePath =
+  lang === 'en' ? Astro.url.pathname.replace(/^\/en\/?/, '/') || '/' : Astro.url.pathname
+const hrefEs = basePath
+const hrefEn = basePath === '/' ? '/en/' : `/en${basePath}`
+const hrefDefault = hrefEs
 ---
 
 <!doctype html>

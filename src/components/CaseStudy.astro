@@ -1,0 +1,171 @@
+---
+import Section from '@/components/Section.astro'
+import type { CaseStudyContent } from '@/data/case-studies'
+import type { Dict } from '@/i18n'
+
+interface Props {
+  study: CaseStudyContent
+  dict: Dict
+  base: string
+}
+
+const { study, dict, base } = Astro.props
+const cs = dict.caseStudy
+---
+
+<main class='px-6 mx-auto w-full max-w-3xl pb-20'>
+  <a
+    href={`${base}/#projects`}
+    class='inline-block mt-8 mb-8 text-xs font-mono text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors'
+  >
+    {cs.back}
+  </a>
+
+  <article data-animate='true' class='space-y-4'>
+    <!-- Cabecera -->
+    <header class='space-y-3 mb-10'>
+      <span
+        class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold font-mono block'
+      >
+        {cs.kicker}
+      </span>
+      <h1 class='font-serif text-4xl tracking-tight text-[var(--color-text)]'>
+        {study.name}
+      </h1>
+      <p class='text-sm text-[var(--color-text-muted)] italic font-serif'>
+        {study.tagline}
+      </p>
+      <p
+        class='flex items-center gap-1.5 text-xs font-mono text-[var(--color-text-muted)]'
+      >
+        <span class='w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block'
+        ></span>
+        {study.status}
+      </p>
+      <div class='flex flex-wrap gap-2 pt-1'>
+        {
+          study.stack.map((s) => (
+            <span class='text-[var(--color-text-muted)] bg-[var(--color-surface-2)] px-2 py-0.5 rounded border border-[var(--color-border)] text-[11px] font-mono'>
+              {s}
+            </span>
+          ))
+        }
+      </div>
+    </header>
+
+    <!-- Screenshots -->
+    {
+      study.screenshots && (
+        <div data-stagger-item class='grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10'>
+          {study.screenshots.map((shot) => (
+            <figure class='space-y-1.5'>
+              <img
+                src={shot.src}
+                alt={shot.alt}
+                loading='lazy'
+                class='w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-surface)]'
+              />
+              <figcaption class='text-[10px] font-mono text-[var(--color-text-muted)] leading-snug'>
+                {shot.caption}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )
+    }
+
+    <!-- Problema -->
+    <Section title={cs.problem}>
+      <p
+        data-stagger-item
+        class='text-sm leading-relaxed text-[var(--color-text)] max-w-2xl'
+      >
+        {study.problem}
+      </p>
+    </Section>
+
+    <!-- Decisiones técnicas clave -->
+    <Section title={cs.decisions}>
+      <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+        {
+          study.decisions.map((d, i) => (
+            <div
+              data-stagger-item
+              class='skill-card space-y-1.5 p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
+            >
+              <span class='font-mono text-[10px] text-[var(--color-text-muted)] block'>
+                0{i + 1}
+              </span>
+              <h3 class='text-xs font-semibold text-[var(--color-text)]'>{d.title}</h3>
+              <p class='text-[11px] leading-snug text-[var(--color-text-muted)]'>
+                {d.text}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </Section>
+
+    <!-- Qué construí realmente -->
+    <Section title={cs.built}>
+      <ul data-stagger-item class='space-y-2 text-sm text-[var(--color-text)] max-w-2xl'>
+        {
+          study.built.map((item) => (
+            <li class='flex gap-2.5 leading-relaxed'>
+              <span class='text-[var(--color-text-muted)] shrink-0'>—</span>
+              <span>{item}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </Section>
+
+    <!-- Trade-off -->
+    <Section title={cs.tradeoff}>
+      <div
+        data-stagger-item
+        class='p-4 rounded-lg bg-[var(--color-surface-2)] border border-[var(--color-border)] border-l-2'
+      >
+        <p class='text-sm leading-relaxed text-[var(--color-text)] max-w-2xl'>
+          {study.tradeoff}
+        </p>
+      </div>
+    </Section>
+
+    <!-- Estado actual -->
+    <Section title={cs.state}>
+      <p
+        data-stagger-item
+        class='text-sm leading-relaxed text-[var(--color-text-muted)] max-w-2xl'
+      >
+        {study.state}
+      </p>
+    </Section>
+
+    <!-- Enlaces + puente al workflow -->
+    <Section title={cs.links}>
+      <div data-stagger-item class='space-y-4'>
+        <div class='flex flex-wrap gap-4 font-mono text-xs'>
+          {
+            study.links.map((link) => (
+              <a
+                href={link.url}
+                target='_blank'
+                rel='noopener noreferrer'
+                class='link-underline text-[var(--color-text)]'
+              >
+                {link.label} <span class='arrow-hover'>↗</span>
+              </a>
+            ))
+          }
+        </div>
+        <p class='text-xs leading-relaxed text-[var(--color-text-muted)] max-w-2xl'>
+          {study.workflowNote}
+          <a href={`${base}/#engineering-workflow`} class='link-underline font-mono ml-1'>
+            {cs.bridge}
+          </a>
+        </p>
+      </div>
+    </Section>
+  </article>
+</main>
