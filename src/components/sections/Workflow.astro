@@ -1,0 +1,268 @@
+---
+import Section from '@/components/Section.astro'
+import type { Dict } from '@/i18n'
+
+interface Props {
+  dict: Dict
+}
+
+const { dict } = Astro.props
+const w = dict.workflow
+
+// Agrupación canónica de las 10 etapas en 3 fases (docs/engineering-workflow/01-mensaje.md §3)
+const PHASE_GROUPS = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8, 9],
+]
+---
+
+<Section title={w.title} subtitle={w.kicker}>
+  <div class='space-y-10'>
+    <!-- Intro + claim -->
+    <div data-stagger-item class='space-y-1.5 max-w-2xl'>
+      <p class='text-sm text-[var(--color-text)]'>{w.intro}</p>
+      <p class='text-sm text-[var(--color-text-muted)]'>{w.claim}</p>
+    </div>
+
+    <!-- El flujo de un vistazo -->
+    <div data-stagger-item class='space-y-2'>
+      <span
+        class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold font-mono block'
+      >
+        {w.flowLabel}
+      </span>
+      <ol
+        class='flex flex-wrap items-center gap-y-2 font-mono text-[11px]'
+        aria-label={w.flowLabel}
+      >
+        {
+          w.stages.map((stage, i) => (
+            <li class='flex items-center'>
+              <span class='px-2 py-1 rounded border border-[var(--color-border)] bg-[var(--color-surface)] text-[var(--color-text)] whitespace-nowrap'>
+                {stage.name}
+              </span>
+              {i < w.stages.length - 1 && (
+                <span class='px-1.5 text-[var(--color-text-muted)]' aria-hidden='true'>
+                  →
+                </span>
+              )}
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+
+    <!-- Explicación por etapas: 3 fases -->
+    <div class='grid grid-cols-1 md:grid-cols-3 gap-4 items-start'>
+      {
+        PHASE_GROUPS.map((group, phaseIdx) => (
+          <div
+            data-stagger-item
+            class='skill-card p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)]'
+          >
+            <span class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold font-mono block'>
+              0{phaseIdx + 1}. {w.phases[phaseIdx].name}
+            </span>
+            <p class='mt-1 mb-3.5 text-[11px] text-[var(--color-text-muted)] italic'>
+              {w.phases[phaseIdx].question}
+            </p>
+            <ol class='space-y-3'>
+              {group.map((stageIdx) => (
+                <li class='flex gap-2.5'>
+                  <span class='font-mono text-[10px] text-[var(--color-text-muted)] pt-0.5 shrink-0'>
+                    {String(stageIdx + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <span class='block text-xs font-semibold text-[var(--color-text)]'>
+                      {w.stages[stageIdx].name}
+                    </span>
+                    <span class='block text-[11px] leading-snug text-[var(--color-text-muted)]'>
+                      {w.stages[stageIdx].desc}
+                    </span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))
+      }
+    </div>
+
+    <!-- IA con criterio -->
+    <div
+      data-stagger-item
+      class='skill-card p-5 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] space-y-5'
+    >
+      <div class='space-y-1.5'>
+        <h3 class='font-serif text-lg tracking-tight text-[var(--color-text)]'>
+          {w.aiTitle}
+        </h3>
+        <p class='text-xs leading-relaxed text-[var(--color-text-muted)] max-w-2xl'>
+          {w.aiIntro}
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-[11px]'>
+        <div
+          class='p-3.5 rounded-lg bg-[var(--color-surface-2)] border border-[var(--color-border)]'
+        >
+          <span
+            class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold block mb-2'
+          >
+            {w.delegateTitle}
+          </span>
+          <ul class='space-y-1 text-[var(--color-text)]'>
+            {
+              w.delegate.map((item) => (
+                <li class='flex gap-2'>
+                  <span class='text-[var(--color-text-muted)]'>→</span>
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div
+          class='p-3.5 rounded-lg bg-[var(--color-surface-2)] border border-[var(--color-border)]'
+        >
+          <span
+            class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold block mb-2'
+          >
+            {w.dontDelegateTitle}
+          </span>
+          <ul class='space-y-1 text-[var(--color-text)]'>
+            {
+              w.dontDelegate.map((item) => (
+                <li class='flex gap-2'>
+                  <span class='text-[var(--color-text-muted)]'>×</span>
+                  {item}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+
+      <div class='border-t border-[var(--color-border)] pt-4'>
+        <span
+          class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold font-mono block mb-2'
+        >
+          {w.rulesTitle}
+        </span>
+        <ol class='grid grid-cols-1 sm:grid-cols-3 gap-3 font-mono text-[11px]'>
+          {
+            w.rules.map((rule, i) => (
+              <li class='flex gap-2 text-[var(--color-text)]'>
+                <span class='text-[var(--color-text-muted)] shrink-0'>R{i + 1}</span>
+                <span class='leading-snug'>{rule}</span>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+
+    <!-- Evidencia real -->
+    <div data-stagger-item class='space-y-3'>
+      <div class='space-y-1'>
+        <span
+          class='text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] font-semibold font-mono block'
+        >
+          {w.evidenceTitle}
+        </span>
+        <p class='text-[11px] leading-snug text-[var(--color-text-muted)] max-w-2xl'>
+          {w.evidenceIntro}
+        </p>
+      </div>
+
+      <!-- Ejemplo trazable completo: Ticket → Branch → PR → Checks → Merge -->
+      <div
+        class='skill-card p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] space-y-3.5'
+      >
+        <span class='block text-xs font-semibold font-mono text-[var(--color-text)]'>
+          {w.example.title}
+        </span>
+        <ol class='grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-3'>
+          {
+            w.example.steps.map((step, i) => (
+              <li class='relative space-y-1'>
+                {i < w.example.steps.length - 1 && (
+                  <span
+                    class='hidden sm:block absolute top-1/2 -right-2.5 -translate-y-1/2 text-[var(--color-text-muted)] text-xs'
+                    aria-hidden='true'
+                  >
+                    →
+                  </span>
+                )}
+                <span class='flex items-baseline gap-1.5'>
+                  <span class='font-mono text-[10px] text-[var(--color-text-muted)]'>
+                    0{i + 1}
+                  </span>
+                  <span class='font-mono text-[11px] font-semibold text-[var(--color-text)] uppercase tracking-wide'>
+                    {step.label}
+                  </span>
+                </span>
+                <span class='block text-[11px] leading-snug text-[var(--color-text-muted)]'>
+                  {step.text}
+                </span>
+                <a
+                  href={step.link.url}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  class='link-underline font-mono text-[11px] text-[var(--color-text)]'
+                >
+                  {step.link.label} <span class='arrow-hover'>↗</span>
+                </a>
+              </li>
+            ))
+          }
+        </ol>
+        <p
+          class='text-[11px] leading-snug text-[var(--color-text)] border-t border-[var(--color-border)] pt-3'
+        >
+          {w.example.sentence}
+        </p>
+      </div>
+
+      <div class='grid grid-cols-1 sm:grid-cols-2 gap-4'>
+        {
+          w.evidence.map((item) => (
+            <div class='skill-card p-4 rounded-lg bg-[var(--color-surface)] border border-[var(--color-border)] space-y-2'>
+              <span class='block text-xs font-semibold font-mono text-[var(--color-text)]'>
+                {item.name}
+              </span>
+              <p class='text-[11px] leading-snug text-[var(--color-text-muted)]'>
+                {item.text}
+              </p>
+              <div class='flex flex-wrap gap-3 font-mono text-[11px]'>
+                {item.links.map((link) => (
+                  <a
+                    href={link.url}
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    class='link-underline text-[var(--color-text)]'
+                  >
+                    {link.label} <span class='arrow-hover'>↗</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Cierre -->
+    <div data-stagger-item class='space-y-2'>
+      <p class='text-sm text-[var(--color-text)]'>
+        {w.closing}
+        <a href='#projects' class='link-underline font-mono text-xs ml-1'>
+          {w.closingLink}
+          <span class='arrow-hover'>→</span>
+        </a>
+      </p>
+      <p class='text-[10px] font-mono text-[var(--color-text-muted)]'>{w.toolsNote}</p>
+    </div>
+  </div>
+</Section>

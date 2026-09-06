@@ -7,6 +7,7 @@ and English (CV_Ezequiel_Menor_EN.pdf) based on cv.json and cv.en.json.
 
 import json
 import os
+import re
 import shutil
 from pathlib import Path
 from pypdf import PdfReader
@@ -43,6 +44,11 @@ def esc(s: any) -> str:
 
 def link(label: str, url: str) -> str:
     return f'<link href="{esc(url)}" color="#1c1917"><u>{esc(label)}</u></link>'
+
+
+def md_bold(s: str) -> str:
+    # Convierte **texto** en <b>texto</b> sobre texto ya escapado
+    return re.sub(r'\*\*(.+?)\*\*', r'<b>\1</b>', s)
 
 
 def build_cv(cv_path: Path, out_path: Path, public_path: Path, lang: str = 'es'):
@@ -291,6 +297,15 @@ def build_cv(cv_path: Path, out_path: Path, public_path: Path, lang: str = 'es')
         )
     )
     story.append(skills_table)
+
+    # Section: Engineering Workflow
+    workflow = cv_data.get('workflow')
+    if workflow:
+        story.append(
+            Paragraph(esc(workflow.get('name', 'Engineering Workflow')), styles['CVSectionTitle'])
+        )
+        for bullet in workflow.get('bullets', []):
+            story.append(Paragraph(f'• {md_bold(esc(bullet))}', styles['CVBullet']))
 
     # Build PDF
     doc = SimpleDocTemplate(

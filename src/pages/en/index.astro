@@ -6,6 +6,7 @@ import Education from '@/components/sections/Education.astro'
 import Hero from '@/components/sections/Hero.astro'
 import Projects from '@/components/sections/Projects.astro'
 import Skills from '@/components/sections/Skills.astro'
+import Workflow from '@/components/sections/Workflow.astro'
 import KeyboardManager from '@/components/KeyboardManager.astro'
 
 import cv from '@cv-en'
@@ -33,6 +34,10 @@ const description = dict.layout.metaDescription(name, label)
 
     <div id='skills' data-animate='true'>
       <Skills skills={skills} dict={dict} />
+    </div>
+
+    <div id='engineering-workflow' data-animate='true'>
+      <Workflow dict={dict} />
     </div>
 
     <div id='education' data-animate='true'>

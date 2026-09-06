@@ -120,6 +120,17 @@
       "keywords": ["LLMs", "Agentes IA", "Prompting"]
     }
   ],
+  "workflow": {
+    "name": "Engineering Workflow",
+    "claim": "Cada cambio entra por un ticket y sale por un PR verificado. La IA acelera el trabajo; el criterio, la revisión y la validación siguen siendo míos.",
+    "bullets": [
+      "**Ticket-driven:** cada cambio nace de un ticket con alcance y criterio de aceptación, y se cierra con evidencia.",
+      "**Una rama por ticket y PR antes de integrar:** ningún cambio relevante entra directo a main.",
+      "**Verificación obligatoria antes de «terminado»:** tests, typecheck/build y lint en verde.",
+      "**Revisión asistida por IA como capa extra de calidad;** la decisión de merge es mía.",
+      "**Cambios pequeños y trazables:** commits semánticos, documentación y ADRs cuando hay decisión de arquitectura."
+    ]
+  },
   "languages": [
     {
       "language": "Español",

@@ -120,6 +120,17 @@
       "keywords": ["LLMs", "AI Agents", "Prompting"]
     }
   ],
+  "workflow": {
+    "name": "Engineering Workflow",
+    "claim": "Every change starts as a ticket and lands as a verified PR. AI accelerates the work — judgement, review and validation stay mine.",
+    "bullets": [
+      "**Ticket-driven:** every change starts from a ticket with scope and acceptance criteria, and closes with evidence.",
+      "**One branch per ticket and a PR before integrating:** no relevant change lands directly on main.",
+      "**Verification is mandatory before “done”:** tests, typecheck/build and lint in green.",
+      "**AI-assisted review as an extra quality layer;** the merge decision is mine.",
+      "**Small, traceable changes:** semantic commits, documentation and ADRs whenever an architecture decision is made."
+    ]
+  },
   "languages": [
     {
       "language": "English",
@@ -153,7 +164,10 @@
       "featured": true,
       "description": "A harness to orchestrate AI agents: flow definition, tools and evaluation. Actively in development.",
       "highlights": ["AI Agents", "LLMs", "Harness"],
-      "url": "https://github.com/EzequielMenor/AIES"
+      "url": "https://aies.ezequielmenor.es/",
+      "repos": {
+        "repo": "https://github.com/EzequielMenor/AIES"
+      }
     },
     {
       "name": "Stackd",

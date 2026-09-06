@@ -11,6 +11,7 @@ export interface Dict {
     otherWork: string
     projects: string
     skills: string
+    workflow: string
   }
   hero: {
     bio: string
@@ -43,6 +44,38 @@ export interface Dict {
     repoMobile: string
     repoDesktop: string
     repoBackend: string
+  }
+  workflow: {
+    kicker: string
+    title: string
+    intro: string
+    claim: string
+    flowLabel: string
+    phases: Array<{ name: string; question: string }>
+    stages: Array<{ name: string; desc: string }>
+    aiTitle: string
+    aiIntro: string
+    delegateTitle: string
+    dontDelegateTitle: string
+    delegate: string[]
+    dontDelegate: string[]
+    rulesTitle: string
+    rules: string[]
+    evidenceTitle: string
+    evidenceIntro: string
+    example: {
+      title: string
+      sentence: string
+      steps: Array<{ label: string; text: string; link: { label: string; url: string } }>
+    }
+    evidence: Array<{
+      name: string
+      text: string
+      links: Array<{ label: string; url: string }>
+    }>
+    closing: string
+    closingLink: string
+    toolsNote: string
   }
   keyboard: {
     hint: string
