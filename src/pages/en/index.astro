@@ -21,26 +21,26 @@ const description = dict.layout.metaDescription(name, label)
 ---
 
 <Layout title={title} description={description} lang='en'>
-  <main class='px-6 mx-auto w-full max-w-3xl space-y-16 pb-20'>
+  <main class='px-6 mx-auto w-full max-w-4xl space-y-16 pb-20'>
     <Hero basics={basics} dict={dict} />
 
-    <div id='projects' data-animate='true'>
+    <div id='projects' data-animate='true' class='scroll-mt-20'>
       <Projects projects={projects} dict={dict} />
     </div>
 
-    <div id='experience' data-animate='true'>
+    <div id='experience' data-animate='true' class='scroll-mt-20'>
       <Experience work={work} dict={dict} locale='en-US' />
     </div>
 
-    <div id='skills' data-animate='true'>
+    <div id='skills' data-animate='true' class='scroll-mt-20'>
       <Skills skills={skills} dict={dict} />
     </div>
 
-    <div id='engineering-workflow' data-animate='true'>
+    <div id='engineering-workflow' data-animate='true' class='scroll-mt-20'>
       <Workflow dict={dict} />
     </div>
 
-    <div id='education' data-animate='true'>
+    <div id='education' data-animate='true' class='scroll-mt-20'>
       <Education education={education} dict={dict} />
     </div>
   </main>
@@ -49,7 +49,7 @@ const description = dict.layout.metaDescription(name, label)
     class='print:hidden border-t border-[var(--color-border)] py-12 px-6 text-center transition-colors'
   >
     <div
-      class='max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[var(--color-text-muted)] gap-4'
+      class='max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs font-mono text-[var(--color-text-muted)] gap-4'
     >
       <p>
         &copy; 2026 {name} &mdash; {dict.footer.builtWith}

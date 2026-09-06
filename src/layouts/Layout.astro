@@ -15,6 +15,7 @@ const dict = getDict(lang)
 
 const switcherHref = lang === 'es' ? '/en/' : '/'
 const switcherLabel = lang === 'es' ? dict.layout.switcherEn : dict.layout.switcherEs
+const homePrefix = lang === 'en' ? '/en' : ''
 
 // Alternates por idioma relativos a la ruta actual (home y case studies)
 const basePath =
@@ -158,8 +159,8 @@ const hrefDefault = hrefEs
     <header
       class='sticky top-0 z-40 w-full backdrop-blur-md bg-[var(--color-bg)]/90 border-b border-[var(--color-border)] print:hidden transition-colors duration-300'
     >
-      <div class='max-w-3xl mx-auto px-6 h-14 flex items-center justify-between'>
-        <a href='#hero' class='flex items-center gap-2 group'>
+      <div class='max-w-4xl mx-auto px-6 h-14 flex items-center justify-between'>
+        <a href={`${homePrefix}/#hero`} class='flex items-center gap-2 group'>
           <span
             class='font-serif text-lg tracking-tight text-[var(--color-text)] group-hover:text-[var(--color-text-muted)] transition-colors'
           >
@@ -170,21 +171,29 @@ const hrefDefault = hrefEs
         <nav
           class='hidden sm:flex items-center gap-5 text-xs font-mono text-[var(--color-text-muted)]'
         >
-          <a href='#projects' class='hover:text-[var(--color-text)] transition-colors'
+          <a
+            href={`${homePrefix}/#projects`}
+            class='hover:text-[var(--color-text)] transition-colors'
             >{dict.sections.projects}</a
           >
-          <a href='#experience' class='hover:text-[var(--color-text)] transition-colors'
+          <a
+            href={`${homePrefix}/#experience`}
+            class='hover:text-[var(--color-text)] transition-colors'
             >{dict.sections.experience}</a
           >
-          <a href='#skills' class='hover:text-[var(--color-text)] transition-colors'
+          <a
+            href={`${homePrefix}/#skills`}
+            class='hover:text-[var(--color-text)] transition-colors'
             >{dict.sections.skills}</a
           >
           <a
-            href='#engineering-workflow'
+            href={`${homePrefix}/#engineering-workflow`}
             class='hover:text-[var(--color-text)] transition-colors'
             >{dict.sections.workflow}</a
           >
-          <a href='#education' class='hover:text-[var(--color-text)] transition-colors'
+          <a
+            href={`${homePrefix}/#education`}
+            class='hover:text-[var(--color-text)] transition-colors'
             >{dict.sections.education}</a
           >
         </nav>
